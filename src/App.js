@@ -256,7 +256,7 @@ const SPECS = [
             { text: "Remplissage vasculaire prudent en attente du geste : 500 mL de cristalloïdes pour maintenir la précharge", grade: "GPS" },
           ]},
         ],
-        source: "ESC Pericardial Diseases Guidelines 2015 · Spodick NEJM 2003;349:684"
+        source: "ESC Pericardial Diseases 2015 (réf. en vigueur) · Spodick NEJM 2003"
       },
       {
         name: "Fibrillation Auriculaire à Réponse Ventriculaire Rapide",
@@ -383,7 +383,7 @@ const SPECS = [
             {text: "Repos sportif STRICT jusqu'à normalisation de la CRP et des symptômes — 3 mois minimum pour les sportifs compétiteurs", grade: "1A"},
           ]},
         ],
-        source: "ESC Pericardial Diseases Guidelines 2015 · Imazio NEJM 2013;369:1522 (COPE)"
+        source: "ESC Pericardial Diseases 2015 · Imazio COPE Circulation 2005 / ICAP NEJM 2013"
       },
       {
         name: "Infarctus du Ventricule Droit",
@@ -402,6 +402,28 @@ const SPECS = [
           ]},
         ],
         source: "ESC STEMI Guidelines 2023 · Dell'Italia Circulation 1998"
+      },
+      {
+        name: "Arrêt Cardiaque Réfractaire — ECMO-RCP (eCPR)",
+        urgence: "ABSOLUE",
+        aliases: ["arrêt cardiaque réfractaire", "eCPR", "ECMO RCP", "ECPR", "ECLS arrêt cardiaque", "ECMO veino-artérielle arrêt"],
+        sections: [
+          { title: "Définition et concept", items: [
+            { text: "Arrêt cardiaque réfractaire : absence de récupération d'une activité circulatoire spontanée après 20 minutes de réanimation cardio-pulmonaire spécialisée bien conduite", grade: "GPS" },
+            { text: "L'eCPR consiste à implanter une ECMO veino-artérielle pendant la RCP pour restaurer une perfusion d'organe, en attendant le traitement de la cause (notamment coronaire)", grade: "GPS" },
+          ]},
+          { title: "Critères de sélection (concertation indispensable)", items: [
+            { text: "No-flow court (< 5 min, idéalement RCP immédiate par témoin), low-flow < 60 min, rythme initial choquable ou cause réversible suspectée", grade: "1B" },
+            { text: "Patient jeune, peu de comorbidités, EtCO₂ > 10 mmHg sous massage (témoin de la qualité de perfusion), absence de comorbidité majeure", grade: "1B" },
+            { text: "Causes particulièrement éligibles : intoxications avec effet stabilisant de membrane, hypothermie profonde, embolie pulmonaire, SCA — la décision est multidisciplinaire et chronométrée", grade: "GPS" },
+          ]},
+          { title: "Données et mise en œuvre", items: [
+            { text: "Les essais récents (ARREST 2020 positif, mais INCEPTION et Prague-OHCA plus nuancés) confirment un bénéfice conditionné à une sélection stricte et une filière organisée et rapide", grade: "2B" },
+            { text: "Canulation fémoro-fémorale veino-artérielle percutanée échoguidée, sans interrompre le massage — surveillance de l'ischémie du membre canulé (cathéter de reperfusion)", grade: "GPS" },
+            { text: "Après implantation : coronarographie en urgence si cause coronaire, contrôle ciblé de la température, prise en charge du syndrome post-arrêt cardiaque", grade: "1B" },
+          ]},
+        ],
+        source: "Yannopoulos Lancet 2020 (ARREST) · Belohlavek NEJM 2022 (Prague-OHCA) · ERC 2021 · SFAR/SRLF"
       },
     ]
   },
@@ -479,7 +501,7 @@ const SPECS = [
             { text: "Oxygénothérapie à haut débit nasal (débit ≥ 40 litres/minute, FiO₂ titrée) : alternative à la ventilation non invasive, améliore le confort", grade: "1B", isNew: true },
           ]},
         ],
-        source: "SRLF/SFAR Sevrage Ventilatoire 2017 · Boles ICM 2007;33:1048 · Ferrer AJRCCM 2006"
+        source: "SRLF/SFAR Sevrage Ventilatoire 2017 · WEAN-SAFE Lancet Respir Med 2023 · Boles ICM 2007"
       },
       {
         name: "Embolie Pulmonaire à Haut Risque",
@@ -624,6 +646,69 @@ const SPECS = [
         ],
         source: "ERS Stridor Adult 2019 · Guldfred Dan Med J 2008"
       },
+      {
+        name: "ECMO Veino-Veineuse — SDRA Réfractaire",
+        urgence: "URGENT",
+        aliases: ["ECMO", "ECMO veino-veineuse", "ECMO VV", "oxygénation extracorporelle", "SDRA réfractaire ECMO", "assistance respiratoire extracorporelle"],
+        sections: [
+          { title: "Indications — SDRA très sévère réfractaire", items: [
+            { text: "À envisager dans le SDRA sévère réfractaire malgré l'optimisation : ventilation protectrice, curarisation, décubitus ventral bien conduit", grade: "1B" },
+            { text: "Critères type EOLIA : PaO₂/FiO₂ < 50 mmHg pendant > 3h, OU < 80 pendant > 6h, OU pH < 7,25 avec PaCO₂ ≥ 60 mmHg pendant > 6h malgré optimisation ventilatoire", grade: "1B" },
+            { text: "L'essai EOLIA (NEJM 2018) et sa méta-analyse suggèrent un bénéfice de survie — adresser précocement à un centre ECMO avant défaillance multiviscérale", grade: "1B" },
+          ]},
+          { title: "Principe et canulation", items: [
+            { text: "ECMO VV : draine le sang veineux, l'oxygène et l'épure en CO₂ via une membrane, le réinjecte dans le système veineux — assure l'hématose SANS support hémodynamique (réservée à la défaillance respiratoire pure)", grade: "GPS" },
+            { text: "Canulation fémoro-jugulaire ou fémoro-fémorale par voie percutanée échoguidée — débit de pompe 4-6 L/min", grade: "GPS" },
+            { text: "Sous ECMO : ventilation ultra-protectrice de repos pulmonaire (Vt très bas, pression de plateau limitée, FiO₂ réduite) pour laisser le poumon récupérer", grade: "1B" },
+          ]},
+          { title: "Complications et surveillance", items: [
+            { text: "Hémorragiques (anticoagulation par héparine, cible TCA ou anti-Xa) — thrombotiques — hémolyse — infections de canules", grade: "GPS" },
+            { text: "Surveillance : débit, pressions du circuit, D-dimères, hémoglobine libre plasmatique (hémolyse), bilan d'hémostase, gaz du sang pré et post-membrane", grade: "GPS" },
+            { text: "Distinguer de l'ECMO veino-artérielle (VA) qui, elle, assure un support hémodynamique (choc cardiogénique, arrêt cardiaque réfractaire)", grade: "GPS" },
+          ]},
+        ],
+        source: "Combes NEJM 2018 (EOLIA) · ELSO Guidelines 2021 · SRLF/SFAR"
+      },
+      {
+        name: "Pneumopathie d'Inhalation",
+        urgence: "URGENT",
+        aliases: ["pneumopathie d'inhalation", "syndrome de Mendelson", "inhalation bronchique", "fausse route", "pneumopathie de déglutition"],
+        sections: [
+          { title: "Distinguer pneumonite chimique et pneumonie infectieuse", items: [
+            { text: "Pneumonite chimique (syndrome de Mendelson) : lésion caustique aiguë par inhalation de liquide gastrique acide — détresse respiratoire immédiate, souvent régressive en 24-48h sans antibiotique", grade: "GPS" },
+            { text: "Pneumonie d'inhalation infectieuse : surinfection bactérienne secondaire (germes oro-pharyngés, anaérobies) — survient chez les patients à troubles de déglutition, troubles de conscience, dénutris", grade: "GPS" },
+          ]},
+          { title: "Prise en charge", items: [
+            { text: "Geste immédiat en cas d'inhalation observée : aspiration des voies aériennes, position proclive — NE PAS pratiquer de lavage alcalin ni de neutralisation", grade: "GPS" },
+            { text: "Antibiothérapie NON systématique dans la pneumonite chimique pure — la réserver en cas de non-amélioration à 48h, de fièvre persistante, ou de terrain à risque (occlusion intestinale, colonisation)", grade: "1B" },
+            { text: "Si antibiothérapie indiquée : amoxicilline-acide clavulanique (couvre les anaérobies) — éviter la couverture anaérobie systématique non justifiée", grade: "1B" },
+            { text: "Support respiratoire selon la sévérité (oxygène, OHDN, ventilation protectrice si SDRA) — prévention par dépistage et prise en charge des troubles de déglutition", grade: "1A" },
+          ]},
+        ],
+        source: "Mandell NEJM 2019 · Marik NEJM 2001 · SPILF"
+      },
+      {
+        name: "Décubitus Ventral dans le SDRA — Mise en Œuvre",
+        urgence: "URGENT",
+        aliases: ["décubitus ventral", "DV", "proning", "retournement SDRA", "ventilation en décubitus ventral"],
+        sections: [
+          { title: "Indication", items: [
+            { text: "SDRA modéré à sévère avec PaO₂/FiO₂ < 150 mmHg malgré une ventilation protectrice optimisée (FiO₂ ≥ 0,6, PEP ≥ 5) — à débuter précocement (essai PROSEVA)", grade: "1A" },
+            { text: "Réduit la mortalité dans le SDRA sévère lorsqu'il est appliqué en séances prolongées (≥ 16 heures consécutives)", grade: "1A" },
+          ]},
+          { title: "Prérequis et sécurité avant retournement", items: [
+            { text: "Sédation profonde ± curarisation, sonde d'intubation sécurisée et repérée, vidange gastrique, protection oculaire, fixation des cathéters et drains", grade: "GPS" },
+            { text: "Équipe d'au moins 3 à 5 personnes, un opérateur dédié à la tête et à la sonde d'intubation — manœuvre coordonnée", grade: "GPS" },
+            { text: "Contre-indications relatives : instabilité hémodynamique majeure non contrôlée, hypertension intracrânienne, fractures instables (rachis, bassin, face), chirurgie abdominale/thoracique récente", grade: "GPS" },
+          ]},
+          { title: "Conduite et surveillance", items: [
+            { text: "Séances d'au moins 16 heures consécutives, répétées tant que persiste l'hypoxémie — réévaluer l'oxygénation 1h après chaque retournement", grade: "1A" },
+            { text: "Prévention des complications : escarres (appui frontal, thoracique, iliaque), œdème facial, compressions nerveuses, extubation accidentelle (complication la plus redoutée), intolérance entérale", grade: "GPS" },
+            { text: "Critères d'arrêt : amélioration durable de l'oxygénation (PaO₂/FiO₂ > 150 en décubitus dorsal avec PEP ≤ 10 et FiO₂ ≤ 0,6, 4h après retour sur le dos)", grade: "1B" },
+          ]},
+        ],
+        source: "Guérin NEJM 2013 (PROSEVA) · SRLF/SFAR SDRA · ESICM ARDS Guidelines 2023"
+      },
     ]
   },
   {
@@ -655,7 +740,7 @@ const SPECS = [
             { text: "Hydrocortisone (Solucortef®) 200 mg/jour en perfusion continue si noradrénaline > 0,25 microgrammes/kg/minute depuis > 4 heures — Contrôle du foyer infectieux dans les 6 à 12 heures", grade: "1B" },
           ]},
         ],
-        source: "SSC Guidelines 2026 · Evans ICM 2021;47:1181 · ATHOS-3 NEJM 2017;377:419"
+        source: "Surviving Sepsis Campaign 2021 · SRLF/SFAR Sepsis et Choc Septique · Evans ICM 2021 · ATHOS-3 NEJM 2017"
       },
       {
         name: "Choc Hémorragique — Damage Control Resuscitation",
@@ -676,17 +761,21 @@ const SPECS = [
             { text: "Coagulopathie : plasma frais congelé + plaquettes + fibrinogène guidés par thromboélastographie si disponible", grade: "1B" },
           ]},
         ],
-        source: "CRASH-2 Lancet 2010;376:23 · Holcomb JAMA 2015 (PROPPR) · ATLS 10th ed."
+        source: "European Trauma Guidelines (Rossaint) 6e éd. 2023 · CRASH-2 Lancet 2010 · CRASH-3 Lancet 2019 · PROPPR JAMA 2015"
       },
       {
         name: "Choc Anaphylactique",
         urgence: "ABSOLUE",
         aliases: ["anaphylaxie", "allergie grave", "urticaire géant", "œdème de Quincke anaphylaxie", "choc allergique"],
         sections: [
-          { title: "Adrénaline — unique traitement de référence", items: [
-            { text: "Adrénaline (épinéphrine) 0,3 à 0,5 mg en injection intramusculaire dans la face antérolatérale de la cuisse — PREMIER geste, sans délai", grade: "1A" },
+          { title: "Classification française par grades de gravité", items: [
+            { text: "Grade I : signes cutanéo-muqueux isolés (érythème, urticaire, œdème) — Grade II : atteinte multiviscérale modérée (hypotension, tachycardie, toux, gêne respiratoire) — Grade III : atteinte sévère menaçant le pronostic vital (collapsus, bronchospasme sévère, troubles du rythme) — Grade IV : arrêt circulatoire et/ou respiratoire", grade: "GPS" },
+            { text: "L'adrénaline est indiquée à partir du grade II et titrée selon le grade — un grade I ne justifie pas d'adrénaline mais une surveillance", grade: "1A" },
+          ]},
+          { title: "Adrénaline — traitement de référence des grades ≥ II", items: [
+            { text: "Hors anesthésie (patient non perfusé) : Adrénaline 0,3 à 0,5 mg en injection intramusculaire dans la face antérolatérale de la cuisse — PREMIER geste, sans délai", grade: "1A" },
             { text: "Répéter toutes les 5 à 15 minutes si insuffisant — pas de dose maximale en situation d'urgence vitale", grade: "1A" },
-            { text: "Adrénaline intraveineuse uniquement si arrêt cardiaque ou choc réfractaire à plusieurs injections intramusculaires : 0,1 mg titrés", grade: "1B" },
+            { text: "Anaphylaxie périopératoire (patient monitoré et perfusé) : adrénaline IV titrée par bolus selon le grade — grade II : 10–20 µg, grade III : 100–200 µg, grade IV : 1 mg comme dans l'arrêt cardiaque (recommandations SFAR/SFA)", grade: "1A" },
           ], hasDoseCalc: true, drugs: [
             { name: "Adrénaline intramusculaire (adulte)", detail: "Face antérolatérale cuisse", fixed: "0,3 à 0,5 mg — dose fixe en urgence vitale" },
             { name: "Adrénaline IV si choc réfractaire", detail: "0,1 mg titrés IV", perKg: 0.001, unit: "mg", max: 0.1, round: 3 },
@@ -698,7 +787,7 @@ const SPECS = [
             { text: "Surveillance minimum 6 heures après stabilisation : réaction biphasique dans 5 à 20% des cas (1 à 72 heures après la réaction initiale)", grade: "1B" },
           ]},
         ],
-        source: "WAO Anaphylaxis Guidelines 2020 · Simons JACI 2014;133:1284"
+        source: "SFMU/SFA/GFRUP Anaphylaxie 2016 · SFAR/SFA Anaphylaxie périopératoire 2011 · WAO 2020"
       },
       {
         name: "Choc Cardiogénique",
@@ -721,6 +810,35 @@ const SPECS = [
           ]},
         ],
         source: "Hochman NEJM 1999 (SHOCK) · Thiele NEJM 2012 (IABP-SHOCK II) · ESC HF Guidelines 2021"
+      },
+      {
+        name: "Oxygénothérapie à Haut Débit Nasal (OHDN/HFNO)",
+        urgence: "URGENT",
+        aliases: ["oxygénothérapie haut débit", "OHDN", "HFNO", "Optiflow", "haut débit nasal", "ROX index", "insuffisance respiratoire hypoxémique"],
+        sections: [
+          { title: "Indications — Conférence de consensus SRLF-SFMU 2024", items: [
+            { text: "L'oxygénothérapie à haut débit nasal (OHDN) est recommandée plutôt que l'oxygénothérapie conventionnelle chez les patients en insuffisance respiratoire aiguë hypoxémique de novo (recommandation forte)", grade: "1A" },
+            { text: "L'OHDN est préférée à la ventilation non invasive (VNI) en cas d'insuffisance respiratoire aiguë hypoxémique de novo (sans hypercapnie, sans OAP cardiogénique)", grade: "1B" },
+            { text: "Le décubitus ventral conscient est proposé chez les patients atteints de pneumonie à COVID-19 nécessitant le recours à l'OHDN", grade: "2B" },
+          ]},
+          { title: "Réglages initiaux", items: [
+            { text: "Débit initial : 50 L/min (plage 40 à 60 L/min) — adapter selon la tolérance du patient", grade: "GPS" },
+            { text: "FiO₂ titrée pour obtenir une SpO₂ entre 92 et 96% — débuter à FiO₂ 1,0 puis diminuer", grade: "1A" },
+            { text: "Température de l'air humidifié : 37°C (ou 34°C si mauvaise tolérance) — l'humidification chauffée améliore la clairance muco-ciliaire et le confort", grade: "GPS" },
+          ]},
+          { title: "Surveillance — Index ROX (prédiction de l'échec)", items: [
+            { text: "Index ROX = (SpO₂/FiO₂) / fréquence respiratoire — à mesurer à H2, H6 et H12 après l'initiation", grade: "1B" },
+            { text: "ROX ≥ 4,88 à H2, H6 ou H12 : faible risque d'intubation — poursuivre l'OHDN", grade: "1B" },
+            { text: "ROX < 3,85 : risque élevé d'échec et d'intubation — alerter le réanimateur, envisager l'intubation", grade: "1B" },
+            { text: "ROX entre 3,85 et 4,88 : zone d'incertitude — réévaluer à 1–2h, surveillance rapprochée", grade: "GPS" },
+          ]},
+          { title: "Critères d'intubation — ne pas retarder", items: [
+            { text: "Signes de détresse persistants malgré OHDN optimale : fréquence respiratoire > 40/min, tirage, balancement thoraco-abdominal, épuisement", grade: "1A" },
+            { text: "Hypoxémie réfractaire (SpO₂ < 90% malgré FiO₂ 1,0 et débit maximal), troubles de conscience, instabilité hémodynamique", grade: "1A" },
+            { text: "Le retard à l'intubation en cas d'échec de l'OHDN est associé à une surmortalité — ne pas s'acharner", grade: "1B" },
+          ]},
+        ],
+        source: "Conférence de consensus SRLF-SFMU 2024 (Helms, Ann Intensive Care 2024;14:140) · Roca AJRCCM 2019 (ROX index)"
       },
     ]
   },
@@ -831,7 +949,7 @@ const SPECS = [
             { text: "Surveiller l'hydrocéphalie secondaire : drainage ventriculaire externe si dilatation ventriculaire sur scanner de contrôle", grade: "GPS" },
           ]},
         ],
-        source: "ESO Guidelines HSA 2013 · Connolly Neurosurgery 2012 · Molyneux ISAT Lancet 2002"
+        source: "AHA/ASA aSAH Guidelines 2023 · Neurocritical Care Society 2023 · ISAT Lancet 2002"
       },
       {
         name: "Hématome Intracérébral Spontané",
@@ -842,9 +960,11 @@ const SPECS = [
             { text: "Scanner cérébral sans injection : diagnostic, volume (formule ABC/2), localisation, présence d'hémorragie ventriculaire ou d'hydrocéphalie", grade: "1A" },
             { text: "Angio-scanner ou IRM si : patient < 55 ans, hématome lobaire, pas d'HTA connue — rechercher une malformation artérioveineuse ou un anévrisme", grade: "GPS" },
           ]},
-          { title: "Contrôle tensionnel en urgence", items: [
-            { text: "Pression artérielle systolique cible < 140 mmHg dans les 2 heures si admission entre 140 et 220 mmHg — réduction rapide sûre et associée à une moindre expansion de l'hématome (INTERACT2, NEJM 2013)", grade: "1B" },
-            { text: "Nicardipine (Loxen®) intraveineux par seringue électrique : agent de choix en France pour le contrôle tensionnel en urgence neurologique", grade: "GPS" },
+          { title: "Bundle de soins précoce (INTERACT3 2023)", items: [
+            { text: "L'essai INTERACT3 (Lancet 2023) a démontré qu'un bundle de soins précoce améliore le pronostic fonctionnel : contrôle tensionnel intensif + glycémique + de la température + reversal rapide de l'anticoagulation", grade: "1A" },
+            { text: "Pression artérielle systolique cible < 140 mmHg, à atteindre précocement (dans l'heure) et à maintenir — réduit l'expansion de l'hématome", grade: "1B" },
+            { text: "Nicardipine (Loxen®) ou urapidil (Eupressyl®) IV par seringue électrique : agents de choix pour un contrôle tensionnel titré — éviter les à-coups", grade: "GPS" },
+            { text: "Contrôle glycémique (éviter hyper et hypoglycémie) et de la température (traiter la fièvre) dans le cadre du bundle", grade: "1B" },
           ]},
           { title: "Reversal des anticoagulants", items: [
             { text: "Anti-vitamines K : complexe prothrombinique (Kanokad® ou Octaplex®) 25 UI/kg intraveineux + vitamine K 10 mg intraveineuse — objectif INR < 1,3 dans l'heure", grade: "1A" },
@@ -853,7 +973,7 @@ const SPECS = [
             { text: "Dabigatran (Pradaxa®) : idarucizumab (Praxbind®) 5 g intraveineux — antidote spécifique", grade: "1A" },
           ]},
         ],
-        source: "Hemphill AHA/ASA Stroke 2015 · INTERACT2 NEJM 2013;368:2355 · ESO AVC Hémorragique 2014"
+        source: "AHA/ASA ICH Guidelines 2022 · Ma INTERACT3 Lancet 2023 · ESO ICH Guidelines 2024"
       },
       {
         name: "Coma d'Étiologie Inconnue — Démarche Diagnostique",
@@ -1012,6 +1132,95 @@ const SPECS = [
         ],
         source: "AOSpine Spinal Cord Injury Guidelines 2022 · Fehlings Neurosurgery 2012"
       },
+      {
+        name: "Mort Encéphalique — Diagnostic et Constat Légal",
+        urgence: "ABSOLUE",
+        aliases: ["mort encéphalique", "mort cérébrale", "coma dépassé", "constat de décès neurologique", "diagnostic mort encéphalique"],
+        sections: [
+          { title: "Prérequis avant tout diagnostic", items: [
+            { text: "Cause du coma connue, lésionnelle et irréversible — éliminer formellement les facteurs confondants : hypothermie (température ≥ 35°C), intoxication ou sédation résiduelle (dosages), troubles métaboliques ou endocriniens majeurs, hypotension", grade: "1A" },
+            { text: "Le diagnostic ne peut être posé qu'en l'absence de toute sédation résiduelle — vérifier les demi-vies des agents administrés, doser si besoin", grade: "1A" },
+          ]},
+          { title: "Critères cliniques (les 3 simultanément)", items: [
+            { text: "1. Coma aréactif profond (score de Glasgow 3) — absence totale de conscience et d'activité motrice spontanée ou provoquée", grade: "1A" },
+            { text: "2. Abolition de TOUS les réflexes du tronc cérébral : photomoteur, cornéen, oculo-céphalique, oculo-vestibulaire, de toux, nauséeux", grade: "1A" },
+            { text: "3. Absence de ventilation spontanée vérifiée par une épreuve d'hypercapnie (test d'apnée) : débrancher le respirateur sous oxygénation apnéique, confirmer l'absence de mouvement respiratoire pour une PaCO₂ ≥ 60 mmHg", grade: "1A" },
+            { text: "Des automatismes médullaires peuvent persister (signe de Lazare) et n'excluent PAS la mort encéphalique — ils ne traduisent aucune activité cérébrale", grade: "GPS" },
+          ]},
+          { title: "Confirmation paraclinique — obligatoire en France (loi)", items: [
+            { text: "Le Code de la santé publique exige UN examen paraclinique de confirmation : soit 2 EEG nuls et aréactifs de 30 minutes réalisés à 4 heures d'intervalle, soit une angiographie cérébrale (le plus souvent angioscanner) objectivant l'arrêt de la circulation encéphalique", grade: "1A" },
+            { text: "Angioscanner cérébral : critère = absence d'opacification des veines cérébrales internes et des branches corticales des artères cérébrales moyennes, sur acquisition à 60 secondes après injection", grade: "1A" },
+            { text: "En cas de sédation résiduelle ou de trouble métabolique gênant l'EEG, l'angioscanner cérébral est préféré (non influencé par ces facteurs)", grade: "1B" },
+          ]},
+          { title: "Aspects légaux et procédure", items: [
+            { text: "Le procès-verbal de constat de la mort est signé par deux médecins ne participant ni au prélèvement ni à la transplantation (indépendance réglementaire)", grade: "1A" },
+            { text: "L'heure légale du décès est celle de la confirmation paraclinique — la réanimation peut être poursuivie en vue d'un éventuel prélèvement d'organes", grade: "GPS" },
+            { text: "Réaliser un angioscanner corps entier dans le même temps pour évaluer la faisabilité d'un prélèvement multi-organes", grade: "1B" },
+          ]},
+        ],
+        source: "Décret 96-1041 du 2 décembre 1996 · SFNR Angioscanner 2007 · Agence de la Biomédecine 2024 · Code de la Santé Publique"
+      },
+      {
+        name: "Prise en Charge du Donneur en Mort Encéphalique (PMO)",
+        urgence: "URGENT",
+        aliases: ["prélèvement multi-organes", "PMO", "donneur d'organes", "réanimation du donneur", "prise en charge donneur mort encéphalique"],
+        sections: [
+          { title: "Cadre légal du consentement", items: [
+            { text: "En France, principe du consentement présumé : toute personne est donneuse sauf inscription au Registre National des Refus (à consulter obligatoirement) ou opposition exprimée de son vivant", grade: "1A" },
+            { text: "Recueil systématique du témoignage des proches sur la position du défunt — entretien mené avec la coordination hospitalière de prélèvement", grade: "1A" },
+          ]},
+          { title: "Objectifs réanimatoires — maintien de l'homéostasie", items: [
+            { text: "Hémodynamique : PAM ≥ 65 mmHg, diurèse ≥ 1 mL/kg/h — remplissage prudent + noradrénaline — la défaillance hémodynamique est constante (vasoplégie + dysfonction myocardique)", grade: "1A" },
+            { text: "Diabète insipide quasi-constant (effondrement de l'ADH) : desmopressine (Minirin®) + compensation des pertes hydriques — surveiller la natrémie (hypernatrémie délétère pour le greffon)", grade: "1A" },
+            { text: "Hormonothérapie de suppléance discutée : hydrocortisone, parfois hormones thyroïdiennes — corrige la défaillance hémodynamique réfractaire", grade: "2B" },
+            { text: "Ventilation protectrice (Vt 6-8 mL/kg, PEP) pour préserver le greffon pulmonaire — normothermie active — correction des troubles ioniques", grade: "1A" },
+          ]},
+          { title: "Coordination et organisation", items: [
+            { text: "Alerter précocement la coordination hospitalière de prélèvement et l'Agence de la Biomédecine — bilan du donneur (sérologies, groupe, imagerie, bilan d'organe)", grade: "1A" },
+            { text: "Le maintien optimal des fonctions vitales conditionne directement la qualité des greffons et le nombre d'organes prélevables", grade: "GPS" },
+          ]},
+        ],
+        source: "Agence de la Biomédecine 2024 · SRLF Prise en charge du sujet en mort encéphalique 2005 · SFAR"
+      },
+      {
+        name: "Vasospasme et Ischémie Cérébrale Retardée (post-HSA)",
+        urgence: "URGENT",
+        aliases: ["vasospasme cérébral", "ischémie cérébrale retardée", "vasospasme post-hémorragie méningée", "DCI", "déficit neurologique retardé"],
+        sections: [
+          { title: "Reconnaissance", items: [
+            { text: "Survient typiquement entre J4 et J14 après une hémorragie sous-arachnoïdienne anévrismale — pic à J7 — première cause de morbi-mortalité après sécurisation de l'anévrisme", grade: "GPS" },
+            { text: "Se manifeste par un déficit neurologique focal nouveau ou une dégradation de la vigilance, après élimination des autres causes (hydrocéphalie, resaignement, convulsions, troubles métaboliques)", grade: "GPS" },
+            { text: "Surveillance par doppler transcrânien quotidien (accélération des vitesses) et angioscanner/angiographie en cas de suspicion", grade: "1B" },
+          ]},
+          { title: "Prévention", items: [
+            { text: "Nimodipine (Nimotop®) 60 mg PO toutes les 4 heures pendant 21 jours dès le diagnostic d'hémorragie sous-arachnoïdienne : seul traitement ayant démontré une amélioration du pronostic neurologique", grade: "1A" },
+            { text: "Maintien de la normovolémie et de la normonatrémie — éviter l'hypovolémie et l'hyponatrémie qui aggravent l'ischémie", grade: "1A" },
+          ]},
+          { title: "Traitement du vasospasme symptomatique", items: [
+            { text: "Optimisation hémodynamique : induction d'une hypertension (objectif PAM élevée par noradrénaline) pour améliorer la perfusion cérébrale — l'ancienne triple-H thérapie est abandonnée au profit de la seule hypertension induite avec euvolémie", grade: "1B" },
+            { text: "Angioplastie endovasculaire (mécanique au ballon ou pharmacologique par vasodilatateur intra-artériel) si vasospasme réfractaire au traitement médical", grade: "1B" },
+          ]},
+        ],
+        source: "Neurocritical Care Society SAH 2023 · AHA/ASA aSAH Guidelines 2023 · ESO 2013"
+      },
+      {
+        name: "Neuromyopathie Acquise en Réanimation",
+        urgence: "SURVEILLANCE",
+        aliases: ["neuromyopathie de réanimation", "polyneuropathie de réanimation", "myopathie de réanimation", "faiblesse acquise en réanimation", "ICU-acquired weakness"],
+        sections: [
+          { title: "Reconnaissance", items: [
+            { text: "Faiblesse musculaire diffuse, symétrique, prédominant aux membres (épargne souvent la face), acquise au cours d'un séjour prolongé en réanimation — cause fréquente d'échec de sevrage ventilatoire", grade: "GPS" },
+            { text: "Facteurs de risque : sepsis, syndrome de défaillance multiviscérale, ventilation mécanique prolongée, corticoïdes, curares, hyperglycémie, immobilisation", grade: "GPS" },
+            { text: "Diagnostic clinique (testing musculaire, score MRC < 48/60) confirmé si besoin par l'électroneuromyographie (distingue atteinte axonale et myopathique)", grade: "1B" },
+          ]},
+          { title: "Prévention — seule approche efficace", items: [
+            { text: "Mobilisation et rééducation précoces : kinésithérapie active dès que possible — réduit la durée de ventilation et améliore le statut fonctionnel", grade: "1A" },
+            { text: "Limiter les facteurs iatrogènes : minimiser la sédation (protocoles d'allègement quotidien), limiter curares et corticoïdes, contrôle glycémique raisonnable", grade: "1B" },
+            { text: "Il n'existe pas de traitement curatif spécifique — la récupération est progressive sur des semaines à des mois et conditionne le pronostic fonctionnel à long terme", grade: "GPS" },
+          ]},
+        ],
+        source: "Stevens ICM 2009 · Hermans Lancet Respir Med 2015 · SRLF"
+      },
     ]
   },
   {
@@ -1088,7 +1297,7 @@ const SPECS = [
             { text: "Immunoglobulines polyvalentes IV (Tegeline®) 2 g/kg en dose unique si choc toxique streptococcique confirmé", grade: "2B" },
           ]},
         ],
-        source: "IDSA Skin/Soft Tissue Infections 2014 · Lancet Strep A toxic shock 2006"
+        source: "IDSA SSTI 2014 · SFAR Dermohypodermites nécrosantes 2023"
       },
       {
         name: "Endocardite Infectieuse Compliquée",
@@ -1114,8 +1323,8 @@ const SPECS = [
         urgence: "URGENT",
         aliases: ["pneumonie grave", "pneumonie communautaire sévère", "pneumopathie réanimation", "PAVM", "pneumonie acquise sous ventilation mécanique", "Legionella Pneumocoque grave"],
         sections: [
-          { title: "Critères de gravité — ATS/IDSA (admission en réanimation)", items: [
-            { text: "Critères majeurs : ventilation mécanique nécessaire, choc septique avec vasopresseurs — Critères mineurs (≥ 3) : fréquence respiratoire ≥ 30/min, rapport PaO₂/FiO₂ ≤ 250, infiltrats multilobaires, confusion, urée > 7 mmol/L, leucocytes < 4 G/L, plaquettes < 100 G/L, température < 36°C, hypotension", grade: "GPS" },
+          { title: "Critères de gravité — admission en réanimation", items: [
+            { text: "Critères de gravité (SPILF-SPLF-SRLF 2025, repris de l'approche ATS/IDSA) — Critères majeurs : ventilation mécanique nécessaire, choc septique avec vasopresseurs — Critères mineurs (≥ 3) : fréquence respiratoire ≥ 30/min, rapport PaO₂/FiO₂ ≤ 250, infiltrats multilobaires, confusion, urée > 7 mmol/L, leucocytes < 4 G/L, plaquettes < 100 G/L, température < 36°C, hypotension", grade: "GPS" },
           ]},
           { title: "Antibiothérapie probabiliste pneumonie communautaire grave", items: [
             { text: "Bêtalactamine : Amoxicilline-Acide clavulanique 3 g IV ou Céfotaxime 1 g × 3/jour IV — associée à un macrolide (azithromycine 500 mg/jour) pour couvrir les germes atypiques (Legionella, Mycoplasme)", grade: "1A" },
@@ -1128,7 +1337,7 @@ const SPECS = [
             { text: "Durée totale 8 jours sauf Pseudomonas ou Staphylocoque doré (14 jours) — guidage par la procalcitonine", grade: "1B" },
           ]},
         ],
-        source: "SPILF/SFAR Pneumonies Graves 2020 · IDSA/ATS Pneumonia Guidelines 2019 · SRLF PAVM 2017"
+        source: "SPILF-SPLF-SRLF-SFM-SFR-SFMU Pneumonies Communautaires 2025 · SRLF/SFAR PAVM 2017 · Dinh MMI 2025"
       },
       {
         name: "Candidémie et Candidose Invasive",
@@ -1184,7 +1393,7 @@ const SPECS = [
             { text: "Immunoglobulines polyvalentes IV 2 g/kg en dose unique si choc toxique réfractaire (neutralisent les super-antigènes)", grade: "2B" },
           ]},
         ],
-        source: "IDSA Skin/Soft Tissue Infections 2014 · Stevens JAMA 2006"
+        source: "IDSA SSTI 2014 (réf.) · Burnham Intensive Care Med 2015 (choc toxique réa)"
       },
       {
         name: "Infection sur Cathéter Veineux Central (BABS)",
@@ -1238,7 +1447,7 @@ const SPECS = [
             {text: "Dialyse précoce si insuffisance rénale oligo-anurique : récupération habituelle en 3 à 4 semaines si traitement adapté — hémorragie pulmonaire (SDRA-like) : mortalité > 50%, ventilation protectrice", grade: "1A"},
           ]},
         ],
-        source: "WHO Leptospirosis Guidelines 2011 · Tubiana CID 2013"
+        source: "WHO Leptospirosis · Haake Curr Top Microbiol Immunol 2015 (revue) · SPILF"
       },
       {
         name: "COVID-19 Grave en Réanimation",
@@ -1278,6 +1487,71 @@ const SPECS = [
           ]},
         ],
         source: "HAS Tuberculose 2022 · WHO TB Guidelines 2022 · Thwaites NEJM 2004"
+      },
+      {
+        name: "Pneumocystose Pulmonaire (PCP) chez l'Immunodéprimé",
+        urgence: "URGENT",
+        aliases: ["pneumocystose", "PCP", "Pneumocystis jirovecii", "pneumonie immunodéprimé", "VIH pneumonie hypoxémiante"],
+        sections: [
+          { title: "Diagnostic", items: [
+            { text: "Terrain : VIH avec CD4 < 200/mm³, corticothérapie prolongée, immunosuppresseurs, greffe d'organe, hémopathie — toux sèche + dyspnée d'aggravation progressive + fièvre + hypoxémie souvent sévère", grade: "GPS" },
+            { text: "Scanner thoracique : infiltrat interstitiel bilatéral en verre dépoli à prédominance péri-hilaire — LDH souvent élevées (non spécifique)", grade: "GPS" },
+            { text: "Diagnostic de certitude : PCR Pneumocystis jirovecii et/ou immunofluorescence sur lavage broncho-alvéolaire (ou expectoration induite) — bêta-D-glucane sérique élevé (bonne valeur prédictive négative)", grade: "1A" },
+          ]},
+          { title: "Traitement de première intention", items: [
+            { text: "Triméthoprime-Sulfaméthoxazole (cotrimoxazole) 15–20 mg/kg/jour de triméthoprime IV en 3–4 prises pendant 21 jours : traitement de référence", grade: "1A" },
+            { text: "Corticothérapie adjuvante si hypoxémie (PaO₂ < 70 mmHg en air ambiant ou gradient alvéolo-artériel > 35 mmHg) : prednisone 40 mg × 2/jour puis décroissance sur 21 jours — réduit la mortalité dans les formes hypoxémiantes", grade: "1A" },
+          ]},
+          { title: "Alternatives si intolérance au cotrimoxazole", items: [
+            { text: "Atovaquone 750 mg × 2/jour PO (formes modérées) — ou Pentamidine 4 mg/kg/jour IV (formes sévères, toxicité rénale et pancréatique) — ou Primaquine + Clindamycine", grade: "1B" },
+            { text: "Prophylaxie secondaire après guérison : cotrimoxazole 1 comprimé/jour jusqu'à restauration immunitaire (CD4 > 200 pendant 3 mois)", grade: "1A" },
+          ]},
+        ],
+        source: "ECIL-9 2023 · HAS Prise en charge VIH 2024 · Thomas NEJM 2004"
+      },
+      {
+        name: "Toxoplasmose Cérébrale chez l'Immunodéprimé",
+        urgence: "URGENT",
+        aliases: ["toxoplasmose cérébrale", "abcès cérébral toxoplasme", "VIH abcès cérébral", "immunodéprimé lésion cérébrale"],
+        sections: [
+          { title: "Diagnostic", items: [
+            { text: "Terrain : VIH avec CD4 < 100/mm³, immunosuppression sévère — céphalées + fièvre + déficit neurologique focal + crises convulsives ± troubles de conscience", grade: "GPS" },
+            { text: "IRM cérébrale : lésions multiples en cocarde (prise de contraste annulaire) avec œdème péri-lésionnel, à prédilection des noyaux gris centraux et de la jonction cortico-sous-corticale", grade: "1A" },
+            { text: "Sérologie toxoplasmose (IgG positive en faveur, une sérologie négative rend le diagnostic peu probable) — PCR toxoplasme sur LCR si ponction lombaire possible", grade: "GPS" },
+          ]},
+          { title: "Traitement d'attaque (6 semaines)", items: [
+            { text: "Pyriméthamine 200 mg dose de charge puis 50–75 mg/jour PO + Sulfadiazine 4–6 g/jour PO en 4 prises + Acide folinique 25 mg/jour (prévention de la toxicité hématologique)", grade: "1A" },
+            { text: "Alternative si intolérance sulfamides : Pyriméthamine + Clindamycine 600 mg × 4/jour", grade: "1B" },
+            { text: "Test thérapeutique : amélioration clinique et radiologique attendue en 10–14 jours — si absence de réponse, reconsidérer le diagnostic (lymphome cérébral)", grade: "GPS" },
+          ]},
+          { title: "Mesures associées", items: [
+            { text: "Corticothérapie (dexaméthasone) uniquement si effet de masse ou œdème menaçant — à éviter sinon (gêne l'interprétation de la réponse au traitement)", grade: "2B" },
+            { text: "Traitement antiépileptique si crises — Introduction ou optimisation du traitement antirétroviral (restauration immunitaire) après 2 semaines", grade: "1B" },
+            { text: "Prophylaxie secondaire : pyriméthamine-sulfadiazine à demi-dose jusqu'à CD4 > 200/mm³ pendant 6 mois", grade: "1A" },
+          ]},
+        ],
+        source: "HAS Prise en charge VIH 2024 · EACS Guidelines 2023 · Dunay Clin Microbiol Rev 2018"
+      },
+      {
+        name: "Grippe Grave et Infections Virales Respiratoires en Réanimation",
+        urgence: "URGENT",
+        aliases: ["grippe grave", "grippe maligne", "influenza réanimation", "SDRA grippal", "virose respiratoire grave", "oseltamivir"],
+        sections: [
+          { title: "Présentation et diagnostic", items: [
+            { text: "Grippe grave : pneumonie virale primaire hypoxémiante (SDRA possible) ou surinfection bactérienne secondaire — terrains à risque : âge, obésité, grossesse, immunodépression, comorbidités cardiorespiratoires", grade: "GPS" },
+            { text: "Diagnostic : PCR multiplex respiratoire (grippe A/B, VRS, SARS-CoV-2, métapneumovirus) sur prélèvement naso-pharyngé ou aspiration trachéale", grade: "1A" },
+          ]},
+          { title: "Traitement", items: [
+            { text: "Oseltamivir (Tamiflu®) 75 mg × 2/jour PO ou SNG pendant 5 jours (doublé et prolongé dans les formes graves) : à débuter le plus PRÉCOCEMENT possible, sans attendre la PCR si forte suspicion", grade: "1A" },
+            { text: "Antibiothérapie associée si suspicion de surinfection bactérienne (couvrir pneumocoque ET Staphylocoque doré, y compris SARM si grippe + pneumonie nécrosante)", grade: "1B" },
+            { text: "Les corticoïdes ne sont PAS recommandés en routine dans la grippe grave (sauf autre indication : SDRA, choc) — risque de surinfection et de réplication virale prolongée", grade: "2B" },
+          ]},
+          { title: "Support et prévention", items: [
+            { text: "Support ventilatoire selon la sévérité (OHDN, ventilation protectrice, décubitus ventral, ECMO VV si SDRA réfractaire) — isolement gouttelettes", grade: "1A" },
+            { text: "Vaccination antigrippale annuelle des sujets à risque et des soignants : principale mesure de prévention", grade: "1A" },
+          ]},
+        ],
+        source: "SPILF/SRLF Grippe grave 2024 · Uyeki Clin Infect Dis 2019 · HCSP"
       },
     ]
   },
@@ -1376,7 +1650,7 @@ const SPECS = [
             { text: "Réanimation hémodynamique : remplissage, vasopresseurs (noradrénaline à doses minimales — éviter les vasoconstricteurs mésentériques)", grade: "GPS" },
           ]},
         ],
-        source: "ESVS Visceral Ischemia Guidelines 2017 · Tilsed EJV 2016"
+        source: "WSES Acute Mesenteric Ischaemia 2022 · ESVS Mesenteric 2017"
       },
       {
         name: "Colite Grave — Clostridioides difficile et Poussée Sévère de MICI",
@@ -1419,7 +1693,7 @@ const SPECS = [
             {text: "Cause non-paracétamolique : INR > 6,5 OU ≥ 3 critères (âge < 10 ou > 40 ans, bilirubine > 300 µmol/L, INR > 3,5, cause non-A non-B ou médicamenteuse, délai ictère-encéphalopathie > 7 jours)", grade: "1B"},
           ]},
         ],
-        source: "EASL Acute Liver Failure 2017 · Lee NEJM 2009;360:1808"
+        source: "EASL Acute Liver Failure 2017 · AASLD ALF 2023 · Lee NEJM 2009"
       },
       {
         name: "Cholangite Aiguë Grave — Angiocholite — Score de Tokyo",
@@ -1440,6 +1714,52 @@ const SPECS = [
           ]},
         ],
         source: "Tokyo Guidelines 2018 · Kiriyama JHBPsurg 2018"
+      },
+      {
+        name: "Hépatite Alcoolique Aiguë Sévère",
+        urgence: "URGENT",
+        aliases: ["hépatite alcoolique", "hépatite alcoolique sévère", "score de Maddrey", "ictère alcoolique", "insuffisance hépatique alcoolique"],
+        sections: [
+          { title: "Diagnostic et évaluation de la sévérité", items: [
+            { text: "Tableau : ictère récent (< 3 mois) + consommation d'alcool active + hépatomégalie douloureuse ± fièvre ± décompensation (ascite, encéphalopathie) sur terrain d'hépatopathie alcoolique", grade: "GPS" },
+            { text: "Score de Maddrey (fonction discriminante) = 4,6 × (TP patient − TP témoin en secondes) + bilirubine (µmol/L)/17 — un score ≥ 32 définit la forme SÉVÈRE justifiant la corticothérapie", grade: "1A" },
+            { text: "Score MELD et score de Lille (à J7) permettent d'affiner le pronostic et d'évaluer la réponse au traitement", grade: "1B" },
+            { text: "La biopsie hépatique (transjugulaire) confirme le diagnostic en cas de doute — recommandée avant corticothérapie si présentation atypique", grade: "2B" },
+          ]},
+          { title: "Traitement de la forme sévère (Maddrey ≥ 32)", items: [
+            { text: "Prednisolone 40 mg/jour PO pendant 28 jours puis décroissance : améliore la survie à court terme (1 mois) dans les formes sévères (essai STOPAH, NEJM 2015)", grade: "1B" },
+            { text: "Évaluer la réponse au score de Lille à J7 : si score de Lille > 0,45 (non-répondeur), arrêter les corticoïdes (bénéfice nul, risque infectieux)", grade: "1A" },
+            { text: "N-Acétylcystéine IV en association aux corticoïdes pendant les 5 premiers jours : pourrait réduire la mortalité précoce et le syndrome hépato-rénal", grade: "2B" },
+          ]},
+          { title: "Mesures associées indispensables", items: [
+            { text: "Sevrage alcoolique encadré (prévention du delirium tremens : benzodiazépines) + vitaminothérapie B1-B6-PP (prévention de l'encéphalopathie de Gayet-Wernicke)", grade: "1A" },
+            { text: "Dépistage et traitement systématique des infections (avant et pendant la corticothérapie) — l'infection est la principale cause de mortalité", grade: "1A" },
+            { text: "Support nutritionnel : apport calorique 35–40 kcal/kg/jour et protéique 1,2–1,5 g/kg/jour — la dénutrition aggrave le pronostic", grade: "1A" },
+            { text: "Abstinence alcoolique totale : seul facteur déterminant de la survie à long terme — orientation addictologique systématique", grade: "1A" },
+          ]},
+        ],
+        source: "EASL Clinical Practice Guidelines 2018 · Thursz NEJM 2015 (STOPAH) · Louvet Gastroenterology 2007 (score de Lille)"
+      },
+      {
+        name: "Syndrome Compartimental Abdominal (Hypertension Intra-Abdominale)",
+        urgence: "URGENT",
+        aliases: ["syndrome compartimental abdominal", "hypertension intra-abdominale", "HTIA", "pression intra-abdominale", "SCA abdominal"],
+        sections: [
+          { title: "Définitions et mesure", items: [
+            { text: "Hypertension intra-abdominale (HTIA) : pression intra-abdominale ≥ 12 mmHg de façon soutenue — Syndrome compartimental abdominal : PIA > 20 mmHg + nouvelle défaillance d'organe", grade: "1A" },
+            { text: "Mesure de référence : pression intra-vésicale (via la sonde urinaire, patient en décubitus dorsal, à l'expiration, vessie instillée de 25 mL) — répétée régulièrement chez les patients à risque", grade: "1A" },
+            { text: "Terrains à risque : chirurgie abdominale, pancréatite grave, remplissage massif, brûlés étendus, traumatisme abdominal, laparotomie", grade: "GPS" },
+          ]},
+          { title: "Conséquences physiopathologiques", items: [
+            { text: "Retentissement multiviscéral : baisse du retour veineux et du débit cardiaque, élévation des pressions de ventilation (compression diaphragmatique), oligo-anurie (compression rénale), ischémie mésentérique", grade: "GPS" },
+          ]},
+          { title: "Prise en charge", items: [
+            { text: "Mesures médicales : sédation-analgésie, évacuation du contenu digestif (SNG, sonde rectale), drainage des collections, restriction du remplissage, optimisation de la volémie", grade: "1B" },
+            { text: "Curarisation transitoire pour relâcher la paroi abdominale dans les formes sévères", grade: "2B" },
+            { text: "Laparotomie de décompression en urgence si syndrome compartimental avéré réfractaire aux mesures médicales (PIA > 25 mmHg avec défaillance d'organe)", grade: "1B" },
+          ]},
+        ],
+        source: "WSACS Guidelines 2013 (Kirkpatrick ICM) · SFAR"
       },
     ]
   },
@@ -1480,7 +1800,7 @@ const SPECS = [
             { text: "Plaquettes si < 20 G/L sans hémorragie, ou < 50 G/L avec hémorragie active — Fibrinogène (Clottafact®) si < 1,5 g/L : 1,5 à 2 g en injection intraveineuse", grade: "1B" },
           ]},
         ],
-        source: "ISTH/SSC Guidelines CIVD 2013 · Taylor Thromb Haemost 2001;86:1327"
+        source: "ISTH DIC Guidance 2023 · Taylor Thromb Haemost 2001 (score)"
       },
       {
         name: "Crise Vaso-Occlusive et Syndrome Thoracique Aigu — Drépanocytose",
@@ -1634,6 +1954,60 @@ const SPECS = [
           ]},
         ],
         source: "CNGOF/SFAR Hémorragie Post-Partum 2022 · WOMAN Trial Lancet 2017;389:2105"
+      },
+      {
+        name: "Embolie Amniotique",
+        urgence: "ABSOLUE",
+        aliases: ["embolie amniotique", "embolie de liquide amniotique", "collapsus per-partum", "détresse maternelle accouchement"],
+        sections: [
+          { title: "Reconnaissance — diagnostic clinique d'urgence", items: [
+            { text: "Survient pendant le travail, l'accouchement ou le post-partum immédiat — tableau brutal associant détresse respiratoire/hypoxémie, collapsus cardiovasculaire et coagulopathie (CIVD)", grade: "GPS" },
+            { text: "Souvent : convulsions, arrêt cardiaque, hémorragie incoercible par CIVD massive — diagnostic d'élimination posé en urgence sur le tableau clinique", grade: "GPS" },
+          ]},
+          { title: "Prise en charge — symptomatique et immédiate", items: [
+            { text: "Réanimation cardio-pulmonaire si arrêt — extraction fœtale immédiate (césarienne perimortem dans les 5 minutes si arrêt maternel et terme viable)", grade: "1A" },
+            { text: "Support hémodynamique agressif (remplissage, noradrénaline, inotropes), support ventilatoire (intubation, FiO₂ élevée), envisager l'ECMO en cas de défaillance réfractaire", grade: "1B" },
+            { text: "Traitement de la CIVD : transfusion massive selon protocole (CGR, PFC, plaquettes, fibrinogène), acide tranexamique — prise en charge de l'hémorragie obstétricale associée", grade: "1A" },
+            { text: "Prise en charge multidisciplinaire immédiate : obstétricien, anesthésiste-réanimateur, hématologue — pronostic maternel et néonatal réservé", grade: "GPS" },
+          ]},
+        ],
+        source: "CNGOF · SFAR Réanimation de l'arrêt cardiaque de la femme enceinte · Pacheco Am J Obstet Gynecol 2020"
+      },
+      {
+        name: "Cardiomyopathie du Péripartum",
+        urgence: "URGENT",
+        aliases: ["cardiomyopathie du péripartum", "cardiomyopathie du post-partum", "insuffisance cardiaque grossesse", "CMPP"],
+        sections: [
+          { title: "Diagnostic", items: [
+            { text: "Insuffisance cardiaque par dysfonction systolique du ventricule gauche (FEVG < 45%) survenant en fin de grossesse ou dans les mois suivant l'accouchement, sans autre cause identifiable", grade: "GPS" },
+            { text: "Signes d'insuffisance cardiaque : dyspnée, œdèmes, orthopnée — à ne pas attribuer trop vite aux signes physiologiques de la grossesse. Échocardiographie et BNP", grade: "1B" },
+          ]},
+          { title: "Prise en charge", items: [
+            { text: "Traitement de l'insuffisance cardiaque adapté à la grossesse/allaitement : les IEC/ARA2 sont contre-indiqués pendant la grossesse (tératogènes) — bêtabloquants et diurétiques possibles", grade: "1B" },
+            { text: "Après l'accouchement : traitement standard de l'insuffisance cardiaque (IEC, bêtabloquant, antagoniste minéralocorticoïde)", grade: "1A" },
+            { text: "La bromocriptine (inhibition de la prolactine) est une option spécifique discutée dans les formes sévères, en association à l'anticoagulation", grade: "2B" },
+            { text: "Anticoagulation préventive (risque thrombo-embolique élevé si FEVG très basse) — assistance circulatoire/transplantation dans les formes réfractaires", grade: "1B" },
+          ]},
+        ],
+        source: "ESC Grossesse et Cardiopathies 2018 · Sliwa Eur J Heart Fail 2010"
+      },
+      {
+        name: "HELLP Syndrome et Stéatose Hépatique Aiguë Gravidique",
+        urgence: "URGENT",
+        aliases: ["HELLP syndrome", "stéatose hépatique gravidique", "SHAG", "hémolyse cytolyse thrombopénie grossesse", "complication hépatique pré-éclampsie"],
+        sections: [
+          { title: "HELLP syndrome", items: [
+            { text: "Triade : Hémolyse (Hemolysis), cytolyse hépatique (Elevated Liver enzymes), thrombopénie (Low Platelets) — complication de la pré-éclampsie, parfois sans HTA franche", grade: "GPS" },
+            { text: "Signes d'alerte : douleur épigastrique ou de l'hypochondre droit, nausées, malaise — risque d'hématome sous-capsulaire du foie et de rupture hépatique", grade: "GPS" },
+            { text: "Prise en charge : traitement de la pré-éclampsie (contrôle tensionnel, sulfate de magnésium), corticoïdes pour maturation fœtale, EXTRACTION fœtale qui est le seul traitement curatif", grade: "1A" },
+          ]},
+          { title: "Stéatose hépatique aiguë gravidique (SHAG)", items: [
+            { text: "Insuffisance hépatique aiguë du 3e trimestre : ictère, encéphalopathie, hypoglycémie, coagulopathie, insuffisance rénale — critères de Swansea", grade: "GPS" },
+            { text: "Urgence vitale materno-fœtale : extraction fœtale immédiate + support de l'insuffisance hépatique (correction de l'hypoglycémie, des troubles de coagulation, transfert en réanimation)", grade: "1A" },
+            { text: "Surveillance du risque d'insuffisance hépatique fulminante — discuter le transfert en centre de transplantation hépatique si non-amélioration après l'accouchement", grade: "1B" },
+          ]},
+        ],
+        source: "CNGOF Pré-éclampsie 2022 · SFAR · Nelson Am J Obstet Gynecol 2013 (Swansea)"
       },
     ]
   },
@@ -1814,6 +2188,24 @@ const SPECS = [
         ],
         source: "SFAR Électrisation 2018 · Koumbourlis Paediatr Respir Rev 2002"
       },
+      {
+        name: "Syndrome d'Embolie Graisseuse",
+        urgence: "URGENT",
+        aliases: ["embolie graisseuse", "syndrome d'embolie graisseuse", "SEG", "fracture os longs détresse respiratoire", "purpura embolie graisseuse"],
+        sections: [
+          { title: "Diagnostic — triade évocatrice", items: [
+            { text: "Survient typiquement 24 à 72 heures après une fracture d'os long (fémur, tibia) ou du bassin, plus rarement après chirurgie orthopédique ou liposuccion", grade: "GPS" },
+            { text: "Triade clinique : détresse respiratoire (hypoxémie, SDRA), signes neurologiques (confusion, coma), purpura pétéchial (thorax, conjonctives, creux axillaires) — la triade complète est inconstante", grade: "GPS" },
+            { text: "Diagnostic clinique (critères de Gurd) — pas de test spécifique. Thrombopénie, anémie et hypoxémie fréquentes. Imagerie cérébrale et pulmonaire pour éliminer les diagnostics différentiels", grade: "GPS" },
+          ]},
+          { title: "Prise en charge", items: [
+            { text: "Traitement essentiellement SYMPTOMATIQUE et de support : oxygénothérapie, ventilation protectrice si SDRA, support hémodynamique", grade: "1B" },
+            { text: "Prévention : fixation chirurgicale PRÉCOCE des fractures d'os long — réduit l'incidence du syndrome d'embolie graisseuse", grade: "1B" },
+            { text: "Les corticoïdes n'ont pas fait la preuve d'un bénéfice établi en traitement curatif (place débattue en prévention) — pas d'indication en routine", grade: "2B" },
+          ]},
+        ],
+        source: "Gurd J Bone Joint Surg · Kwiatt J Emerg Trauma Shock 2013"
+      },
     ]
   },
   {
@@ -1849,13 +2241,17 @@ const SPECS = [
             {text: "Hyperkaliémie > 6,5 mmol/L réfractaire au traitement médical — Acidose métabolique pH < 7,15 réfractaire — Urémie symptomatique (encéphalopathie, péricardite) — Surcharge volémique avec oligurie résistant aux diurétiques", grade: "1A"},
             {text: "Intoxication dialysable : lithium, méthanol, éthylène glycol, salicylates — initier sans délai", grade: "1A"},
           ]},
+          {title: "Timing — données récentes", items: [
+            {text: "En l'absence d'indication métabolique urgente, ne pas débuter l'EER de façon précoce : une stratégie d'attente sous surveillance étroite est non inférieure (essais AKIKI 2016, IDEAL-ICU 2018, STARRT-AKI 2020) et évite des dialyses inutiles", grade: "1A"},
+            {text: "L'essai AKIKI-2 (2021) a montré qu'une stratégie très tardive n'apporte pas de bénéfice supplémentaire et pourrait être délétère — initier dès qu'apparaît une indication ou une oligurie/azotémie très prolongée", grade: "1B"},
+          ]},
           {title: "Modalités — continu vs intermittent", items: [
-            {text: "Hémofiltration veino-veineuse continue (HVVC/CRRT) : préférée en réanimation si instabilité hémodynamique — tolérance cardiovasculaire supérieure", grade: "1B"},
-            {text: "Hémodialyse intermittente : si patient hémodynamiquement stable — épuration plus efficace des molécules de petit poids moléculaire en moins de temps", grade: "1B"},
-            {text: "Anticoagulation du circuit : citrate régional (méthode de référence, KDIGO 2012) — ou héparine non fractionnée si citrate contre-indiqué (insuffisance hépatique)", grade: "1A"},
+            {text: "Hémofiltration veino-veineuse continue (CRRT) : préférée si instabilité hémodynamique — meilleure tolérance cardiovasculaire et meilleur contrôle de la volémie", grade: "1B"},
+            {text: "Hémodialyse intermittente : si patient hémodynamiquement stable — pas de différence de mortalité démontrée entre continu et intermittent (le choix dépend de la tolérance hémodynamique)", grade: "1A"},
+            {text: "Anticoagulation du circuit en CRRT : citrate régional recommandé en première intention (KDIGO) — ou héparine non fractionnée si citrate contre-indiqué (insuffisance hépatique sévère)", grade: "1A"},
           ]},
         ],
-        source: "KDIGO AKI Guidelines 2012 · SRLF EER Réanimation 2015"
+        source: "KDIGO AKI 2012 · Gaudry NEJM 2016 (AKIKI) · STARRT-AKI NEJM 2020 · Gaudry Lancet 2021 (AKIKI-2)"
       },
       {
         name: "Limitation et Arrêt des Traitements Actifs (LATA) — Loi Claeys-Leonetti",
@@ -1897,6 +2293,75 @@ const SPECS = [
           ]},
         ],
         source: "SFAR/SFTS Transfusion Réanimation 2022 · Hébert NEJM 1999 (TRICC) · Holst NEJM 2014 (TRISS)"
+      },
+      {
+        name: "Antibioprophylaxie Chirurgicale (SFAR-SPILF 2024)",
+        urgence: "SURVEILLANCE",
+        aliases: ["antibioprophylaxie", "antibioprophylaxie chirurgicale", "ABP", "prophylaxie bloc opératoire", "prévention infection site opératoire"],
+        sections: [
+          { title: "Principes fondamentaux — les 4 piliers", items: [
+            { text: "L'antibioprophylaxie réduit d'environ 50% le risque d'infection du site opératoire — elle repose sur 4 piliers : la bonne indication, le choix de la molécule, la bonne posologie, le moment adéquat", grade: "1A" },
+            { text: "Indication : chirurgies à risque (ouverture du tractus digestif, respiratoire ou urogénital) — classes d'Altemeier I (propre avec prothèse) et II (propre-contaminée). Pas d'ABP pour la chirurgie propre sans implant", grade: "1A" },
+          ]},
+          { title: "Timing et réinjection", items: [
+            { text: "Administration dans les 30 minutes précédant l'incision (idéalement à l'induction anesthésique) — JAMAIS après l'incision", grade: "1A" },
+            { text: "Réinjection peropératoire si durée > 2 demi-vies de l'antibiotique (typiquement toutes les 2 heures pour la céfazoline) ou si saignement > 1500 mL", grade: "1A" },
+            { text: "Durée : DOSE UNIQUE dans la très grande majorité des cas — l'antibioprophylaxie ne doit jamais dépasser 24 heures (au-delà = antibiothérapie curative, pas prophylaxie)", grade: "1A" },
+          ]},
+          { title: "Molécules de référence par type de chirurgie", items: [
+            { text: "Céfazoline 2 g IV (3 g si poids > 100 kg) : molécule de référence de la majorité des chirurgies (orthopédie, paroi, vasculaire, gynécologie) — réinjection 2 g toutes les 4h", grade: "1A" },
+            { text: "Chirurgie colorectale : céfoxitine 2 g, ou céfazoline + métronidazole (couverture anaérobie) — préparation digestive associée", grade: "1A" },
+            { text: "Allergie vraie aux bêtalactamines : clindamycine 900 mg ± gentamicine, ou vancomycine 15 mg/kg si risque SARM", grade: "1B" },
+          ]},
+          { title: "Erreurs fréquentes à éviter", items: [
+            { text: "Ne PAS prolonger l'ABP au-delà de la fermeture (drains, cathéters ne justifient pas la poursuite) — Ne PAS confondre ABP et antibiothérapie curative", grade: "1A" },
+            { text: "Adapter la dose au poids (obésité) — Ne pas oublier la réinjection lors des chirurgies longues — Respecter le délai de 30 min avant incision", grade: "GPS" },
+          ]},
+        ],
+        source: "RFE SFAR-SPILF Antibioprophylaxie en chirurgie et médecine interventionnelle 2024 (V1.3)"
+      },
+      {
+        name: "Intubation Difficile — Algorithme",
+        urgence: "URGENT",
+        aliases: ["intubation difficile", "algorithme intubation difficile", "ventilation impossible intubation impossible", "vidéolaryngoscope", "abord trachéal"],
+        sections: [
+          { title: "Anticipation et préparation", items: [
+            { text: "Dépistage des critères prédictifs : ouverture de bouche limitée, Mallampati 3-4, distance thyro-mentonnière courte, cou court/peu mobile, antécédent d'intubation difficile", grade: "GPS" },
+            { text: "Préoxygénation optimale, position adaptée, matériel d'intubation difficile immédiatement disponible (vidéolaryngoscope, mandrins, masques laryngés, kit d'abord trachéal)", grade: "1A" },
+          ]},
+          { title: "Algorithme en cas de difficulté", items: [
+            { text: "Échec d'intubation MAIS ventilation au masque possible : oxygéner, optimiser (mandrin béquillé, vidéolaryngoscope, manœuvre laryngée externe), limiter le nombre de tentatives (≤ 2-3)", grade: "1A" },
+            { text: "Recourir précocement au vidéolaryngoscope et/ou au dispositif supra-glottique (masque laryngé) — appeler à l'aide sans délai", grade: "1A" },
+            { text: "Situation « ne peut pas intuber, ne peut pas oxygéner » (CICO) : abord trachéal d'urgence (cricothyroïdotomie) sans délai — c'est une urgence vitale absolue", grade: "1A" },
+          ]},
+          { title: "Points clés", items: [
+            { text: "Le maintien de l'oxygénation prime toujours sur l'intubation — ne pas s'acharner sur des tentatives répétées qui traumatisent et aggravent", grade: "1A" },
+            { text: "Préparer mentalement et matériellement la stratégie d'échec AVANT l'induction — verbaliser le plan A/B/C en équipe", grade: "GPS" },
+          ]},
+        ],
+        source: "SFAR Intubation Difficile 2017 · DAS Guidelines 2015"
+      },
+      {
+        name: "Drainage Thoracique — Technique et Surveillance",
+        urgence: "URGENT",
+        aliases: ["drainage thoracique", "drain thoracique", "drain pleural", "pose de drain", "thoracostomie"],
+        sections: [
+          { title: "Indications", items: [
+            { text: "Pneumothorax compressif (après exsufflation), pneumothorax mal toléré ou de grande abondance, épanchement pleural liquidien mal toléré, hémothorax, empyème", grade: "1A" },
+            { text: "En urgence vitale (pneumothorax compressif) : l'exsufflation à l'aiguille précède le drain mais ne le remplace pas", grade: "1A" },
+          ]},
+          { title: "Technique", items: [
+            { text: "Voie de référence : triangle de sécurité (bord antérieur du grand dorsal, bord latéral du grand pectoral, ligne du mamelon) — 4e-5e espace intercostal sur la ligne axillaire moyenne", grade: "GPS" },
+            { text: "Asepsie chirurgicale, anesthésie locale, passage au RAS du bord SUPÉRIEUR de la côte inférieure (évite le paquet vasculo-nerveux intercostal sous-costal), contrôle échographique recommandé", grade: "1B" },
+            { text: "Raccordement à un système de drainage avec valve anti-retour (bocal ou dispositif à usage unique), ± aspiration douce", grade: "GPS" },
+          ]},
+          { title: "Surveillance et complications", items: [
+            { text: "Vérifier le bullage (fuite aérienne), l'oscillation (perméabilité), la quantité et l'aspect du liquide drainé — radiographie thoracique de contrôle après la pose", grade: "GPS" },
+            { text: "Complications : malposition, lésion d'organe (poumon, foie, rate, cœur), hémorragie, infection, œdème pulmonaire de réexpansion (si évacuation trop rapide d'un épanchement abondant)", grade: "GPS" },
+            { text: "Ablation lorsque l'indication est résolue (poumon ré-expandu, absence de bullage, drainage < 200 mL/j) — clampage non systématique", grade: "1B" },
+          ]},
+        ],
+        source: "BTS Pleural Disease Guidelines 2023 · SFMU"
       },
     ]
   },
@@ -1949,7 +2414,7 @@ const SPECS = [
             { text: "Hémodialyse urgente si insuffisance rénale oligo-anurique réfractaire — ne pas retarder l'indication", grade: "1A" },
           ]},
         ],
-        source: "Kovesdy Nat Rev Nephrol 2014;10:653 · OPAL-HK NEJM 2015;372:211"
+        source: "ERBP/UK Renal Hyperkalaemia 2023 · ESC 2021 · OPAL-HK NEJM 2015"
       },
       {
         name: "Insuffisance Surrénalienne Aiguë",
@@ -1986,7 +2451,7 @@ const SPECS = [
             { text: "Ionogramme urinaire (rapport Na/K urinaire) + osmolalité urinaire + plasma pour orienter le diagnostic étiologique", grade: "GPS" },
           ]},
         ],
-        source: "ESE/ERA Guidelines Spasovski 2014 · Adrogue NEJM 2000;342:1581"
+        source: "ESE Hyponatrémie 2014 (réf. en vigueur) · Spasovski Eur J Endocrinol 2014 · ESICM mise au point 2023"
       },
       {
         name: "Coma Hyperosmolaire Hyperglycémique",
@@ -2089,7 +2554,7 @@ const SPECS = [
             { text: "Pas d'insuline : glycémie normale ou basse — risque hypoglycémie sévère", grade: "GPS" },
           ]},
         ],
-        source: "Huddle Am J Med 2001 · Fulop Medicine 1986"
+        source: "McGuire Emerg Med J 2006 (revue) · Long J Emerg Med 2021 (mise à jour)"
       },
       {
         name: "Hypercalcémie Sévère",
@@ -2107,7 +2572,7 @@ const SPECS = [
             {text: "Hémodialyse si hypercalcémie menaçante (> 4 mmol/L) avec insuffisance rénale ou insuffisance cardiaque contre-indiquant l'hyperhydratation", grade: "GPS"},
           ]},
         ],
-        source: "EES Hypercalcemia Guidelines 2015 · Minisola NEJM 2015;373:2389"
+        source: "Endocrine Society Hypercalcemia · Minisola BMJ 2015 (revue) · Walsh JCEM 2016"
       },
       {
         name: "Rhabdomyolyse Aiguë Sévère",
@@ -2125,7 +2590,7 @@ const SPECS = [
             {text: "Épuration extra-rénale si insuffisance rénale oligo-anurique persistante malgré hyperhydratation intensive", grade: "1A"},
           ]},
         ],
-        source: "KDIGO AKI Guidelines 2012 · Sauret Am Fam Physician 2002"
+        source: "KDIGO AKI 2012 · Chavez Crit Care 2016 (revue rhabdomyolyse)"
       },
       {
         name: "Diabète Insipide Central",
@@ -2159,6 +2624,138 @@ const SPECS = [
         ],
         source: "ASPEN/SCCM Refeeding Syndrome 2020 · NICE Guidelines Nutrition 2006"
       },
+      {
+        name: "Hypokaliémie Sévère",
+        urgence: "URGENT",
+        aliases: ["hypokaliémie sévère", "kaliémie basse", "hypokaliémie menaçante", "troubles du rythme hypokaliémie"],
+        sections: [
+          { title: "Gravité et signes", items: [
+            { text: "Hypokaliémie sévère : kaliémie < 2,5 mmol/L, ou toute hypokaliémie avec signes ECG ou symptômes — risque de troubles du rythme ventriculaire (torsades de pointes), surtout si cardiopathie ou digitaliques", grade: "GPS" },
+            { text: "ECG : aplatissement de l'onde T, apparition d'une onde U, sous-décalage ST, allongement du QT — risque d'arythmie ventriculaire grave", grade: "GPS" },
+          ]},
+          { title: "Traitement", items: [
+            { text: "Voie IV si hypokaliémie sévère ou signes ECG : chlorure de potassium dilué, débit ne dépassant pas 1 à 1,5 g/h sur voie périphérique (idéalement voie centrale et scope si débit élevé)", grade: "1A" },
+            { text: "NE JAMAIS injecter le KCl en bolus direct (risque d'arrêt cardiaque) — toujours dilué et perfusé lentement sous surveillance scopique", grade: "1A" },
+            { text: "Corriger une hypomagnésémie associée (fréquente) : sans correction du magnésium, l'hypokaliémie est réfractaire à la supplémentation potassique", grade: "1A" },
+            { text: "Rechercher et traiter la cause : pertes digestives, diurétiques, hyperaldostéronisme, transfert intracellulaire (alcalose, insuline, bêta-2-mimétiques)", grade: "GPS" },
+          ]},
+        ],
+        source: "ESC/Lang Kaliémie 2020 · KDIGO · UK Renal Association Guidelines"
+      },
+      {
+        name: "Hypernatrémie Sévère",
+        urgence: "URGENT",
+        aliases: ["hypernatrémie sévère", "natrémie élevée", "déshydratation intracellulaire", "hypernatrémie réanimation"],
+        sections: [
+          { title: "Diagnostic et mécanismes", items: [
+            { text: "Hypernatrémie : natrémie > 145 mmol/L — traduit toujours un déficit en eau relatif au sodium (déshydratation intracellulaire) — sévère si > 160 mmol/L", grade: "GPS" },
+            { text: "Causes en réanimation : pertes hydriques (diabète insipide, pertes digestives, hyperthermie, polyurie osmotique), apports sodés excessifs, défaut d'accès à l'eau (patient sédaté)", grade: "GPS" },
+          ]},
+          { title: "Correction prudente — risque d'œdème cérébral", items: [
+            { text: "Calculer le déficit en eau libre : eau = poids × 0,6 × [(natrémie/140) − 1] en litres — corriger par eau libre (PO/SNG) ou glucosé 5% IV", grade: "1A" },
+            { text: "Vitesse de correction : NE PAS dépasser 10 mmol/L par 24h (le cerveau s'adapte par accumulation d'osmoles ; une correction trop rapide provoque un œdème cérébral)", grade: "1A" },
+            { text: "Hypernatrémie aiguë (< 48h) : correction plus rapide possible — Hypernatrémie chronique : correction lente impérative", grade: "1B" },
+            { text: "Si diabète insipide central confirmé : desmopressine (Minirin®) — restaurer l'accès libre à l'eau chez le patient conscient", grade: "1A" },
+          ]},
+        ],
+        source: "Adrogué NEJM 2000 · Sterns Clin J Am Soc Nephrol 2018 · ESE Guidelines"
+      },
+      {
+        name: "Acidose Métabolique — Démarche Diagnostique",
+        urgence: "URGENT",
+        aliases: ["acidose métabolique", "trou anionique", "acidose lactique", "acidose hyperchlorémique", "diagnostic acidose"],
+        sections: [
+          { title: "Confirmer et caractériser", items: [
+            { text: "Acidose métabolique : pH < 7,38 avec bicarbonates < 22 mmol/L — calculer le trou anionique : TA = Na − (Cl + HCO₃) — normale 8-12 mmol/L (corrigé selon l'albumine)", grade: "GPS" },
+            { text: "Étape clé : distinguer acidose à TROU ANIONIQUE ÉLEVÉ (accumulation d'acides) vs trou anionique NORMAL/hyperchlorémique (perte de bicarbonates)", grade: "1A" },
+          ]},
+          { title: "Acidose à trou anionique élevé (mnémo : KUSMALE)", items: [
+            { text: "Acidose lactique (lactates ↑) : choc, hypoxie tissulaire, metformine, défaillance hépatique — c'est la cause la plus fréquente en réanimation", grade: "GPS" },
+            { text: "Acidocétose (diabétique, alcoolique, jeûne) — Insuffisance rénale (rétention d'acides) — Intoxications : méthanol, éthylène glycol, salicylés, paracétamol (5-oxoproline)", grade: "GPS" },
+            { text: "Mesurer le trou osmolaire si suspicion d'intoxication par alcools toxiques (méthanol, éthylène glycol)", grade: "1B" },
+          ]},
+          { title: "Acidose à trou anionique normal (hyperchlorémique)", items: [
+            { text: "Pertes digestives de bicarbonates (diarrhée, fistules) — acidoses tubulaires rénales — apport excessif de chlore (remplissage massif au sérum salé isotonique)", grade: "GPS" },
+            { text: "Traitement étiologique avant tout — alcalinisation par bicarbonate de sodium réservée aux acidoses sévères (pH < 7,10-7,15) ou à l'acidose hyperchlorémique avec insuffisance rénale (essai BICAR-ICU)", grade: "2B" },
+          ]},
+        ],
+        source: "Jaber Lancet 2018 (BICAR-ICU) · Kraut NEJM 2014 · SRLF"
+      },
+      {
+        name: "Syndrome de Levée d'Obstacle (Polyurie Post-Obstructive)",
+        urgence: "SURVEILLANCE",
+        aliases: ["syndrome de levée d'obstacle", "polyurie post-obstructive", "levée d'obstacle urinaire", "drainage vésical rétention"],
+        sections: [
+          { title: "Mécanisme", items: [
+            { text: "Polyurie majeure survenant après la levée d'un obstacle urinaire chronique (drainage d'une rétention aiguë, dérivation d'une obstruction bilatérale) — par perte transitoire du pouvoir de concentration et diurèse osmotique (urée accumulée)", grade: "GPS" },
+            { text: "Risque de déshydratation, d'hypovolémie et de troubles ioniques sévères (hypokaliémie, hyponatrémie, hypomagnésémie) si les pertes ne sont pas compensées", grade: "GPS" },
+          ]},
+          { title: "Prise en charge", items: [
+            { text: "Surveillance horaire de la diurèse, du poids, de la pression artérielle et ionogramme répété — quantifier les pertes", grade: "1B" },
+            { text: "Compensation hydro-électrolytique adaptée aux pertes (en général la moitié à deux tiers du volume uriné, par soluté adapté au ionogramme urinaire) — éviter la surcompensation qui entretient la polyurie", grade: "1B" },
+            { text: "Décompression vésicale prudente en cas de rétention chronique volumineuse (risque d'hématurie a vacuo) — la polyurie est habituellement spontanément résolutive en quelques jours", grade: "GPS" },
+          ]},
+        ],
+        source: "Recommandations AFU · Halbgewachs Can Fam Physician 2015"
+      },
+      {
+        name: "Syndrome de Renutrition Inappropriée (Refeeding Syndrome)",
+        urgence: "URGENT",
+        aliases: ["syndrome de renutrition", "refeeding syndrome", "renutrition inappropriée", "hypophosphorémie renutrition", "complication renutrition dénutri"],
+        sections: [
+          { title: "Mécanisme et patients à risque", items: [
+            { text: "Complication métabolique de la renutrition d'un patient dénutri : la reprise des apports glucidiques entraîne un transfert intracellulaire massif de phosphore, potassium et magnésium, avec carence aiguë en thiamine (B1)", grade: "GPS" },
+            { text: "À risque : dénutrition sévère, jeûne prolongé (> 5-10 jours), alcoolisme, anorexie mentale, chirurgie bariatrique, cancer, post-réanimation prolongée", grade: "GPS" },
+            { text: "Manifestations : hypophosphorémie profonde (signe biologique cardinal), troubles du rythme, défaillance cardiaque, troubles neurologiques, détresse respiratoire", grade: "GPS" },
+          ]},
+          { title: "Prévention et prise en charge", items: [
+            { text: "Reprise PROGRESSIVE et prudente des apports caloriques chez le patient à risque (débuter bas, ~10 kcal/kg/j, augmenter sur plusieurs jours)", grade: "1A" },
+            { text: "Supplémentation en thiamine (vitamine B1) AVANT tout apport glucidique, et supplémentation préventive en phosphore, potassium et magnésium", grade: "1A" },
+            { text: "Surveillance biologique rapprochée du phosphore, potassium, magnésium pendant la phase de renutrition — correction des déficits avant et pendant", grade: "1A" },
+            { text: "Surveillance scopée (risque d'arythmie) dans les formes sévères — ne pas interrompre la nutrition mais ralentir et corriger", grade: "1B" },
+          ]},
+        ],
+        source: "NICE Nutrition Support CG32 · Friedli Nutrition 2017 · SFNCM"
+      },
+      {
+        name: "Syndrome de Défaillance Multiviscérale (SDMV)",
+        urgence: "URGENT",
+        aliases: ["syndrome de défaillance multiviscérale", "SDMV", "défaillance multiviscérale", "MODS", "défaillance multi-organes"],
+        sections: [
+          { title: "Définition et physiopathologie", items: [
+            { text: "Défaillance simultanée ou successive d'au moins deux systèmes d'organes, ne pouvant maintenir l'homéostasie sans intervention thérapeutique — quantifié par le score SOFA", grade: "GPS" },
+            { text: "Causes principales : sepsis (première cause), choc prolongé, ischémie-reperfusion, polytraumatisme, pancréatite grave — réponse inflammatoire systémique dérégulée", grade: "GPS" },
+            { text: "La mortalité augmente avec le nombre d'organes défaillants et la durée des défaillances", grade: "GPS" },
+          ]},
+          { title: "Principes de prise en charge", items: [
+            { text: "Traitement étiologique impératif et précoce (contrôle de la source infectieuse, revascularisation, hémostase) — c'est le déterminant pronostique majeur", grade: "1A" },
+            { text: "Support de chaque défaillance d'organe : ventilation protectrice, support hémodynamique, épuration extra-rénale, correction des troubles métaboliques et de l'hémostase", grade: "1A" },
+            { text: "Éviter les défaillances iatrogènes (ventilation, sur-remplissage, néphrotoxiques, surdosages médicamenteux) — approche d'épargne d'organe", grade: "1B" },
+            { text: "Réévaluation pluriquotidienne du SOFA et des objectifs thérapeutiques — discuter la proportionnalité des soins si aggravation réfractaire", grade: "GPS" },
+          ]},
+        ],
+        source: "Singer JAMA 2016 (Sepsis-3) · Vincent Lancet 2013 · SRLF"
+      },
+      {
+        name: "Syndrome Post-Réanimation (PICS) et Sevrage Prolongé",
+        urgence: "SURVEILLANCE",
+        aliases: ["syndrome post-réanimation", "PICS", "post intensive care syndrome", "séquelles de réanimation", "sevrage prolongé réanimation"],
+        sections: [
+          { title: "Définition", items: [
+            { text: "Le syndrome post-réanimation (PICS) regroupe les séquelles physiques, cognitives et psychiatriques apparaissant après un séjour en réanimation et persistant au-delà", grade: "GPS" },
+            { text: "Trois composantes : physique (neuromyopathie de réanimation, déconditionnement), cognitive (troubles de mémoire, des fonctions exécutives), psychique (anxiété, dépression, stress post-traumatique)", grade: "GPS" },
+          ]},
+          { title: "Prévention pendant le séjour", items: [
+            { text: "Application du bundle ABCDEF : allègement de la sédation, réveil et ventilation spontanée quotidiens, prévention/dépistage du delirium (CAM-ICU), mobilisation précoce", grade: "1A" },
+            { text: "Limiter la sédation profonde et prolongée, privilégier l'analgésie, maintenir le cycle nycthéméral, impliquer la famille", grade: "1B" },
+          ]},
+          { title: "Sevrage ventilatoire prolongé et suivi", items: [
+            { text: "Sevrage difficile/prolongé : échec de 3 épreuves de ventilation spontanée ou ventilation > 7 jours après le premier essai — rechercher cause cardiaque, neuromusculaire, métabolique", grade: "1B" },
+            { text: "Organiser le suivi post-réanimation (consultation dédiée) pour dépister et prendre en charge les séquelles — information du patient et des proches", grade: "GPS" },
+          ]},
+        ],
+        source: "Needham CCM 2012 (PICS) · WEAN-SAFE Lancet Respir Med 2023 · SRLF"
+      },
     ]
   },
   {
@@ -2186,7 +2783,7 @@ const SPECS = [
             { text: "Critères de King's College pour la transplantation urgente : pH artériel < 7,30 après réanimation — OU les 3 critères suivants réunis : INR > 6,5 + créatinine > 300 µmol/L + encéphalopathie hépatique de grade III ou IV", grade: "1B" },
           ]},
         ],
-        source: "Smilkstein NEJM 1988;319:1557 · EASL Acute Liver Failure 2017 · Prescott Lancet 1979"
+        source: "Recommandations SNFGE/EASL Acute Liver Failure 2017 · Wong Clin Toxicol 2023 (NAC) · Rumack nomogramme"
       },
       {
         name: "Intoxication aux Bêtabloquants et Inhibiteurs Calciques",
@@ -2211,7 +2808,7 @@ const SPECS = [
             { text: "Assistance circulatoire extracorporelle (ECMO veno-artérielle) si choc réfractaire à toutes les mesures médicales", grade: "GPS" },
           ]},
         ],
-        source: "Engebretsen Clin Toxicol 2011;49:277 · St-Onge Clin Toxicol 2014;52:901 · EXTRIP Workgroup"
+        source: "St-Onge Crit Care Med 2017 (consensus HIET) · Engebretsen Clin Toxicol 2011 · EXTRIP"
       },
       {
         name: "Intoxication aux Antidépresseurs Tricycliques",
@@ -2251,7 +2848,7 @@ const SPECS = [
             { text: "Intubation précoce si hypersécrétion bronchique massive ou insuffisance respiratoire — Benzodiazépines si convulsions", grade: "1A" },
           ]},
         ],
-        source: "Eddleston Lancet 2008;371:597 · WHO Pesticide Poisoning Guidelines"
+        source: "Eddleston Lancet 2008 (réf.) · Eddleston BMJ 2020 (mise à jour) · WHO"
       },
       {
         name: "Intoxication aux Opiacés — Surdosage",
@@ -2313,7 +2910,7 @@ const SPECS = [
             { name: "Bleu de méthylène (Proveblue®)", detail: "1–2 mg/kg IV sur 5 min", perKg: 1.5, unit: "mg", round: 0 },
           ]},
         ],
-        source: "Umbreit Pharmacotherapy 2007 · TOXBASE Méthémoglobinémie"
+        source: "Cortazzo J Cardiothorac Vasc Anesth 2014 (revue) · TOXBASE · BABS"
       },
       {
         name: "Hyperthermie Maligne d'Effort et Coup de Chaleur",
@@ -2334,7 +2931,7 @@ const SPECS = [
             { text: "Benzodiazépines si convulsions ou frissons intenses (qui augmentent la thermogenèse)", grade: "GPS" },
           ]},
         ],
-        source: "Leon Crit Care Med 2015;43:S186 · Bouchama NEJM 2002;346:1978"
+        source: "Bouchama NEJM 2022 (Heat Stroke review) · Epstein NEJM 2019 · Leon CCM 2015"
       },
       {
         name: "Intoxication au Monoxyde de Carbone",
@@ -2351,7 +2948,7 @@ const SPECS = [
             {text: "Intubation + ventilation FiO₂ 1,0 si coma ou convulsions : demi-vie CO réduite à 20 à 30 minutes — évacuation immédiate du lieu + déclaration si intoxication collective", grade: "1A"},
           ]},
         ],
-        source: "SPILF Intoxication CO 2017 · Weaver NEJM 2002;347:1057"
+        source: "Rose Am J Respir Crit Care Med 2017 (revue CO) · Weaver NEJM 2009 · SPILF"
       },
       {
         name: "Intoxication au Lithium",
@@ -2429,7 +3026,7 @@ const SPECS = [
             { text: "Contrôle de l'hyperthermie : refroidissement physique actif — benzodiazépines pour l'hyperactivité musculaire — curarisation + intubation si température > 40°C réfractaire", grade: "1B" },
           ]},
         ],
-        source: "Boyer Sternbach NEJM 2005;352:1112 · Dunkley QJM 2003;96:635"
+        source: "Boyer NEJM 2005 (critères de Hunter, réf.) · Scotton Ochsner J 2019 (revue)"
       },
       {
         name: "Syndrome Malin des Neuroleptiques",
@@ -2447,7 +3044,7 @@ const SPECS = [
             { text: "Refroidissement physique actif, benzodiazépines, hydratation abondante pour prévenir l'insuffisance rénale sur rhabdomyolyse", grade: "1B" },
           ]},
         ],
-        source: "Gurrera NEJM 2011;364:126 · Strawn J Acad Child Adolesc 2007"
+        source: "Gurrera Acad Emerg Med 2011 (critères) · Ware Innov Clin Neurosci 2018 (revue)"
       },
       {
         name: "Sevrage Alcoolique Grave — Delirium Tremens",
@@ -2530,6 +3127,25 @@ const SPECS = [
           ]},
         ],
         source: "SRLF/SFAR/SFNEP Nutrition Réanimation 2022 · Singer ESPEN ICM 2023"
+      },
+      {
+        name: "Hyperthermie Maligne Per-Anesthésique",
+        urgence: "ABSOLUE",
+        aliases: ["hyperthermie maligne", "hyperthermie maligne per-anesthésique", "dantrolène", "hypertonie halogénés succinylcholine", "HM anesthésie"],
+        sections: [
+          { title: "Reconnaissance — urgence anesthésique", items: [
+            { text: "Réaction pharmacogénétique (canal de la ryanodine RYR1) déclenchée par les anesthésiques halogénés et la succinylcholine — hypermétabolisme musculaire aigu", grade: "GPS" },
+            { text: "Signes précoces : élévation inexpliquée de l'EtCO₂ malgré l'augmentation de la ventilation (signe le plus précoce et sensible), tachycardie, rigidité musculaire (notamment masséters)", grade: "GPS" },
+            { text: "Puis : hyperthermie (tardive), acidose mixte, hyperkaliémie, rhabdomyolyse, troubles du rythme — distincte du coup de chaleur (contexte anesthésique)", grade: "GPS" },
+          ]},
+          { title: "Traitement immédiat", items: [
+            { text: "ARRÊT IMMÉDIAT de tous les agents déclenchants (halogénés, succinylcholine) — passer en oxygène pur à haut débit, hyperventilation", grade: "1A" },
+            { text: "DANTROLÈNE 2,5 mg/kg IV en bolus, à répéter toutes les 5-10 min jusqu'à régression (jusqu'à 10 mg/kg) : antidote spécifique qui bloque la libération de calcium", grade: "1A" },
+            { text: "Refroidissement actif, correction de l'hyperkaliémie et de l'acidose, traitement des arythmies (éviter les inhibiteurs calciques avec le dantrolène), diurèse alcaline (rhabdomyolyse)", grade: "1A" },
+            { text: "Surveillance prolongée en réanimation (risque de récidive), enquête familiale et orientation vers une consultation spécialisée (test de contracture, génétique RYR1)", grade: "1B" },
+          ]},
+        ],
+        source: "SFAR Hyperthermie Maligne · MHAUS Guidelines · Glahn Br J Anaesth 2010"
       },
     ]
   },
@@ -2681,72 +3297,356 @@ const SPECS = [
     ]
   },
 ];
+// ═══════════════════════════════════════════════════════════════
+// BIBLIOTHÈQUE DE SCORES — RéaGuard
+// ═══════════════════════════════════════════════════════════════
 const SCORES = [
+  // ─────────── GRAVITÉ GÉNÉRALE / SEPSIS ───────────
   {
-    id: "sofa", name: "Score SOFA", category: "Défaillance d'organes — Sepsis",
+    id: "sofa", name: "Score SOFA", cat: "Gravité & Sepsis", short: "Défaillance multiviscérale",
     fields: [
-      { id: "resp", label: "Respiratoire — Rapport PaO₂/FiO₂", opts: [["≥ 400 mmHg (normal)", 0], ["300–399 mmHg", 1], ["200–299 mmHg", 2], ["100–199 mmHg sous ventilation mécanique", 3], ["< 100 mmHg sous ventilation mécanique", 4]] },
-      { id: "plat", label: "Plaquettes", opts: [["≥ 150 G/L (normal)", 0], ["100–149 G/L", 1], ["50–99 G/L", 2], ["20–49 G/L", 3], ["< 20 G/L", 4]] },
-      { id: "bili", label: "Bilirubine totale", opts: [["< 20 µmol/L (normal)", 0], ["20–32 µmol/L", 1], ["33–101 µmol/L", 2], ["102–204 µmol/L", 3], ["> 204 µmol/L", 4]] },
-      { id: "cv", label: "Cardiovasculaire", opts: [["Pression artérielle moyenne ≥ 70 mmHg", 0], ["Pression artérielle moyenne < 70 mmHg", 1], ["Dopamine ≤ 5 µg/kg/min ou Dobutamine (toute dose)", 2], ["Dopamine > 5 µg/kg/min ou Noradrénaline ≤ 0,1 µg/kg/min", 3], ["Dopamine > 15 µg/kg/min ou Noradrénaline > 0,1 µg/kg/min", 4]] },
-      { id: "gcs", label: "Score de Glasgow", opts: [["15 — conscient normal", 0], ["13–14", 1], ["10–12", 2], ["6–9", 3], ["< 6 — coma profond", 4]] },
-      { id: "creat", label: "Créatinine sérique", opts: [["< 110 µmol/L (normal)", 0], ["110–170 µmol/L", 1], ["171–299 µmol/L", 2], ["300–440 µmol/L ou diurèse < 500 mL/jour", 3], ["> 440 µmol/L ou diurèse < 200 mL/jour", 4]] },
+      { id: "resp", label: "Respiratoire — PaO₂/FiO₂", opts: [["≥ 400 mmHg", 0], ["300–399", 1], ["200–299", 2], ["100–199 sous VM", 3], ["< 100 sous VM", 4]] },
+      { id: "plat", label: "Plaquettes (G/L)", opts: [["≥ 150", 0], ["100–149", 1], ["50–99", 2], ["20–49", 3], ["< 20", 4]] },
+      { id: "bili", label: "Bilirubine (µmol/L)", opts: [["< 20", 0], ["20–32", 1], ["33–101", 2], ["102–204", 3], ["> 204", 4]] },
+      { id: "cv", label: "Cardiovasculaire", opts: [["PAM ≥ 70 mmHg", 0], ["PAM < 70 mmHg", 1], ["Dopa ≤ 5 ou Dobutamine", 2], ["Dopa > 5 ou Noradré ≤ 0,1", 3], ["Dopa > 15 ou Noradré > 0,1", 4]] },
+      { id: "gcs", label: "Glasgow", opts: [["15", 0], ["13–14", 1], ["10–12", 2], ["6–9", 3], ["< 6", 4]] },
+      { id: "creat", label: "Créatinine / diurèse", opts: [["< 110 µmol/L", 0], ["110–170", 1], ["171–299", 2], ["300–440 ou < 500 mL/j", 3], ["> 440 ou < 200 mL/j", 4]] },
     ],
-    interp: (s) => s <= 6 ? { text: `${s}/24 — Mortalité hospitalière < 10%`, color: C.green } : s <= 9 ? { text: `${s}/24 — Mortalité ~15 à 20%`, color: C.orange } : s <= 12 ? { text: `${s}/24 — Mortalité 40 à 50%`, color: C.red } : { text: `${s}/24 — Mortalité > 80%`, color: C.red }
+    interp: (s) => s <= 6 ? { text: `${s}/24 — Mortalité < 10%`, level: "ok" } : s <= 9 ? { text: `${s}/24 — Mortalité 15–20%`, level: "warn" } : s <= 12 ? { text: `${s}/24 — Mortalité 40–50%`, level: "bad" } : { text: `${s}/24 — Mortalité > 80%`, level: "bad" },
+    note: "Une augmentation aiguë du SOFA ≥ 2 points définit le sepsis (Sepsis-3). Calculé à l'admission puis quotidiennement.",
+    source: "Vincent ICM 1996 · Singer JAMA 2016 (Sepsis-3)"
   },
   {
-    id: "gcs", name: "Score de Glasgow", category: "Évaluation du niveau de conscience",
+    id: "qsofa", name: "qSOFA (quick SOFA)", cat: "Gravité & Sepsis", short: "Dépistage rapide du sepsis",
     fields: [
-      { id: "eye", label: "Ouverture des yeux (E)", opts: [["Spontanée sans stimulation (E4)", 4], ["À la parole (E3)", 3], ["À la stimulation douloureuse (E2)", 2], ["Absente, aucune réponse (E1)", 1]] },
-      { id: "verb", label: "Réponse verbale (V)", opts: [["Orientée, cohérente (V5)", 5], ["Confuse, désorientée (V4)", 4], ["Mots inappropriés, isolés (V3)", 3], ["Sons incompréhensibles (V2)", 2], ["Absente (V1)", 1]] },
-      { id: "mot", label: "Réponse motrice (M)", opts: [["Obéit aux ordres simples (M6)", 6], ["Localise la douleur (M5)", 5], ["Flexion-retrait, évitement (M4)", 4], ["Flexion stéréotypée, décortication (M3)", 3], ["Extension stéréotypée, décérébration (M2)", 2], ["Absente (M1)", 1]] },
+      { id: "fr", label: "Fréquence respiratoire ≥ 22/min", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "tas", label: "Pression artérielle systolique ≤ 100 mmHg", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "conf", label: "Altération de la conscience (Glasgow < 15)", opts: [["Non", 0], ["Oui", 1]] },
     ],
-    interp: (s) => s <= 8 ? { text: `${s}/15 — Coma grave — Intubation à envisager si < 9`, color: C.red } : s <= 12 ? { text: `${s}/15 — Troubles modérés de la conscience`, color: C.orange } : { text: `${s}/15 — Conscience globalement conservée`, color: C.green }
+    interp: (s) => s >= 2 ? { text: `${s}/3 — Risque élevé : mortalité augmentée, évaluer le sepsis`, level: "bad" } : { text: `${s}/3 — Risque faible (ne pas éliminer un sepsis pour autant)`, level: "ok" },
+    note: "Outil de dépistage au lit du patient hors réanimation. Un qSOFA ≥ 2 doit faire rechercher un sepsis et évaluer le SOFA complet.",
+    source: "Singer JAMA 2016 (Sepsis-3)"
   },
   {
-    id: "nihss", name: "NIHSS — Score de l'AVC", category: "Sévérité de l'accident vasculaire cérébral",
+    id: "igs2", name: "IGS II (SAPS II)", cat: "Gravité & Sepsis", short: "Pronostic à l'admission en réa",
     fields: [
-      { id: "cons", label: "Niveau de conscience (item 1a)", opts: [["Alerte, réactif normalement (0)", 0], ["Somnolent, stimulable verbalement (1)", 1], ["Stuporeux, stimulation répétée nécessaire (2)", 2], ["Coma, réponse aux stimuli douloureux seulement (3)", 3]] },
-      { id: "gaze", label: "Oculomotricité (item 2)", opts: [["Normale (0)", 0], ["Paralysie partielle (1)", 1], ["Déviation conjuguée ou paralysie complète (2)", 2]] },
-      { id: "vis", label: "Champs visuels (item 3)", opts: [["Normaux (0)", 0], ["Hémianopsie partielle (1)", 1], ["Hémianopsie complète (2)", 2], ["Cécité bilatérale ou corticale (3)", 3]] },
-      { id: "fac", label: "Parésie faciale (item 4)", opts: [["Normale (0)", 0], ["Mineure — asymétrie au sourire (1)", 1], ["Partielle — face inférieure (2)", 2], ["Complète (3)", 3]] },
-      { id: "mG", label: "Motricité bras gauche (item 5a)", opts: [["Normale — pas de chute en 10s (0)", 0], ["Chute avant 10s sans atteindre le lit (1)", 1], ["Chute sur le lit avant 10s (2)", 2], ["Mouvement contre gravité seulement (3)", 3], ["Aucun mouvement (4)", 4]] },
-      { id: "mD", label: "Motricité bras droit (item 5b)", opts: [["Normale — pas de chute en 10s (0)", 0], ["Chute avant 10s sans atteindre le lit (1)", 1], ["Chute sur le lit avant 10s (2)", 2], ["Mouvement contre gravité seulement (3)", 3], ["Aucun mouvement (4)", 4]] },
-      { id: "lang", label: "Langage — Aphasie (item 9)", opts: [["Normal (0)", 0], ["Aphasie légère à modérée (1)", 1], ["Aphasie sévère, communication fragmentaire (2)", 2], ["Mutisme ou aphasie globale (3)", 3]] },
+      { id: "age", label: "Âge", opts: [["< 40 ans", 0], ["40–59", 7], ["60–69", 12], ["70–74", 15], ["75–79", 16], ["≥ 80", 18]] },
+      { id: "fc", label: "Fréquence cardiaque (/min)", opts: [["70–119", 0], ["40–69 ou 120–159", 4], ["< 40 ou ≥ 160", 11], ["", 7]] },
+      { id: "tas", label: "PA systolique (mmHg)", opts: [["100–199", 0], ["≥ 200", 2], ["70–99", 5], ["< 70", 13]] },
+      { id: "temp", label: "Température", opts: [["< 39°C", 0], ["≥ 39°C", 3]] },
+      { id: "gcs", label: "Glasgow", opts: [["14–15", 0], ["11–13", 5], ["9–10", 7], ["6–8", 13], ["< 6", 26]] },
+      { id: "uree", label: "Urée sanguine", opts: [["< 10 mmol/L", 0], ["10–29,9", 6], ["≥ 30", 10]] },
+      { id: "gb", label: "Globules blancs (G/L)", opts: [["1–19,9", 0], ["≥ 20", 3], ["< 1", 12]] },
+      { id: "k", label: "Kaliémie (mmol/L)", opts: [["3–4,9", 0], ["< 3 ou ≥ 5", 3]] },
+      { id: "na", label: "Natrémie (mmol/L)", opts: [["125–144", 0], ["≥ 145", 1], ["< 125", 5]] },
+      { id: "hco3", label: "Bicarbonates (mmol/L)", opts: [["≥ 20", 0], ["15–19", 3], ["< 15", 6]] },
+      { id: "bili", label: "Bilirubine", opts: [["< 68,4 µmol/L", 0], ["68,4–102,5", 4], ["≥ 102,6", 9]] },
+      { id: "chr", label: "Maladie chronique", opts: [["Aucune", 0], ["Cancer métastatique", 9], ["Hémopathie maligne", 10], ["SIDA", 17]] },
+      { id: "adm", label: "Type d'admission", opts: [["Chirurgie programmée", 0], ["Médicale", 6], ["Chirurgie non programmée", 8]] },
     ],
-    interp: (s) => s === 0 ? { text: "0 — Aucun déficit neurologique", color: C.green } : s <= 4 ? { text: `${s} — AVC mineur — éligible thrombolyse`, color: C.green } : s <= 15 ? { text: `${s} — AVC modéré — thrombolyse et/ou thrombectomie`, color: C.orange } : { text: `${s} — AVC sévère — thrombectomie en urgence`, color: C.red }
+    interp: (s) => s < 30 ? { text: `${s} points — Mortalité prédite faible (< 10%)`, level: "ok" } : s < 50 ? { text: `${s} points — Mortalité prédite modérée (~25%)`, level: "warn" } : { text: `${s} points — Mortalité prédite élevée (> 50%)`, level: "bad" },
+    note: "Score de gravité généraliste calculé sur les valeurs les plus péjoratives des 24 premières heures. Prédit la mortalité hospitalière.",
+    source: "Le Gall JAMA 1993"
   },
   {
-    id: "doses", name: "Calculateur de Doses Pondérées", category: "Pharmacologie — toutes urgences",
-    fields: [{ id: "w", label: "Poids du patient en kilogrammes", type: "number", placeholder: "70" }],
-    interp: () => null,
-    custom: (vals) => {
-      const w = parseFloat(vals.w) || 70;
-      return [
-        ["Ténectéplase AVC (0,25 mg/kg, max 25 mg)", `${Math.min(0.25 * w, 25).toFixed(1)} mg — injection IV directe unique`],
-        ["Altéplase AVC total (0,9 mg/kg, max 90 mg)", `${Math.min(0.9 * w, 90).toFixed(0)} mg — 10% en bolus + 90% sur 1h`],
-        ["Altéplase AVC bolus initial", `${Math.min(0.09 * w, 9).toFixed(1)} mg IV direct`],
-        ["Adrénaline ACR (dose fixe)", "1 mg IV direct — indépendant du poids"],
-        ["N-Acétylcystéine 1ère perf. (150 mg/kg)", `${(150 * w).toFixed(0)} mg IV sur 1h`],
-        ["N-Acétylcystéine 2ème perf. (50 mg/kg)", `${(50 * w).toFixed(0)} mg IV sur 4h`],
-        ["N-Acétylcystéine 3ème perf. (100 mg/kg)", `${(100 * w).toFixed(0)} mg IV sur 16h`],
-        ["Kétamine induction ISR (1,5 mg/kg)", `${(1.5 * w).toFixed(0)} mg IV direct`],
-        ["Propofol induction (2 mg/kg)", `${(2 * w).toFixed(0)} mg IV titré`],
-        ["Succinylcholine ISR (1,5 mg/kg)", `${(1.5 * w).toFixed(0)} mg IV direct`],
-        ["Rocuronium ISR (1,2 mg/kg)", `${(1.2 * w).toFixed(0)} mg IV direct`],
-        ["Sugammadex reversal rocuronium (16 mg/kg)", `${(16 * w).toFixed(0)} mg IV direct`],
-        ["Lévétiracétam état de mal (60 mg/kg, max 4500 mg)", `${Math.min(60 * w, 4500).toFixed(0)} mg IV sur 10 min`],
-        ["Valproate état de mal (40 mg/kg, max 3000 mg)", `${Math.min(40 * w, 3000).toFixed(0)} mg IV sur 10 min`],
-        ["Mannitol 20% HTIC (0,75 g/kg)", `${(0.75 * w).toFixed(0)} g IV sur 20 min`],
-        ["Artésunate paludisme (2,4 mg/kg)", `${(2.4 * w).toFixed(0)} mg IV`],
-        ["Insuline DKA IVSE (0,1 UI/kg/h)", `${(0.1 * w).toFixed(1)} UI/heure`],
-        ["Insuline HIET bolus (1 UI/kg)", `${w.toFixed(0)} UI IV direct`],
-        ["Intralipid 20% bolus (1,5 mL/kg)", `${(1.5 * w).toFixed(0)} mL IV direct`],
-        ["Céfotaxime méningite (300 mg/kg/j, max 24 g)", `${Math.min(300 * w, 24000).toFixed(0)} mg/jour IV`],
-        ["Dexaméthasone méningite (0,15 mg/kg toutes 6h)", `${(0.15 * w).toFixed(1)} mg par injection IV`],
-      ];
-    }
-  }
+    id: "apache2", name: "APACHE II", cat: "Gravité & Sepsis", short: "Sévérité physiologique aiguë",
+    fields: [
+      { id: "phys", label: "Somme des 12 variables physiologiques (APS)", type: "number", placeholder: "ex: 15" },
+      { id: "age", label: "Points liés à l'âge", opts: [["≤ 44 ans (0)", 0], ["45–54 (2)", 2], ["55–64 (3)", 3], ["65–74 (5)", 5], ["≥ 75 (6)", 6]] },
+      { id: "chr", label: "Maladie chronique sévère", opts: [["Aucune (0)", 0], ["Post-op programmé (2)", 2], ["Médical ou post-op urgent (5)", 5]] },
+    ],
+    interp: (s) => s <= 9 ? { text: `${s} points — Mortalité ~10%`, level: "ok" } : s <= 19 ? { text: `${s} points — Mortalité 12–25%`, level: "warn" } : s <= 29 ? { text: `${s} points — Mortalité 40–55%`, level: "bad" } : { text: `${s} points — Mortalité > 70%`, level: "bad" },
+    note: "Le score physiologique aigu (APS) somme 12 paramètres (température, PAM, FC, FR, oxygénation, pH, Na, K, créatinine, hématocrite, GB, Glasgow). Saisir le sous-total APS.",
+    source: "Knaus Crit Care Med 1985"
+  },
+  {
+    id: "news2", name: "NEWS2", cat: "Gravité & Sepsis", short: "Alerte précoce de détérioration",
+    fields: [
+      { id: "fr", label: "Fréquence respiratoire", opts: [["12–20", 0], ["9–11", 1], ["21–24", 2], ["≤ 8 ou ≥ 25", 3]] },
+      { id: "spo2", label: "SpO₂", opts: [["≥ 96%", 0], ["94–95%", 1], ["92–93%", 2], ["≤ 91%", 3]] },
+      { id: "o2", label: "Oxygénothérapie", opts: [["Air ambiant", 0], ["Sous oxygène", 2]] },
+      { id: "tas", label: "PA systolique", opts: [["111–219", 0], ["101–110", 1], ["91–100", 2], ["≤ 90 ou ≥ 220", 3]] },
+      { id: "fc", label: "Fréquence cardiaque", opts: [["51–90", 0], ["41–50 ou 91–110", 1], ["111–130", 2], ["≤ 40 ou ≥ 131", 3]] },
+      { id: "cons", label: "Conscience", opts: [["Alerte", 0], ["Confusion / réponse à voix-douleur-aucune", 3]] },
+      { id: "temp", label: "Température", opts: [["36,1–38,0", 0], ["35,1–36,0 ou 38,1–39,0", 1], ["≥ 39,1", 2], ["≤ 35,0", 3]] },
+    ],
+    interp: (s) => s <= 4 ? { text: `${s} — Risque faible (surveillance standard)`, level: "ok" } : s <= 6 ? { text: `${s} — Risque moyen — avis urgent`, level: "warn" } : { text: `${s} — Risque élevé — appel réanimation`, level: "bad" },
+    note: "Score d'alerte précoce. Un total ≥ 7, ou 3 dans un seul paramètre, impose une évaluation urgente en milieu de soins critiques.",
+    source: "Royal College of Physicians NEWS2 2017"
+  },
+
+  // ─────────── NEUROLOGIE ───────────
+  {
+    id: "gcs", name: "Score de Glasgow (GCS)", cat: "Neurologie", short: "Niveau de conscience",
+    fields: [
+      { id: "eye", label: "Ouverture des yeux (E)", opts: [["Spontanée (E4)", 4], ["À la parole (E3)", 3], ["À la douleur (E2)", 2], ["Absente (E1)", 1]] },
+      { id: "verb", label: "Réponse verbale (V)", opts: [["Orientée (V5)", 5], ["Confuse (V4)", 4], ["Mots inappropriés (V3)", 3], ["Sons incompréhensibles (V2)", 2], ["Absente (V1)", 1]] },
+      { id: "mot", label: "Réponse motrice (M)", opts: [["Obéit (M6)", 6], ["Localise (M5)", 5], ["Évitement (M4)", 4], ["Décortication (M3)", 3], ["Décérébration (M2)", 2], ["Absente (M1)", 1]] },
+    ],
+    interp: (s) => s <= 8 ? { text: `${s}/15 — Coma grave — intubation si ≤ 8`, level: "bad" } : s <= 12 ? { text: `${s}/15 — Trouble modéré de conscience`, level: "warn" } : { text: `${s}/15 — Conscience conservée`, level: "ok" },
+    note: "Score de 3 à 15. Un Glasgow ≤ 8 justifie la protection des voies aériennes (intubation).",
+    source: "Teasdale Lancet 1974"
+  },
+  {
+    id: "nihss", name: "NIHSS", cat: "Neurologie", short: "Sévérité de l'AVC",
+    fields: [
+      { id: "cons", label: "Conscience (1a)", opts: [["Alerte (0)", 0], ["Somnolent (1)", 1], ["Stuporeux (2)", 2], ["Coma (3)", 3]] },
+      { id: "gaze", label: "Oculomotricité (2)", opts: [["Normale (0)", 0], ["Paralysie partielle (1)", 1], ["Déviation forcée (2)", 2]] },
+      { id: "vis", label: "Champ visuel (3)", opts: [["Normal (0)", 0], ["Hémianopsie partielle (1)", 1], ["Hémianopsie complète (2)", 2], ["Cécité bilatérale (3)", 3]] },
+      { id: "fac", label: "Parésie faciale (4)", opts: [["Normale (0)", 0], ["Mineure (1)", 1], ["Partielle (2)", 2], ["Complète (3)", 3]] },
+      { id: "mg", label: "Bras gauche (5a)", opts: [["Pas de chute (0)", 0], ["Chute < 10s (1)", 1], ["Effort anti-gravité (2)", 2], ["Pas anti-gravité (3)", 3], ["Aucun mouvement (4)", 4]] },
+      { id: "md", label: "Bras droit (5b)", opts: [["Pas de chute (0)", 0], ["Chute < 10s (1)", 1], ["Effort anti-gravité (2)", 2], ["Pas anti-gravité (3)", 3], ["Aucun mouvement (4)", 4]] },
+      { id: "jg", label: "Jambe gauche (6a)", opts: [["Pas de chute (0)", 0], ["Chute < 5s (1)", 1], ["Effort anti-gravité (2)", 2], ["Pas anti-gravité (3)", 3], ["Aucun mouvement (4)", 4]] },
+      { id: "jd", label: "Jambe droite (6b)", opts: [["Pas de chute (0)", 0], ["Chute < 5s (1)", 1], ["Effort anti-gravité (2)", 2], ["Pas anti-gravité (3)", 3], ["Aucun mouvement (4)", 4]] },
+      { id: "atax", label: "Ataxie (7)", opts: [["Absente (0)", 0], ["1 membre (1)", 1], ["2 membres (2)", 2]] },
+      { id: "sens", label: "Sensibilité (8)", opts: [["Normale (0)", 0], ["Déficit modéré (1)", 1], ["Déficit sévère (2)", 2]] },
+      { id: "lang", label: "Langage (9)", opts: [["Normal (0)", 0], ["Aphasie légère (1)", 1], ["Aphasie sévère (2)", 2], ["Mutisme (3)", 3]] },
+      { id: "dys", label: "Dysarthrie (10)", opts: [["Normale (0)", 0], ["Légère (1)", 1], ["Sévère (2)", 2]] },
+      { id: "ext", label: "Extinction/négligence (11)", opts: [["Absente (0)", 0], ["Partielle (1)", 1], ["Complète (2)", 2]] },
+    ],
+    interp: (s) => s === 0 ? { text: "0 — Pas de déficit", level: "ok" } : s <= 4 ? { text: `${s} — AVC mineur`, level: "ok" } : s <= 15 ? { text: `${s} — AVC modéré`, level: "warn" } : s <= 20 ? { text: `${s} — AVC sévère`, level: "bad" } : { text: `${s} — AVC très sévère`, level: "bad" },
+    note: "Score de 0 à 42. Guide l'indication de thrombolyse et de thrombectomie. À recalculer après traitement.",
+    source: "Brott Stroke 1989 · NINDS"
+  },
+  {
+    id: "rass", name: "Échelle RASS", cat: "Neurologie", short: "Sédation-agitation en réa",
+    fields: [
+      { id: "v", label: "Niveau observé", opts: [["+4 Combatif, dangereux", 4], ["+3 Très agité, arrache les dispositifs", 3], ["+2 Agité, lutte contre le respirateur", 2], ["+1 Anxieux mais calme", 1], ["0 Éveillé et calme", 0], ["−1 Somnolent, éveil > 10s à la voix", -1], ["−2 Sédation légère, éveil < 10s à la voix", -2], ["−3 Sédation modérée, mouvement à la voix sans contact visuel", -3], ["−4 Sédation profonde, réponse à la stimulation physique", -4], ["−5 Non réveillable", -5]] },
+    ],
+    interp: (s) => s >= 2 ? { text: `RASS +${s} — Agitation : adapter la sédation/analgésie`, level: "bad" } : s >= -1 ? { text: `RASS ${s} — Cible habituelle de confort (0 à −2)`, level: "ok" } : s >= -3 ? { text: `RASS ${s} — Sédation modérée`, level: "warn" } : { text: `RASS ${s} — Sédation profonde — réévaluer l'indication`, level: "bad" },
+    note: "Cible recommandée en réanimation : RASS 0 à −2 (sédation légère) sauf indication spécifique (SDRA sévère, HTIC). Évaluer pluriquotidiennement.",
+    source: "Sessler AJRCCM 2002"
+  },
+  {
+    id: "hunt", name: "Hunt & Hess", cat: "Neurologie", short: "Gravité de l'hémorragie méningée",
+    fields: [
+      { id: "g", label: "Grade clinique", opts: [["I — Asymptomatique ou céphalée légère", 1], ["II — Céphalée sévère, raideur, pas de déficit (sauf paire crânienne)", 2], ["III — Somnolence, confusion, déficit focal léger", 3], ["IV — Stupeur, hémiparésie modérée à sévère", 4], ["V — Coma profond, décérébration", 5]] },
+    ],
+    interp: (s) => s <= 2 ? { text: `Grade ${s} — Bon pronostic`, level: "ok" } : s === 3 ? { text: `Grade ${s} — Pronostic intermédiaire`, level: "warn" } : { text: `Grade ${s} — Pronostic réservé`, level: "bad" },
+    note: "Évalue la gravité clinique d'une hémorragie sous-arachnoïdienne anévrismale. Corrèle avec la mortalité et le pronostic.",
+    source: "Hunt & Hess J Neurosurg 1968"
+  },
+  {
+    id: "camicu", name: "CAM-ICU", cat: "Neurologie", short: "Dépistage du delirium",
+    fields: [
+      { id: "a", label: "1. Début aigu ou fluctuation de l'état mental", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "b", label: "2. Inattention (erreurs au test attentionnel)", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "c", label: "3. Niveau de conscience altéré (RASS ≠ 0)", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "d", label: "4. Pensée désorganisée", opts: [["Non", 0], ["Oui", 1]] },
+    ],
+    interp: (s, v) => (v.a == 1 && v.b == 1 && (v.c == 1 || v.d == 1)) ? { text: "CAM-ICU POSITIF — delirium présent", level: "bad" } : { text: "CAM-ICU négatif (si critères 1+2 et 3 ou 4 non réunis)", level: "ok" },
+    note: "Positif si : critère 1 ET 2 présents, ET (critère 3 OU 4). Le delirium en réanimation aggrave le pronostic — dépister au moins une fois par équipe.",
+    source: "Ely JAMA 2001"
+  },
+
+  // ─────────── RESPIRATOIRE ───────────
+  {
+    id: "berlin", name: "Critères de Berlin (SDRA)", cat: "Respiratoire", short: "Définition et sévérité du SDRA",
+    fields: [
+      { id: "delai", label: "Délai (≤ 1 semaine d'une agression)", opts: [["Oui", 0], ["Non — autre diagnostic", 99]] },
+      { id: "img", label: "Imagerie : opacités bilatérales", opts: [["Oui", 0], ["Non", 99]] },
+      { id: "orig", label: "Œdème non expliqué par défaillance cardiaque/surcharge", opts: [["Oui", 0], ["Non", 99]] },
+      { id: "pf", label: "PaO₂/FiO₂ (avec PEP ≥ 5)", opts: [["200–300 → léger", 1], ["100–200 → modéré", 2], ["≤ 100 → sévère", 3]] },
+    ],
+    interp: (s, v) => (v.delai == 99 || v.img == 99 || v.orig == 99) ? { text: "Critères non réunis — ce n'est pas un SDRA au sens de Berlin", level: "ok" } : v.pf == 1 ? { text: "SDRA LÉGER (PaO₂/FiO₂ 200–300) — mortalité ~27%", level: "warn" } : v.pf == 2 ? { text: "SDRA MODÉRÉ (100–200) — mortalité ~32% — décubitus ventral si < 150", level: "bad" } : { text: "SDRA SÉVÈRE (≤ 100) — mortalité ~45% — DV + curares, discuter ECMO", level: "bad" },
+    note: "Les 4 critères temporels/radiologiques/étiologiques doivent être réunis ; la sévérité est fixée par le rapport PaO₂/FiO₂ sous PEP ≥ 5 cmH₂O.",
+    source: "ARDS Definition Task Force JAMA 2012"
+  },
+  {
+    id: "curb65", name: "CURB-65", cat: "Respiratoire", short: "Gravité de la pneumonie",
+    fields: [
+      { id: "c", label: "Confusion", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "u", label: "Urée > 7 mmol/L", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "r", label: "Fréquence respiratoire ≥ 30/min", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "b", label: "PA systolique < 90 ou diastolique ≤ 60 mmHg", opts: [["Non", 0], ["Oui", 1]] },
+      { id: "age", label: "Âge ≥ 65 ans", opts: [["Non", 0], ["Oui", 1]] },
+    ],
+    interp: (s) => s <= 1 ? { text: `${s}/5 — Ambulatoire possible (mortalité < 3%)`, level: "ok" } : s === 2 ? { text: `${s}/5 — Hospitalisation à considérer`, level: "warn" } : { text: `${s}/5 — Pneumonie grave — réanimation à envisager (mortalité 15–40%)`, level: "bad" },
+    note: "Évalue la gravité d'une pneumonie communautaire et oriente le lieu de prise en charge. Score ≥ 3 = forme sévère.",
+    source: "Lim Thorax 2003"
+  },
+  {
+    id: "wells_ep", name: "Score de Wells (EP)", cat: "Respiratoire", short: "Probabilité d'embolie pulmonaire",
+    fields: [
+      { id: "tvp", label: "Signes cliniques de TVP", opts: [["Non", 0], ["Oui (+3)", 3]] },
+      { id: "alt", label: "Diagnostic alternatif moins probable que l'EP", opts: [["Non", 0], ["Oui (+3)", 3]] },
+      { id: "fc", label: "Fréquence cardiaque > 100/min", opts: [["Non", 0], ["Oui (+1,5)", 1.5]] },
+      { id: "immob", label: "Immobilisation ou chirurgie < 4 semaines", opts: [["Non", 0], ["Oui (+1,5)", 1.5]] },
+      { id: "atcd", label: "Antécédent de TVP ou EP", opts: [["Non", 0], ["Oui (+1,5)", 1.5]] },
+      { id: "hemo", label: "Hémoptysie", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "k", label: "Cancer actif", opts: [["Non", 0], ["Oui (+1)", 1]] },
+    ],
+    interp: (s) => s < 2 ? { text: `${s} — Probabilité faible`, level: "ok" } : s <= 6 ? { text: `${s} — Probabilité modérée`, level: "warn" } : { text: `${s} — Probabilité forte — imagerie urgente`, level: "bad" },
+    note: "Probabilité clinique pré-test d'embolie pulmonaire. En cas de probabilité faible, le dosage des D-dimères permet d'exclure le diagnostic.",
+    source: "Wells Thromb Haemost 2000"
+  },
+
+  // ─────────── HÉMODYNAMIQUE / CARDIO ───────────
+  {
+    id: "killip", name: "Classe de Killip", cat: "Cardiologie", short: "IC à la phase aiguë de l'IDM",
+    fields: [
+      { id: "k", label: "Stade clinique", opts: [["I — Pas de signe d'insuffisance cardiaque", 1], ["II — Crépitants < mi-champs, B3, turgescence jugulaire", 2], ["III — Œdème aigu du poumon", 3], ["IV — Choc cardiogénique", 4]] },
+    ],
+    interp: (s) => s === 1 ? { text: "Killip I — Mortalité ~6%", level: "ok" } : s === 2 ? { text: "Killip II — Mortalité ~17%", level: "warn" } : s === 3 ? { text: "Killip III — Mortalité ~38%", level: "bad" } : { text: "Killip IV — Mortalité ~67%", level: "bad" },
+    note: "Stratification pronostique de l'insuffisance cardiaque à la phase aiguë de l'infarctus du myocarde.",
+    source: "Killip Am J Cardiol 1967"
+  },
+  {
+    id: "chadsvasc", name: "CHA₂DS₂-VASc", cat: "Cardiologie", short: "Risque thrombo-embolique en FA",
+    fields: [
+      { id: "c", label: "Insuffisance cardiaque / dysfonction VG", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "h", label: "Hypertension artérielle", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "a", label: "Âge ≥ 75 ans", opts: [["Non", 0], ["Oui (+2)", 2]] },
+      { id: "d", label: "Diabète", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "s", label: "AVC / AIT / embolie antérieurs", opts: [["Non", 0], ["Oui (+2)", 2]] },
+      { id: "v", label: "Maladie vasculaire", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "a2", label: "Âge 65–74 ans", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "sc", label: "Sexe féminin", opts: [["Non", 0], ["Oui (+1)", 1]] },
+    ],
+    interp: (s) => s === 0 ? { text: "0 — Risque faible — pas d'anticoagulation", level: "ok" } : s === 1 ? { text: "1 — Anticoagulation à discuter", level: "warn" } : { text: `${s} — Anticoagulation recommandée`, level: "bad" },
+    note: "Estime le risque thrombo-embolique annuel dans la fibrillation atriale non valvulaire et l'indication d'anticoagulation.",
+    source: "Lip Chest 2010 · ESC 2020"
+  },
+  {
+    id: "grace", name: "GRACE (simplifié)", cat: "Cardiologie", short: "Risque dans le SCA",
+    fields: [
+      { id: "killip", label: "Classe Killip", opts: [["I", 0], ["II", 20], ["III", 39], ["IV", 59]] },
+      { id: "tas", label: "PA systolique", opts: [["≥ 200", 0], ["160–199", 10], ["120–159", 24], ["100–119", 34], ["80–99", 43], ["< 80", 58]] },
+      { id: "fc", label: "Fréquence cardiaque", opts: [["< 70", 0], ["70–89", 7], ["90–109", 13], ["110–149", 23], ["150–199", 36], ["≥ 200", 46]] },
+      { id: "age", label: "Âge", opts: [["< 40", 0], ["40–49", 18], ["50–59", 36], ["60–69", 55], ["70–79", 73], ["≥ 80", 91]] },
+      { id: "creat", label: "Créatinine (µmol/L)", opts: [["< 35", 1], ["35–70", 4], ["71–105", 7], ["106–140", 10], ["141–176", 13], ["177–353", 21], ["> 353", 28]] },
+      { id: "arret", label: "Arrêt cardiaque à l'admission", opts: [["Non", 0], ["Oui", 39]] },
+      { id: "st", label: "Sus/sous-décalage ST", opts: [["Non", 0], ["Oui", 28]] },
+      { id: "tropo", label: "Élévation des marqueurs", opts: [["Non", 0], ["Oui", 14]] },
+    ],
+    interp: (s) => s <= 108 ? { text: `${s} — Risque faible (mortalité hospit. < 1%)`, level: "ok" } : s <= 140 ? { text: `${s} — Risque intermédiaire (1–3%) — coronarographie < 72h`, level: "warn" } : { text: `${s} — Risque élevé (> 3%) — stratégie invasive précoce < 24h`, level: "bad" },
+    note: "Stratifie le risque dans le syndrome coronarien aigu et oriente le délai de la stratégie invasive (coronarographie).",
+    source: "Granger Arch Intern Med 2003 · ESC NSTEMI 2020"
+  },
+
+  // ─────────── DIGESTIF / HÉPATIQUE ───────────
+  {
+    id: "childpugh", name: "Child-Pugh", cat: "Digestif & Hépatique", short: "Sévérité de la cirrhose",
+    fields: [
+      { id: "enc", label: "Encéphalopathie", opts: [["Absente", 1], ["Grade 1–2", 2], ["Grade 3–4", 3]] },
+      { id: "asc", label: "Ascite", opts: [["Absente", 1], ["Minime (contrôlée)", 2], ["Modérée à tendue", 3]] },
+      { id: "bili", label: "Bilirubine", opts: [["< 34 µmol/L", 1], ["34–50", 2], ["> 50", 3]] },
+      { id: "alb", label: "Albumine", opts: [["> 35 g/L", 1], ["28–35", 2], ["< 28", 3]] },
+      { id: "tp", label: "TP / INR", opts: [["TP > 50% (INR < 1,7)", 1], ["TP 40–50% (INR 1,7–2,3)", 2], ["TP < 40% (INR > 2,3)", 3]] },
+    ],
+    interp: (s) => s <= 6 ? { text: `${s} — Classe A — survie à 1 an ~100%`, level: "ok" } : s <= 9 ? { text: `${s} — Classe B — survie à 1 an ~80%`, level: "warn" } : { text: `${s} — Classe C — survie à 1 an ~45%`, level: "bad" },
+    note: "Évalue la sévérité et le pronostic de la cirrhose. Classe A : 5–6, B : 7–9, C : 10–15.",
+    source: "Pugh Br J Surg 1973"
+  },
+  {
+    id: "meld", name: "Score MELD", cat: "Digestif & Hépatique", short: "Pronostic hépatique / greffe",
+    fields: [
+      { id: "bili", label: "Bilirubine (mg/dL)", type: "number", placeholder: "ex: 2.0" },
+      { id: "inr", label: "INR", type: "number", placeholder: "ex: 1.5" },
+      { id: "creat", label: "Créatinine (mg/dL)", type: "number", placeholder: "ex: 1.2" },
+    ],
+    compute: (v) => {
+      const ln = Math.log;
+      let bili = Math.max(parseFloat(v.bili) || 1, 1);
+      let inr = Math.max(parseFloat(v.inr) || 1, 1);
+      let creat = Math.max(parseFloat(v.creat) || 1, 1);
+      creat = Math.min(creat, 4);
+      let meld = Math.round(3.78 * ln(bili) + 11.2 * ln(inr) + 9.57 * ln(creat) + 6.43);
+      meld = Math.max(6, Math.min(40, meld));
+      return meld;
+    },
+    interp: (s) => s < 10 ? { text: `MELD ${s} — Mortalité à 3 mois < 2%`, level: "ok" } : s < 20 ? { text: `MELD ${s} — Mortalité à 3 mois 6–20%`, level: "warn" } : { text: `MELD ${s} — Mortalité à 3 mois > 20% — discuter greffe`, level: "bad" },
+    note: "Prédit la mortalité à 3 mois de la cirrhose et hiérarchise l'accès à la greffe hépatique. Convertir : bilirubine µmol/L ÷ 17 = mg/dL ; créat µmol/L ÷ 88,4 = mg/dL.",
+    source: "Kamath Hepatology 2001"
+  },
+  {
+    id: "blatchford", name: "Glasgow-Blatchford", cat: "Digestif & Hépatique", short: "Gravité d'hémorragie digestive haute",
+    fields: [
+      { id: "uree", label: "Urée (mmol/L)", opts: [["< 6,5", 0], ["6,5–7,9", 2], ["8–9,9", 3], ["10–24,9", 4], ["≥ 25", 6]] },
+      { id: "hb", label: "Hémoglobine (g/dL)", opts: [["≥ 13 (H) / ≥ 12 (F)", 0], ["12–12,9 (H) / 10–11,9 (F)", 1], ["10–11,9 (H)", 3], ["< 10", 6]] },
+      { id: "tas", label: "PA systolique (mmHg)", opts: [["≥ 110", 0], ["100–109", 1], ["90–99", 2], ["< 90", 3]] },
+      { id: "autres", label: "Autres (FC ≥ 100, méléna, syncope, hépatopathie, IC)", opts: [["Aucun", 0], ["Un ou plusieurs présents", 3]] },
+    ],
+    interp: (s) => s === 0 ? { text: "0 — Très bas risque, prise en charge ambulatoire possible", level: "ok" } : s <= 5 ? { text: `${s} — Risque modéré`, level: "warn" } : { text: `${s} — Risque élevé — endoscopie et hospitalisation`, level: "bad" },
+    note: "Évalue le risque d'une hémorragie digestive haute et la nécessité d'une intervention (transfusion, endoscopie). Un score de 0 autorise une prise en charge ambulatoire.",
+    source: "Blatchford Lancet 2000"
+  },
+  {
+    id: "ranson", name: "Score de Ranson", cat: "Digestif & Hépatique", short: "Gravité de la pancréatite aiguë",
+    fields: [
+      { id: "adm", label: "À l'admission : âge>55, GB>16G/L, glycémie>11mmol/L, LDH>350, ASAT>250", opts: [["0 critère", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]] },
+      { id: "h48", label: "À 48h : ↓Ht>10%, ↑urée>1,8mmol/L, calcémie<2mmol/L, PaO₂<60, déficit base>4, séquestration>6L", opts: [["0 critère", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6]] },
+    ],
+    interp: (s) => s <= 2 ? { text: `${s} — Mortalité faible (~1%)`, level: "ok" } : s <= 4 ? { text: `${s} — Mortalité ~15%`, level: "warn" } : { text: `${s} — Pancréatite grave — mortalité 40–100%`, level: "bad" },
+    note: "Évalue la gravité d'une pancréatite aiguë (critères à l'admission + à 48h). Un score ≥ 3 définit une forme sévère.",
+    source: "Ranson Surg Gynecol Obstet 1974"
+  },
+
+  // ─────────── RÉNAL / DIVERS ───────────
+  {
+    id: "kdigo", name: "Stades KDIGO (IRA)", cat: "Rénal & Divers", short: "Insuffisance rénale aiguë",
+    fields: [
+      { id: "s", label: "Stade", opts: [["Stade 1 — créat ×1,5–1,9 ou +26,5 µmol/L ; diurèse < 0,5 mL/kg/h × 6–12h", 1], ["Stade 2 — créat ×2–2,9 ; diurèse < 0,5 mL/kg/h ≥ 12h", 2], ["Stade 3 — créat ×3 ou ≥ 354 µmol/L ou EER ; diurèse < 0,3 mL/kg/h ≥ 24h ou anurie ≥ 12h", 3]] },
+    ],
+    interp: (s) => s === 1 ? { text: "Stade 1 — IRA débutante", level: "warn" } : s === 2 ? { text: "Stade 2 — IRA modérée", level: "bad" } : { text: "Stade 3 — IRA sévère — discuter l'épuration extra-rénale", level: "bad" },
+    note: "Classification de l'insuffisance rénale aiguë selon la créatinine et la diurèse. Le stade le plus péjoratif des deux critères est retenu.",
+    source: "KDIGO AKI 2012"
+  },
+  {
+    id: "parkland", name: "Formule de Parkland", cat: "Rénal & Divers", short: "Remplissage du brûlé",
+    fields: [
+      { id: "poids", label: "Poids (kg)", type: "number", placeholder: "ex: 70" },
+      { id: "sct", label: "Surface cutanée brûlée (%)", type: "number", placeholder: "ex: 30" },
+    ],
+    compute: (v) => {
+      const p = parseFloat(v.poids) || 0;
+      const s = parseFloat(v.sct) || 0;
+      return Math.round(4 * p * s);
+    },
+    interp: (s) => ({ text: `${s} mL de Ringer Lactate sur 24h — la moitié (${Math.round(s/2)} mL) sur les 8 premières heures`, level: "warn" }),
+    note: "Volume de cristalloïdes (Ringer Lactate) des 24 premières heures du brûlé = 4 mL × poids × % surface brûlée. Moitié sur 8h, moitié sur 16h. Ajuster sur la diurèse (0,5–1 mL/kg/h).",
+    source: "Baxter Parkland Formula · ABA Guidelines"
+  },
+  {
+    id: "wells_tvp", name: "Score de Wells (TVP)", cat: "Rénal & Divers", short: "Probabilité de thrombose veineuse",
+    fields: [
+      { id: "k", label: "Cancer actif", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "para", label: "Paralysie/immobilisation MI", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "alit", label: "Alitement > 3j ou chirurgie < 12 sem.", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "traj", label: "Douleur sur trajet veineux", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "oed", label: "Œdème de tout le membre", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "mol", label: "Mollet augmenté > 3 cm", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "god", label: "Œdème prenant le godet", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "coll", label: "Circulation veineuse collatérale", opts: [["Non", 0], ["Oui (+1)", 1]] },
+      { id: "alt", label: "Diagnostic alternatif aussi probable", opts: [["Non", 0], ["Oui (−2)", -2]] },
+    ],
+    interp: (s) => s < 1 ? { text: `${s} — Probabilité faible`, level: "ok" } : s <= 2 ? { text: `${s} — Probabilité modérée`, level: "warn" } : { text: `${s} — Probabilité forte — écho-doppler`, level: "bad" },
+    note: "Probabilité clinique de thrombose veineuse profonde. Couplé aux D-dimères pour l'algorithme diagnostique.",
+    source: "Wells NEJM 2003"
+  },
+  {
+    id: "bps", name: "Behavioral Pain Scale (BPS)", cat: "Neurologie", short: "Douleur du patient intubé-sédaté",
+    fields: [
+      { id: "vis", label: "Expression du visage", opts: [["Détendu (1)", 1], ["Partiellement crispé — front plissé (2)", 2], ["Totalement crispé — paupières fermées (3)", 3], ["Grimace (4)", 4]] },
+      { id: "mb", label: "Mouvements des membres supérieurs", opts: [["Aucun (1)", 1], ["Flexion partielle (2)", 2], ["Flexion complète avec doigts (3)", 3], ["Rétraction permanente (4)", 4]] },
+      { id: "vent", label: "Adaptation au respirateur", opts: [["Adapté (1)", 1], ["Toux mais tolère (2)", 2], ["Lutte contre le respirateur (3)", 3], ["Non ventilable (4)", 4]] },
+    ],
+    interp: (s) => s <= 5 ? { text: `${s}/12 — Douleur contrôlée`, level: "ok" } : { text: `${s}/12 — Douleur significative — adapter l'analgésie (objectif < 6)`, level: "bad" },
+    note: "Évalue la douleur chez le patient de réanimation intubé et sédaté, non communicant. Objectif thérapeutique : BPS < 6. Évaluation pluriquotidienne.",
+    source: "Payen Crit Care Med 2001"
+  },
+  {
+    id: "cpot", name: "CPOT", cat: "Neurologie", short: "Douleur du patient non communicant",
+    fields: [
+      { id: "vis", label: "Expression faciale", opts: [["Détendue (0)", 0], ["Tendue, front plissé (1)", 1], ["Grimace (2)", 2]] },
+      { id: "mvt", label: "Mouvements corporels", opts: [["Absence (0)", 0], ["Protection (1)", 1], ["Agitation (2)", 2]] },
+      { id: "mus", label: "Tension musculaire", opts: [["Détendu (0)", 0], ["Tendu, rigide (1)", 1], ["Très tendu ou rigide (2)", 2]] },
+      { id: "vent", label: "Ventilation (intubé) ou vocalisation", opts: [["Tolère / parle normalement (0)", 0], ["Tousse mais tolère / soupire (1)", 1], ["Lutte contre le respirateur / pleure (2)", 2]] },
+    ],
+    interp: (s) => s <= 2 ? { text: `${s}/8 — Douleur peu probable`, level: "ok" } : { text: `${s}/8 — Douleur probable — adapter l'analgésie (seuil > 2)`, level: "bad" },
+    note: "Critical-Care Pain Observation Tool : évalue la douleur du patient non communicant (intubé ou non). Un score > 2 évoque une douleur significative.",
+    source: "Gélinas Am J Crit Care 2006"
+  },
 ];
 
 // ═══════════════════════════════════════════════════════════════
@@ -2797,6 +3697,47 @@ const VENT_MODES = [
       { name: "Temps haut (Thigh)", cible: "4–6 secondes (APRV)", alerte: "< 2s = dérecrutement · > 6s = CO₂ retention" },
       { name: "Pression basse (Plow)", cible: "0–5 cmH₂O", alerte: "> 10 = limitation expiration" },
       { name: "Temps bas (Tlow)", cible: "0,4–0,8 secondes (APRV)", alerte: "Titré sur débit expiratoire de pointe (75% flow)" },
+    ]
+  },
+  {
+    id: "vaci", name: "Ventilation Assistée Contrôlée Intermittente (VACI/SIMV)",
+    short: "VACI / SIMV",
+    description: "Mode mixte : la machine délivre un nombre fixe de cycles contrôlés (volume garanti), synchronisés avec les efforts du patient. Entre ces cycles imposés, le patient peut respirer spontanément, souvent avec une aide inspiratoire.",
+    indications: ["Transition vers le sevrage", "Patient reprenant une ventilation spontanée", "Sevrage progressif (historique)"],
+    avantages: ["Combine cycles garantis et respiration spontanée", "Transition douce vers la VSAI", "Maintien d'une ventilation minimale"],
+    inconvenients: ["Asynchronies possibles", "Travail respiratoire parfois augmenté", "Largement supplanté par la VSAI pour le sevrage"],
+    parametres: [
+      { name: "Volume courant (cycles imposés)", cible: "6 mL/kg PPI", alerte: "> 8 mL/kg = surdistension" },
+      { name: "Fréquence des cycles imposés", cible: "Diminuée progressivement (sevrage)", alerte: "Réduction trop rapide = fatigue" },
+      { name: "Aide inspiratoire (cycles spontanés)", cible: "8–15 cmH₂O", alerte: "Insuffisante = épuisement" },
+      { name: "PEP", cible: "5–8 cmH₂O", alerte: "> 10 = retentissement hémodynamique" },
+    ]
+  },
+  {
+    id: "cpap", name: "Pression Positive Continue (CPAP / VS-PEP)",
+    short: "CPAP / VS-PEP",
+    description: "Le patient respire spontanément à travers une pression positive continue, sans aide inspiratoire ajoutée. Maintient le recrutement alvéolaire et la capacité résiduelle fonctionnelle.",
+    indications: ["Œdème aigu du poumon cardiogénique", "Épreuve de ventilation spontanée (sevrage)", "Apnée du sommeil", "Pré-oxygénation"],
+    avantages: ["Recrutement alvéolaire", "Réduit le travail cardiaque dans l'OAP", "Non invasif possible (masque)"],
+    inconvenients: ["Aucune aide à l'inspiration (tout l'effort est au patient)", "Inefficace si fatigue musculaire", "Intolérance au masque (VNI)"],
+    parametres: [
+      { name: "Niveau de PEP/CPAP", cible: "5–10 cmH₂O", alerte: "> 12 = retentissement hémodynamique" },
+      { name: "FiO₂", cible: "Titrée SpO₂ 92–96%", alerte: "OAP : souvent FiO₂ élevée initiale" },
+      { name: "Critère d'épreuve de sevrage", cible: "CPAP 5 / AI 7 pendant 30 min – 2h", alerte: "Échec = fréquence, désaturation, agitation" },
+    ]
+  },
+  {
+    id: "pcv", name: "Ventilation Contrôlée en Pression (PCV)",
+    short: "PCV / VC-PC",
+    description: "Le respirateur délivre une pression inspiratoire fixe pendant un temps réglé ; le volume courant résulte de la compliance et des résistances. Le débit est décélérant.",
+    indications: ["SDRA (contrôle de la pression)", "Compliance pulmonaire très altérée", "Fuites (chirurgie thoracique, fistule)"],
+    avantages: ["Pression de crête maîtrisée (limite le barotraumatisme)", "Débit décélérant favorable à la distribution gazeuse"],
+    inconvenients: ["Volume courant VARIABLE selon la compliance (risque d'hypoventilation si aggravation)", "Surveillance rapprochée du Vt indispensable"],
+    parametres: [
+      { name: "Pression inspiratoire (au-dessus de la PEP)", cible: "Titrée pour Vt 6 mL/kg", alerte: "Pression motrice (driving pressure) < 15 cmH₂O" },
+      { name: "Temps inspiratoire / I:E", cible: "I:E 1:2 (adapter)", alerte: "Inversé = auto-PEP, retentissement" },
+      { name: "PEP", cible: "Selon la pathologie (SDRA : titrée)", alerte: "Vérifier le Vt résultant à chaque changement" },
+      { name: "Fréquence respiratoire", cible: "15–25/min", alerte: "Surveiller la PaCO₂ (Vt variable)" },
     ]
   },
 ];
@@ -3746,6 +4687,2065 @@ const ProtocolIllustration = ({ specId, protoName, C }) => {
   return null;
 };
 
+
+// ═══ MODULE INFECTIOLOGIE DATA ═══
+// ═══════════════════════════════════════════════════════════════
+// MODULE INFECTIOLOGIE — RéaGuard v8
+// Antibiothérapie · BMR · Désescalade · Posologies · Durées · PK/PD
+// ═══════════════════════════════════════════════════════════════
+
+const INFECTO_SITUATIONS = [
+  {
+    id: "sepsis_npe",
+    name: "Sepsis sans porte d'entrée",
+    icon: "🔴",
+    color: "#DC2626",
+    bgColor: "#FEF2F2",
+    probabiliste: {
+      standard: {
+        label: "Pas de facteur de risque BMR",
+        molecules: [
+          { name: "Pipéracilline-Tazobactam (Tazocilline®)", dose: "4 g IV", frequence: "toutes les 6h (ou 4g en perfusion continue sur 24h)", duree: "jusqu'à identification du germe", note: "Spectre large, premier choix en sepsis communautaire sévère" },
+          { name: "Gentamicine", dose: "5–7 mg/kg IV", frequence: "dose unique quotidienne", duree: "24–48h uniquement (synergie initiale)", note: "Dose unique, adapter selon la clairance — arrêter dès 48h" },
+        ],
+        source: "SSC 2024 · SRLF 2022"
+      },
+      bmr: {
+        label: "Facteur de risque BMR ou sepsis nosocomial",
+        molecules: [
+          { name: "Méropénème (Méronem®)", dose: "2 g IV", frequence: "toutes les 8h (perfusion prolongée 3h si BLSE)", duree: "jusqu'à identification", note: "Couvre BLSE, Pseudomonas — réserver aux situations à risque élevé" },
+          { name: "Vancomycine", dose: "30 mg/kg/j IV", frequence: "en perfusion continue ou 2 fois/j", duree: "jusqu'à antibiogramme", note: "Si suspicion SARM ou colonisation connue — cible AUC/CMI 400–600" },
+        ],
+        source: "SPILF 2022 · SRLF BMR 2022"
+      },
+      choc: {
+        label: "Choc septique — couverture maximale d'emblée",
+        molecules: [
+          { name: "Méropénème", dose: "2 g IV", frequence: "toutes les 8h", duree: "désescalade à 48–72h", note: "" },
+          { name: "Vancomycine", dose: "30 mg/kg/j IV", frequence: "continu", duree: "désescalade à 48–72h", note: "" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "dose unique J1 uniquement", duree: "1 dose (synergie initiale)", note: "Une seule injection — ne pas répéter sauf exception" },
+        ],
+        source: "SSC 2024"
+      }
+    }
+  },
+  {
+    id: "pavm",
+    name: "PAVM / Pneumonie nosocomiale",
+    icon: "🫁",
+    color: "#1D4ED8",
+    bgColor: "#EFF6FF",
+    probabiliste: {
+      standard: {
+        label: "PAVM précoce (< 5 jours) sans facteur de risque BMR",
+        molecules: [
+          { name: "Amoxicilline-Acide clavulanique (Augmentin®)", dose: "2 g IV", frequence: "toutes les 6h", duree: "8 jours total", note: "Forme précoce sans facteur de risque — germes communs" },
+          { name: "Céfotaxime (Claforan®)", dose: "2 g IV", frequence: "toutes les 8h", duree: "8 jours", note: "Alternative — bonne couverture pneumocoque" },
+        ],
+        source: "IDSA/ATS HAP/VAP Guidelines 2024 · SRLF PAVM 2017"
+      },
+      bmr: {
+        label: "PAVM tardive (≥ 5 jours) ou facteur de risque BMR",
+        molecules: [
+          { name: "Pipéracilline-Tazobactam", dose: "4 g IV", frequence: "toutes les 6h ou continu 16g/24h", duree: "8 jours (non-Pseudomonas) / 14 jours (Pseudomonas)", note: "Anti-Pseudomonas — perfusion continue si Pseudomonas suspecté" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "dose unique quotidienne × 3–5j", duree: "3–5 jours", note: "Synergie et couverture Pseudomonas — guider par dosage pharmacologique" },
+          { name: "Vancomycine", dose: "30–45 mg/kg/j IV", frequence: "continu ou 2×/j", duree: "jusqu'à antibiogramme", note: "Si SARM suspecté (colonisation ou facteur de risque)" },
+        ],
+        source: "IDSA/ATS HAP/VAP Guidelines 2024"
+      },
+      choc: {
+        label: "PAVM sévère — choc septique ou ventilation difficile",
+        molecules: [
+          { name: "Méropénème", dose: "2 g IV", frequence: "toutes les 8h en perfusion 3h", duree: "8–14 jours selon germe", note: "Perfusion prolongée augmente le temps au-dessus de la CMI" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "quotidienne × 3–5j", duree: "3–5 jours max", note: "" },
+          { name: "Vancomycine ou Linézolide", dose: "600 mg IV/PO × 2/j (Linézolide)", frequence: "toutes les 12h", duree: "14 jours si SARM prouvé", note: "Linézolide supérieur à la vancomycine dans la PAVM à SARM (étude ZEPHyR)" },
+        ],
+        source: "IDSA/ATS 2024 · Wunderink CHEST 2012 (ZEPHyR)"
+      }
+    }
+  },
+  {
+    id: "pneumonie_communautaire",
+    name: "Pneumonie Communautaire Grave",
+    icon: "💨",
+    color: "#0284C7",
+    bgColor: "#F0F9FF",
+    probabiliste: {
+      standard: {
+        label: "Pneumonie communautaire grave — admission réanimation",
+        molecules: [
+          { name: "Amoxicilline-Acide clavulanique", dose: "1 g IV", frequence: "toutes les 8h", duree: "7 jours", note: "Couvre pneumocoque, H. influenzae, anaérobies" },
+          { name: "Azithromycine (Zithromax®)", dose: "500 mg IV ou PO", frequence: "1×/j", duree: "5 jours", note: "Couverture des germes atypiques (Legionella, Mycoplasme) — à associer SYSTÉMATIQUEMENT en réa" },
+        ],
+        source: "SPILF/SPLF Pneumonie 2020"
+      },
+      bmr: {
+        label: "Suspicion Legionella ou terrain immunodéprimé",
+        molecules: [
+          { name: "Lévofloxacine (Tavanic®)", dose: "500 mg IV", frequence: "toutes les 12h", duree: "10–14 jours si Legionella confirmée", note: "MONOTHÉRAPIE possible si Legionella — ajouter rifampicine si forme grave" },
+          { name: "Céfotaxime", dose: "2 g IV", frequence: "toutes les 8h", duree: "7 jours", note: "Remplace l'amoxicilline si allergie ou résistance pneumocoque" },
+          { name: "Rifampicine", dose: "600 mg IV", frequence: "toutes les 12h", duree: "21 jours si Legionella sévère", note: "Adjuvant à la lévofloxacine dans les formes très sévères de légionellose" },
+        ],
+        source: "SPILF Legionellose 2021"
+      },
+      choc: {
+        label: "Pneumonie grave avec choc ou facteur de risque Pseudomonas",
+        molecules: [
+          { name: "Pipéracilline-Tazobactam", dose: "4 g IV", frequence: "toutes les 6h", duree: "8–10 jours", note: "Si bronchectasies, BPCO sévère, corticothérapie prolongée" },
+          { name: "Lévofloxacine", dose: "500 mg IV", frequence: "toutes les 12h", duree: "7–10 jours", note: "Associer pour couvrir les atypiques" },
+        ],
+        source: "IDSA/ATS CAP Guidelines 2024"
+      }
+    }
+  },
+  {
+    id: "infection_urinaire",
+    name: "Infection Urinaire Haute Compliquée",
+    icon: "🔬",
+    color: "#0F766E",
+    bgColor: "#F0FDFA",
+    probabiliste: {
+      standard: {
+        label: "Pyélonéphrite compliquée ou prostatite — pas de BMR",
+        molecules: [
+          { name: "Céfotaxime", dose: "2 g IV", frequence: "toutes les 8h", duree: "10–14 jours total (switch oral à 48–72h si possible)", note: "Première intention — bonne couverture entérobactéries communautaires" },
+          { name: "Gentamicine", dose: "5 mg/kg IV", frequence: "dose unique quotidienne", duree: "48–72h puis relais oral", note: "Alternative ou association initiale si forme sévère" },
+        ],
+        source: "SPILF Infections Urinaires 2024"
+      },
+      bmr: {
+        label: "Suspicion BLSE ou infection nosocomiale",
+        molecules: [
+          { name: "Méropénème ou Ertapénème", dose: "1 g IV (Ertapénème)", frequence: "1×/j", duree: "10–14 jours", note: "Ertapénème si BLSE confirmé sans facteur de risque Pseudomonas (plus commode : 1×/j)" },
+          { name: "Tigécycline", dose: "100 mg IV dose de charge puis 50 mg", frequence: "toutes les 12h", duree: "10–14 jours", note: "Si EPC (entérobactérie productrice de carbapénémase) — association obligatoire" },
+        ],
+        source: "SPILF BLSE 2022"
+      },
+      choc: {
+        label: "Choc septique d'origine urinaire",
+        molecules: [
+          { name: "Méropénème", dose: "2 g IV", frequence: "toutes les 8h", duree: "désescalade à 48h si possible", note: "" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "dose unique J1", duree: "1 dose", note: "" },
+        ],
+        source: "SSC 2024"
+      }
+    }
+  },
+  {
+    id: "peritonite",
+    name: "Infection Abdominale — Péritonite",
+    icon: "🩺",
+    color: "#B45309",
+    bgColor: "#FFFBEB",
+    probabiliste: {
+      standard: {
+        label: "Péritonite communautaire",
+        molecules: [
+          { name: "Amoxicilline-Acide clavulanique", dose: "2 g IV", frequence: "toutes les 6h", duree: "5–7 jours après contrôle du foyer", note: "Couvre entérobactéries + anaérobies — péritonite communautaire simple" },
+          { name: "Métronidazole (Flagyl®)", dose: "500 mg IV", frequence: "toutes les 8h", duree: "5–7 jours", note: "Couverture anaérobie renforcée si péritonite stercorale ou fécale" },
+        ],
+        source: "SFAR/SFCD Péritonite 2021 · WSES 2021"
+      },
+      bmr: {
+        label: "Péritonite nosocomiale ou post-opératoire",
+        molecules: [
+          { name: "Pipéracilline-Tazobactam", dose: "4 g IV", frequence: "toutes les 6h", duree: "7–10 jours", note: "Couvre Pseudomonas et anaérobies — standard des péritonites post-opératoires" },
+          { name: "Fluconazole", dose: "800 mg dose de charge puis 400 mg IV", frequence: "1×/j", duree: "14 jours si Candida isolé", note: "Antifongique SYSTÉMATIQUE si Candida dans le liquide péritonéal, nutrition parentérale ou chirurgie abdominale majeure" },
+        ],
+        source: "SFAR/SFCD 2021 · ESCMID Candida 2020"
+      },
+      choc: {
+        label: "Péritonite avec choc septique",
+        molecules: [
+          { name: "Méropénème", dose: "2 g IV", frequence: "toutes les 8h", duree: "jusqu'à désescalade", note: "" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "dose unique J1", duree: "1 dose", note: "" },
+          { name: "Caspofungine (Cancidas®)", dose: "70 mg J1 puis 50 mg IV", frequence: "1×/j", duree: "14 jours si Candida", note: "Préférer aux azolés en choc septique (meilleure fongicidie initiale)" },
+        ],
+        source: "SSC 2024 · ESCMID 2020"
+      }
+    }
+  },
+  {
+    id: "meningite",
+    name: "Méningite Bactérienne",
+    icon: "🧠",
+    color: "#6D28D9",
+    bgColor: "#F5F3FF",
+    probabiliste: {
+      standard: {
+        label: "Adulte immunocompétent < 50 ans",
+        molecules: [
+          { name: "Céfotaxime", dose: "300 mg/kg/j IV", frequence: "en 4–6 perfusions ou continu", duree: "10–14 jours (pneumocoque) / 7 jours (méningocoque)", note: "Maximum 24 g/jour — démarrer AVANT la ponction lombaire si délai > 30 min" },
+          { name: "Dexaméthasone", dose: "0,15 mg/kg IV", frequence: "toutes les 6h × 4 jours", duree: "4 jours", note: "AVANT ou AVEC les antibiotiques — réduit la mortalité et les séquelles (pneumocoque)" },
+        ],
+        source: "SPILF Méningites 2018"
+      },
+      bmr: {
+        label: "Sujet > 50 ans, immunodéprimé ou grossesse (couverture Listeria)",
+        molecules: [
+          { name: "Céfotaxime", dose: "300 mg/kg/j IV", frequence: "4–6 fois/j", duree: "10–21 jours selon germe", note: "" },
+          { name: "Amoxicilline", dose: "200 mg/kg/j IV", frequence: "4–6 fois/j", duree: "21 jours si Listeria confirmée", note: "OBLIGATOIRE si > 50 ans ou immunodéprimé — Listeria résistante aux céphalosporines" },
+          { name: "Dexaméthasone", dose: "0,15 mg/kg IV", frequence: "toutes les 6h × 4 jours", duree: "4 jours", note: "Arrêter si germe différent du pneumocoque ou du méningocoque" },
+        ],
+        source: "SPILF Méningites 2018"
+      },
+      choc: {
+        label: "Purpura fulminans — traitement pré-hospitalier",
+        molecules: [
+          { name: "Ceftriaxone (Rocéphine®)", dose: "2 g IV ou IM", frequence: "dose unique — AVANT le transport", duree: "relais céfotaxime en réanimation", note: "Injecter SUR PLACE si délai de transfert > 30 minutes — ne jamais attendre" },
+        ],
+        source: "DGS/SPILF 2018"
+      }
+    }
+  },
+  {
+    id: "endocardite",
+    name: "Endocardite Infectieuse",
+    icon: "❤️",
+    color: "#DC2626",
+    bgColor: "#FEF2F2",
+    probabiliste: {
+      standard: {
+        label: "Valve native — germe non encore identifié",
+        molecules: [
+          { name: "Amoxicilline", dose: "200 mg/kg/j IV", frequence: "en 4–6 perfusions ou continu", duree: "4–6 semaines selon germe", note: "Couvre Streptocoques (60% des endocardites sur valve native)" },
+          { name: "Oxacilline (Bristopen®)", dose: "200 mg/kg/j IV", frequence: "en 4–6 perfusions", duree: "4–6 semaines", note: "Couvre SAMS — associer si origine cutanée ou porte d'entrée staphylococcique" },
+          { name: "Gentamicine", dose: "3 mg/kg/j IV", frequence: "1×/j", duree: "2 semaines uniquement (toxicité)", note: "Synergie bactéricide — ne pas prolonger au-delà de 2 semaines" },
+        ],
+        source: "ESC Endocardite Guidelines 2023"
+      },
+      bmr: {
+        label: "Prothèse valvulaire ou suspicion SARM",
+        molecules: [
+          { name: "Vancomycine", dose: "30–45 mg/kg/j IV", frequence: "continu (cible AUC/CMI 400–600)", duree: "6 semaines", note: "Endocardite sur prothèse ou SARM — monitoring pharmacologique obligatoire" },
+          { name: "Rifampicine", dose: "1 200 mg/j PO ou IV", frequence: "en 2 prises", duree: "6 semaines (prothèse)", note: "Pénètre dans le biofilm — INDISPENSABLE sur prothèse — ne jamais débuter en bactériémie active" },
+          { name: "Gentamicine", dose: "3 mg/kg/j IV", frequence: "1×/j", duree: "2 semaines", note: "" },
+        ],
+        source: "ESC Endocardite Guidelines 2023"
+      },
+      choc: {
+        label: "Endocardite avec insuffisance cardiaque ou choc",
+        molecules: [
+          { name: "Vancomycine", dose: "30–45 mg/kg/j IV continu", frequence: "continu", duree: "jusqu'à chirurgie puis relais", note: "Indication chirurgicale urgente dans les 24–72h si instabilité hémodynamique" },
+          { name: "Gentamicine", dose: "3 mg/kg/j IV", frequence: "1×/j", duree: "2 semaines", note: "" },
+        ],
+        source: "ESC 2023 — Heart Team decision"
+      }
+    }
+  },
+  {
+    id: "neutropenie",
+    name: "Neutropénie Fébrile",
+    icon: "🦠",
+    color: "#15803D",
+    bgColor: "#F0FDF4",
+    probabiliste: {
+      standard: {
+        label: "Neutropénie fébrile — risque standard (aplasie < 7 jours)",
+        molecules: [
+          { name: "Pipéracilline-Tazobactam", dose: "4 g IV", frequence: "toutes les 6h", duree: "jusqu'à apyrexie 48h + PNN > 500", note: "Anti-Pseudomonas essentiel — ne jamais sous-traiter une neutropénie fébrile" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "dose unique quotidienne", duree: "3–5 jours si bactériémie documentée", note: "Synergie initiale — arrêter dès stabilisation" },
+        ],
+        source: "ECIL-9 2023 · IDSA 2011"
+      },
+      bmr: {
+        label: "Neutropénie profonde prolongée (> 7 jours) ou instabilité",
+        molecules: [
+          { name: "Méropénème", dose: "1 g IV", frequence: "toutes les 8h", duree: "jusqu'à sortie d'aplasie", note: "Si aplasie > 7 jours ou antécédent BLSE/EPC" },
+          { name: "Vancomycine", dose: "30 mg/kg/j IV", frequence: "continu", duree: "jusqu'à antibiogramme", note: "Si mucite sévère, cathéter infecté suspecté ou SARM connu" },
+          { name: "Caspofungine", dose: "70 mg J1 puis 50 mg IV", frequence: "1×/j", duree: "jusqu'à sortie d'aplasie", note: "Antifongique empirique si fièvre persistante > 4 jours malgré ATB" },
+        ],
+        source: "ECIL-9 2023"
+      },
+      choc: {
+        label: "Neutropénie fébrile avec choc septique",
+        molecules: [
+          { name: "Méropénème", dose: "2 g IV", frequence: "toutes les 8h", duree: "désescalade à 48h si possible", note: "" },
+          { name: "Amikacine", dose: "30 mg/kg IV", frequence: "dose unique J1", duree: "1 dose", note: "" },
+          { name: "Caspofungine", dose: "70 mg J1 puis 50 mg IV", frequence: "1×/j", duree: "14 jours minimum si Candida", note: "Antifongique d'emblée en choc chez le neutropénique" },
+          { name: "Vancomycine", dose: "30–45 mg/kg/j IV", frequence: "continu", duree: "jusqu'à antibiogramme", note: "" },
+        ],
+        source: "ECIL-9 2023 · SSC 2024"
+      }
+    }
+  },
+];
+
+// ─── DÉSESCALADE ANTIBIOTIQUE ──────────────────────────────────
+const DESESCALADE = {
+  // COCCI GRAM POSITIF
+  "Staphylococcus aureus sensible méticilline (SAMS)": {
+    color: "#D97706",
+    molecules: [
+      { name: "Oxacilline (Bristopen®)", dose: "150–200 mg/kg/j IV", frequence: "4–6×/j", duree: "Standard selon localisation", note: "MOLÉCULE DE RÉFÉRENCE — supérieure à la vancomycine sur SAMS" },
+      { name: "Céfazoline (Kefzol®)", dose: "6–12 g/j IV", frequence: "3×/j", duree: "Standard", note: "Alternative si intolérance pénicillines (test allergie recommandé)" },
+    ],
+    arret_vanco: "⚠ DÉSESCALADER la vancomycine vers l'oxacilline dès SAMS confirmé — mortalité plus élevée sous vancomycine sur SAMS"
+  },
+  "Staphylococcus aureus résistant méticilline (SARM)": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Vancomycine", dose: "30–45 mg/kg/j IV", frequence: "continu — cible AUC/CMI 400–600", duree: "Selon localisation (endocardite 6 sem, bactériémie 14j minimum)", note: "Monitoring pharmacologique obligatoire — toxicité rénale" },
+      { name: "Daptomycine (Cubicin®)", dose: "8–10 mg/kg IV", frequence: "1×/j", duree: "14j minimum bactériémie", note: "Alternative vancomycine — CONTRE-INDIQUÉ dans la pneumonie (inactivé par le surfactant)" },
+      { name: "Linézolide (Zyvoxid®)", dose: "600 mg IV ou PO", frequence: "2×/j", duree: "14j", note: "Bonne biodisponibilité orale — privilégier dans la PAVM à SARM (supérieur à la vancomycine)" },
+      { name: "Ceftaroline (Zinforo®)", dose: "600 mg IV", frequence: "2×/j sur 1h", duree: "5–14j", note: "Céphalosporine anti-SARM — bactériémie et pneumonie" },
+    ],
+    arret_vanco: ""
+  },
+  "Staphylocoque à coagulase négative (SCN)": {
+    color: "#B45309",
+    molecules: [
+      { name: "Vancomycine", dose: "30 mg/kg/j IV", frequence: "continu", duree: "7–14j selon localisation", note: "Si résistant à la méticilline (fréquent sur matériel)" },
+      { name: "Oxacilline", dose: "150 mg/kg/j IV", frequence: "4–6×/j", duree: "7–14j", note: "Si sensible à la méticilline" },
+    ],
+    arret_vanco: "Ablation du cathéter/matériel souvent indispensable"
+  },
+  "Streptocoque β-hémolytique (A, B, G)": {
+    color: "#0F766E",
+    molecules: [
+      { name: "Amoxicilline", dose: "200 mg/kg/j IV", frequence: "4–6×/j", duree: "10–14j (bactériémie) / 21j (endocardite)", note: "Toujours sensible à la pénicilline — désescalade systématique" },
+      { name: "Benzylpénicilline (Pénicilline G)", dose: "4 MUI IV", frequence: "toutes les 4h", duree: "10–14j", note: "Molécule de référence — efficacité maximale" },
+    ],
+    arret_vanco: "Arrêter systématiquement la vancomycine dès streptocoque identifié (toujours sensible pénicilline)"
+  },
+  "Streptococcus pneumoniae (Pneumocoque)": {
+    color: "#1D4ED8",
+    molecules: [
+      { name: "Amoxicilline", dose: "200 mg/kg/j IV", frequence: "4–6×/j", duree: "10–14j méningite / 7j pneumonie", note: "Si CMI amoxicilline ≤ 0,06 mg/L (sensible) — vérifier l'antibiogramme" },
+      { name: "Céfotaxime ou Ceftriaxone", dose: "Céfotaxime 300 mg/kg/j IV", frequence: "4–6×/j", duree: "10–14j", note: "Si résistance partielle amoxicilline — dépasse la CMI par effet temps-dépendant" },
+    ],
+    arret_vanco: ""
+  },
+  "Enterococcus faecalis": {
+    color: "#7C3AED",
+    molecules: [
+      { name: "Amoxicilline", dose: "200 mg/kg/j IV", frequence: "4–6×/j", duree: "4–6 semaines si endocardite", note: "E. faecalis toujours sensible amoxicilline — jamais de vancomycine si sensible" },
+      { name: "Amoxicilline + Gentamicine", dose: "Amoxicilline 200 mg/kg/j + Gentamicine 3 mg/kg/j", frequence: "4–6×/j + 1×/j", duree: "2 semaines gentamicine / 4–6 sem amoxicilline", note: "Synergie bactéricide — indispensable dans l'endocardite" },
+    ],
+    arret_vanco: "⚠ Désescalader la vancomycine vers l'amoxicilline dès E. faecalis sensible confirmé"
+  },
+  "Enterococcus faecium (ERV — résistant vancomycine)": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Linézolide", dose: "600 mg IV ou PO", frequence: "2×/j", duree: "14–21j", note: "Bactériostatique — pas de monothérapie dans l'endocardite" },
+      { name: "Daptomycine", dose: "10–12 mg/kg IV", frequence: "1×/j", duree: "14–21j", note: "Haute dose si endocardite ou bactériémie — associer rifampicine ou ampicilline" },
+      { name: "Tigécycline", dose: "100 mg puis 50 mg IV", frequence: "2×/j", duree: "14j", note: "Association recommandée — ne pas utiliser seule (résistance rapide)" },
+    ],
+    arret_vanco: ""
+  },
+  // BACILLES GRAM NÉGATIF
+  "Escherichia coli sensible (sans BLSE)": {
+    color: "#15803D",
+    molecules: [
+      { name: "Amoxicilline-Acide clavulanique", dose: "1 g IV", frequence: "3×/j", duree: "Selon localisation", note: "Si sensible à l'antibiogramme — désescalade systématique" },
+      { name: "Céfotaxime ou Céfazoline", dose: "Céfazoline 2 g IV", frequence: "3×/j", duree: "Selon localisation", note: "Si résistant amoxicilline-acide clavulanique" },
+      { name: "Triméthoprime-Sulfaméthoxazole (Bactrim®)", dose: "800/160 mg PO", frequence: "2×/j", duree: "Selon localisation", note: "Si sensible — option switch oral" },
+    ],
+    arret_vanco: "Arrêter carbapénème ou tazocilline — désescalade obligatoire"
+  },
+  "E. coli BLSE / Klebsiella BLSE": {
+    color: "#D97706",
+    molecules: [
+      { name: "Ertapénème (Invanz®)", dose: "1 g IV", frequence: "1×/j", duree: "10–14j", note: "BLSE sans facteur de risque Pseudomonas — préférer à méropénème pour épargner les carbapénèmes larges spectre" },
+      { name: "Méropénème", dose: "1–2 g IV", frequence: "3×/j", duree: "10–14j", note: "Si sepsis sévère, méningite, ou facteur de risque Pseudomonas" },
+      { name: "Pivmécillinam (Selexid®)", dose: "400 mg PO", frequence: "3×/j", duree: "7j", note: "Switch oral si BLSE sur IU basse — vérifier sensibilité antibiogramme" },
+    ],
+    arret_vanco: ""
+  },
+  "Pseudomonas aeruginosa sensible": {
+    color: "#0F766E",
+    molecules: [
+      { name: "Pipéracilline-Tazobactam", dose: "4 g IV", frequence: "toutes les 6h ou continu 16g/24h", duree: "10–14j", note: "En perfusion continue : maximise le temps au-dessus de la CMI" },
+      { name: "Céfépime (Axépim®)", dose: "2 g IV", frequence: "3×/j", duree: "10–14j", note: "Alternative à la tazocilline" },
+      { name: "Ciprofloxacine", dose: "400 mg IV", frequence: "2×/j", duree: "10–14j", note: "Si sensible — bonne biodisponibilité PO pour le switch oral" },
+    ],
+    arret_vanco: "Ne pas arrêter l'aminoside avant J3–J5 si Pseudomonas — risque d'échec"
+  },
+  "Pseudomonas aeruginosa résistant (multi-R)": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Colistine (Colimycine®)", dose: "9 MUI dose de charge puis 4,5 MUI IV", frequence: "2×/j", duree: "14j minimum", note: "Dernier recours — néphrotoxicité majeure — monitoring rénal quotidien" },
+      { name: "Ceftolozane-Tazobactam (Zerbaxa®)", dose: "3 g IV", frequence: "3×/j en perfusion 1h", duree: "14j", note: "Active sur Pseudomonas multi-résistant — supérieure à la colistine (moins toxique)" },
+      { name: "Ceftazidime-Avibactam (Avycaz®)", dose: "2,5 g IV", frequence: "3×/j en perfusion 2h", duree: "14j", note: "Active sur Pseudomonas ET EPC (KPC) — discuter avec infectiologue" },
+    ],
+    arret_vanco: "⚠ Consulter l'infectiologue OBLIGATOIREMENT avant toute prescription de colistine"
+  },
+  "Klebsiella pneumoniae EPC (carbapénémase)": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Ceftazidime-Avibactam (Avycaz®)", dose: "2,5 g IV", frequence: "3×/j en perfusion 2h", duree: "14j", note: "Active sur KPC et OXA-48 — traitement de référence des EPC" },
+      { name: "Ceftazidime-Avibactam + Aztreonam", dose: "Association — voir infectiologue", frequence: "3×/j", duree: "14j", note: "Si MBL (métallo-carbapénémase NDM, VIM) — seule association active" },
+      { name: "Imipénème-Cilastatine-Relebactam (Recarbrio®)", dose: "1,25 g IV", frequence: "3×/j", duree: "14j", note: "Alternative si KPC — disponible en ATU" },
+    ],
+    arret_vanco: "⚠ Isolement contact strict — signalement ARS — avis infectiologue OBLIGATOIRE"
+  },
+  "Acinetobacter baumannii multi-résistant": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Colistine", dose: "9 MUI dose de charge puis 4,5 MUI IV", frequence: "2×/j", duree: "14j", note: "Souvent seule option — néphrotoxicité, neurotoxicité" },
+      { name: "Sulbactam (associé)", dose: "9 g/j IV", frequence: "3–4×/j", duree: "14j", note: "Associer à la colistine — activité propre sur A. baumannii" },
+      { name: "Rifampicine + Colistine", dose: "600 mg IV × 2/j + colistine", frequence: "2×/j", duree: "14j", note: "Synergie démontrée in vitro — pas de preuve de supériorité clinique" },
+    ],
+    arret_vanco: "⚠ Cas difficile — avis infectiologue et microbiologiste INDISPENSABLE"
+  },
+  // ANAÉROBIES
+  "Bacteroides fragilis / anaérobies": {
+    color: "#374151",
+    molecules: [
+      { name: "Métronidazole", dose: "500 mg IV", frequence: "3×/j", duree: "Selon localisation (7–14j)", note: "RÉFÉRENCE des infections anaérobies — bonne pénétration tissulaire" },
+      { name: "Amoxicilline-Acide clavulanique", dose: "1 g IV", frequence: "3×/j", duree: "Selon localisation", note: "Si association à des germes aérobies sensibles" },
+    ],
+    arret_vanco: ""
+  },
+  // FUNGI
+  "Candida albicans (candidémie confirmée)": {
+    color: "#BE185D",
+    molecules: [
+      { name: "Fluconazole", dose: "800 mg dose de charge puis 400 mg IV", frequence: "1×/j", duree: "14j après dernière hémoculture négative", note: "Si C. albicans, patient stable sans exposition azolés préalable — passage oral possible" },
+      { name: "Caspofungine", dose: "70 mg J1 puis 50 mg IV", frequence: "1×/j", duree: "14j", note: "Préférer si choc, exposition azolés, ou immunodépression sévère" },
+    ],
+    arret_vanco: "Ablation du cathéter central OBLIGATOIRE — fond d'œil systématique"
+  },
+  "Candida glabrata / tropicalis / krusei": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Caspofungine", dose: "70 mg J1 puis 50 mg IV", frequence: "1×/j", duree: "14j minimum", note: "C. krusei résistant fluconazole — C. glabrata souvent résistant — échinocandine OBLIGATOIRE" },
+      { name: "Micafungine (Mycamine®)", dose: "100–150 mg IV", frequence: "1×/j", duree: "14j minimum", note: "Alternative à la caspofungine — même spectre" },
+      { name: "Voriconazole", dose: "6 mg/kg IV × 2 J1 puis 4 mg/kg × 2", frequence: "2×/j", duree: "14j", note: "Si sensible sur antifongigramme (C. glabrata parfois sensible)" },
+    ],
+    arret_vanco: "Antifongigramme OBLIGATOIRE — certaines espèces multirésistantes"
+  },
+  "Aspergillus fumigatus (aspergillose invasive confirmée ou probable)": {
+    color: "#7C3AED",
+    molecules: [
+      { name: "Voriconazole (Vfend®)", dose: "6 mg/kg IV × 2 J1, puis 4 mg/kg × 2", frequence: "2×/j", duree: "6–12 semaines (jusqu'à récupération immunitaire)", note: "RÉFÉRENCE — monitoring plasma obligatoire (cible 1–5,5 mg/L) — interactions médicamenteuses nombreuses" },
+      { name: "Isavuconazole (Cresemba®)", dose: "200 mg × 3/j J1–J2 puis 200 mg/j IV", frequence: "1×/j entretien", duree: "6–12 semaines", note: "Non-inférieur au voriconazole — meilleur profil hépatique et oculaire — moins d'interactions" },
+      { name: "Liposomal Amphotéricine B (AmBisome®)", dose: "3 mg/kg/j IV", frequence: "1×/j", duree: "Jusqu'à switch oral possible", note: "2ème ligne — si échec azolés ou contre-indication — néphrotoxicité surveillée" },
+    ],
+    arret_vanco: "Associer traitement de l'immunodépression sous-jacente — scanner thoracique de contrôle à 2 semaines"
+  },
+  "Aspergillus résistant voriconazole": {
+    color: "#DC2626",
+    molecules: [
+      { name: "Isavuconazole", dose: "200 mg × 3/j puis 200 mg/j IV", frequence: "1×/j", duree: "6–12 semaines", note: "Si résistance voriconazole — vérifier isavuconazole CMI" },
+      { name: "Liposomal Amphotéricine B", dose: "3–5 mg/kg/j IV", frequence: "1×/j", duree: "Jusqu'à stabilisation", note: "Dernier recours — pas de résistance croisée avec les azolés" },
+      { name: "Voriconazole + Anidulafungine", dose: "Association", frequence: "", duree: "6–12 semaines", note: "Association discutée — essai COMBISTRAT négatif — à réserver aux formes réfractaires sévères" },
+    ],
+    arret_vanco: "⚠ Discuter avec le centre de référence mycologie — antifungigramme OBLIGATOIRE"
+  },
+};
+
+
+// ─── NOUVEAUX ANTIBIOTIQUES BGN — SRLF 2022 ────────────────────
+const NOUVEAUX_ATB_BGN = {
+  intro: "Conférence de consensus SRLF (décembre 2022) — Place des nouveaux antibiotiques dans les infections à bacilles à Gram négatif en réanimation. Algorithme par mécanisme de résistance.",
+  mecanismes: [
+    {
+      id: "blse",
+      nom: "Entérobactérie BLSE (bêtalactamase à spectre étendu)",
+      color: "#D97706",
+      definition: "Résistance aux céphalosporines de 3ème génération par production de bêtalactamase à spectre étendu. Reste sensible aux carbapénèmes.",
+      premiere_intention: [
+        { name: "Ertapénème (Invanz®)", dose: "1 g IV", frequence: "1×/j", note: "Si pas de facteur de risque Pseudomonas — épargne les carbapénèmes anti-Pseudomonas (méropénème, imipénème)" },
+        { name: "Méropénème (Meronem®)", dose: "1–2 g IV", frequence: "toutes les 8h (perfusion prolongée 3h)", note: "Si sepsis sévère, choc, ou facteur de risque Pseudomonas associé" },
+      ],
+      epargne: [
+        { name: "Pipéracilline-Tazobactam", note: "Option discutée sur IU à BLSE après contrôle de la source (étude MERINO : infériorité dans les bactériémies — à éviter en infection grave)" },
+        { name: "Aminosides / Témocilline", note: "Alternatives d'épargne des carbapénèmes sur infections urinaires BLSE" },
+      ],
+      source: "SRLF 2022 (Dequin, Ann Intensive Care 2023) · MERINO Trial JAMA 2018"
+    },
+    {
+      id: "parc",
+      nom: "Pseudomonas aeruginosa résistant aux carbapénèmes (PARC)",
+      color: "#DC2626",
+      definition: "Pseudomonas résistant à l'imipénème et/ou au méropénème. Mécanisme principal : imperméabilité membranaire (porines OprD) ± efflux.",
+      premiere_intention: [
+        { name: "Ceftolozane-Tazobactam (Zerbaxa®)", dose: "3 g IV (2 g ceftolozane)", frequence: "toutes les 8h en perfusion 1h", note: "PREMIÈRE INTENTION du PARC selon SRLF 2022 — molécule de référence, plus stable face aux mécanismes de résistance du Pseudomonas" },
+      ],
+      alternatives: [
+        { name: "Imipénème-Cilastatine-Relebactam (Recarbrio®)", dose: "1,25 g IV", frequence: "toutes les 6h", note: "Alternative si résistance au ceftolozane-tazobactam" },
+        { name: "Céfidérocol (Fetcroja®)", dose: "2 g IV", frequence: "toutes les 8h en perfusion 3h", note: "Sidérophore — actif sur la plupart des BGN multirésistants — réserver aux impasses" },
+        { name: "Ceftazidime-Avibactam (Zavicefta®)", dose: "2,5 g IV", frequence: "toutes les 8h en perfusion 2h", note: "Alternative possible sur PARC" },
+      ],
+      dernier_recours: [
+        { name: "Colistine / Aminosides / Fosfomycine", note: "Si aucune alternative — toujours en association si infection grave (jamais en monothérapie)" },
+      ],
+      source: "SRLF 2022 (Dequin, Ann Intensive Care 2023)"
+    },
+    {
+      id: "epc_kpc",
+      nom: "Entérobactérie productrice de carbapénémase — type KPC ou OXA-48",
+      color: "#B91C1C",
+      definition: "EPC (carbapénémase de classe A — KPC, ou classe D — OXA-48). Hydrolyse les carbapénèmes. Mécanisme le plus fréquent en France.",
+      premiere_intention: [
+        { name: "Ceftazidime-Avibactam (Zavicefta®)", dose: "2,5 g IV", frequence: "toutes les 8h en perfusion 2h", note: "TRAITEMENT DE RÉFÉRENCE des EPC à KPC et OXA-48 — l'avibactam restaure l'activité sur ces carbapénémases" },
+      ],
+      alternatives: [
+        { name: "Méropénème-Vaborbactam (Vaborem®)", dose: "2 g/2 g IV", frequence: "toutes les 8h en perfusion 3h", note: "Actif sur KPC (pas sur OXA-48 ni métallo-bêtalactamases)" },
+        { name: "Céfidérocol (Fetcroja®)", dose: "2 g IV", frequence: "toutes les 8h perfusion 3h", note: "Actif sur toutes les classes de carbapénémases — alternative en impasse" },
+      ],
+      source: "SRLF 2022 · ESCMID 2022"
+    },
+    {
+      id: "epc_mbl",
+      nom: "Entérobactérie productrice de métallo-bêtalactamase (NDM, VIM, IMP)",
+      color: "#7F1D1D",
+      definition: "EPC de classe B (métallo-bêtalactamase — MBL : NDM, VIM, IMP). Hydrolyse TOUS les bêtalactamines y compris les associations avec inhibiteurs classiques. Mécanisme le plus difficile.",
+      premiere_intention: [
+        { name: "Aztréonam + Ceftazidime-Avibactam", dose: "Aztréonam 2 g + Ceftazidime-Avibactam 2,5 g IV", frequence: "toutes les 8h", note: "SEULE ASSOCIATION ACTIVE sur les MBL — l'aztréonam échappe à la MBL, l'avibactam protège l'aztréonam des autres bêtalactamases — AVIS INFECTIOLOGUE OBLIGATOIRE" },
+      ],
+      alternatives: [
+        { name: "Céfidérocol (Fetcroja®)", dose: "2 g IV", frequence: "toutes les 8h perfusion 3h", note: "Actif sur les MBL (NDM) — alternative à l'association aztréonam + CAZ-AVI" },
+      ],
+      source: "SRLF 2022 · avis spécialisé systématique"
+    },
+    {
+      id: "acineto",
+      nom: "Acinetobacter baumannii résistant aux carbapénèmes",
+      color: "#991B1B",
+      definition: "A. baumannii multirésistant — souvent OXA-23. Pathogène redoutable en réanimation, écologie hospitalière.",
+      premiere_intention: [
+        { name: "Céfidérocol (Fetcroja®)", dose: "2 g IV", frequence: "toutes les 8h perfusion 3h", note: "Option sur A. baumannii résistant — discuter avec l'infectiologue" },
+      ],
+      alternatives: [
+        { name: "Colistine + Sulbactam (haute dose)", dose: "Sulbactam 9 g/j + Colistine", frequence: "", note: "Association de référence historique — sulbactam a une activité propre sur A. baumannii" },
+        { name: "Colistine + Rifampicine", dose: "", frequence: "", note: "Synergie in vitro — pas de bénéfice clinique démontré" },
+      ],
+      source: "SRLF 2022 · IDSA 2023"
+    },
+  ],
+  principes: [
+    "La tigécycline est NON recommandée pour les bactériémies et les pneumonies acquises sous ventilation mécanique (concentrations sériques insuffisantes).",
+    "Une association n'est PAS recommandée si l'on utilise une bêtalactamine active sur le germe.",
+    "L'association est suggérée uniquement en cas d'infection grave uniquement sensible à la colistine, aux aminosides, à la fosfomycine ou à la tigécycline.",
+    "Préférer une molécule ancienne si elle est active (après contrôle de la source) pour les infections urinaires ou biliaires — épargne des nouveaux antibiotiques.",
+    "Perfusion prolongée ou continue recommandée pour les bêtalactamines (optimisation PK/PD temps-dépendant).",
+  ]
+};
+
+
+
+// ═══════════════════════════════════════════════════════════════
+// MODULE HÉMODYNAMIQUE — RéaGuard
+// Monitorage · Calculateurs · Profils de choc · Frank-Starling
+// ═══════════════════════════════════════════════════════════════
+
+// ─── PROFILS DE CHOC ───────────────────────────────────────────
+const CHOC_PROFILES = [
+  {
+    id: "septique",
+    nom: "Choc Septique",
+    icon: "🔴",
+    color: "#DC2626",
+    profil: "Vasoplégique — débit cardiaque élevé, résistances basses",
+    hemodynamique: {
+      "Débit cardiaque (IC)": "Élevé ou normal (> 3,5 L/min/m²)",
+      "Résistances (RVS)": "EFFONDRÉES (< 800 dynes·s·cm⁻⁵)",
+      "Précharge (PVC/VCI)": "Variable — souvent basse (hypovolémie relative)",
+      "ScvO₂": "Souvent élevée (> 70%) — défaut d'extraction",
+      "Lactate": "Élevé (> 2 mmol/L)"
+    },
+    prise_en_charge: [
+      { etape: "1. Remplissage initial", detail: "Cristalloïdes 30 mL/kg dans les 3 premières heures (Surviving Sepsis Campaign) — réévaluer par paramètres dynamiques", grade: "1B" },
+      { etape: "2. Vasopresseur de 1ère ligne", detail: "Noradrénaline — objectif PAM ≥ 65 mmHg — débuter précocement sans attendre la fin du remplissage si PAM très basse", grade: "1A" },
+      { etape: "3. Vasopresseur de 2ème ligne", detail: "Ajouter Vasopressine 0,03 U/min si noradrénaline > 0,5 µg/kg/min — épargne catécholaminergique", grade: "2B" },
+      { etape: "4. Inotrope si dysfonction myocardique", detail: "Dobutamine si signes d'hypoperfusion persistante malgré remplissage et PAM correcte (cardiomyopathie septique)", grade: "2B" },
+      { etape: "5. Corticoïdes si réfractaire", detail: "Hydrocortisone 200 mg/j si choc réfractaire aux vasopresseurs (noradrénaline ≥ 0,25 µg/kg/min depuis > 4h)", grade: "2B" },
+    ],
+    source: "Surviving Sepsis Campaign 2021 · SRLF Sepsis 2022"
+  },
+  {
+    id: "cardiogenique",
+    nom: "Choc Cardiogénique",
+    icon: "💙",
+    color: "#1D4ED8",
+    profil: "Défaillance de pompe — débit bas, résistances hautes",
+    hemodynamique: {
+      "Débit cardiaque (IC)": "EFFONDRÉ (< 2,2 L/min/m²)",
+      "Résistances (RVS)": "Élevées (> 1400 dynes·s·cm⁻⁵)",
+      "Précharge (PAPO)": "Élevée (> 18 mmHg) — congestion",
+      "ScvO₂": "Basse (< 60%) — extraction maximale",
+      "Lactate": "Élevé — hypoperfusion"
+    },
+    prise_en_charge: [
+      { etape: "1. Identifier et traiter la cause", detail: "Coronarographie urgente si SCA (cause la plus fréquente) — échocardiographie pour mécanisme (dysfonction VG, complication mécanique)", grade: "1A" },
+      { etape: "2. Inotrope", detail: "Dobutamine 5–20 µg/kg/min — première ligne pour augmenter le débit cardiaque", grade: "1B" },
+      { etape: "3. Vasopresseur si hypotension", detail: "Noradrénaline préférée à la dopamine (moins d'arythmies, meilleure survie — étude SOAP II)", grade: "1B" },
+      { etape: "4. Assistance circulatoire", detail: "ECMO veino-artérielle ou Impella si choc réfractaire — discuter précocement avec centre expert", grade: "2B" },
+      { etape: "5. Éviter le remplissage excessif", detail: "Précharge déjà élevée — remplissage prudent (250 mL) uniquement si précharge-dépendance documentée", grade: "GPS" },
+    ],
+    source: "ESC Heart Failure 2023 · SRLF Choc Cardiogénique 2022"
+  },
+  {
+    id: "hypovolemique",
+    nom: "Choc Hypovolémique / Hémorragique",
+    icon: "🩸",
+    color: "#991B1B",
+    profil: "Perte volémique — précharge effondrée, débit bas, résistances hautes",
+    hemodynamique: {
+      "Débit cardiaque (IC)": "Bas (< 2,5 L/min/m²)",
+      "Résistances (RVS)": "Élevées (vasoconstriction compensatrice)",
+      "Précharge (PVC/VCI)": "EFFONDRÉE — VCI collabée, VPP élevée",
+      "ScvO₂": "Basse — extraction maximale",
+      "Lactate": "Élevé"
+    },
+    prise_en_charge: [
+      { etape: "1. Contrôle de la source", detail: "Hémostase chirurgicale ou endovasculaire urgente si hémorragie — damage control", grade: "1A" },
+      { etape: "2. Remplissage / Transfusion", detail: "Hémorragie : transfusion ratio 1:1:1 (CGR/PFC/plaquettes) — choc hypovolémique non hémorragique : cristalloïdes", grade: "1A" },
+      { etape: "3. Acide tranexamique", detail: "1 g IV en 10 min puis 1 g sur 8h si hémorragie traumatique < 3h (étude CRASH-2)", grade: "1A" },
+      { etape: "4. Vasopresseur transitoire", detail: "Noradrénaline pour maintenir PAM en attendant le remplissage — ne pas masquer l'hypovolémie", grade: "GPS" },
+      { etape: "5. Cibles", detail: "Hémorragie non contrôlée : PAS 80–90 mmHg (hypotension permissive) jusqu'au contrôle — sauf traumatisme crânien (PAM ≥ 80)", grade: "1B" },
+    ],
+    source: "European Trauma Guidelines 2023 · CRASH-2"
+  },
+  {
+    id: "obstructif",
+    nom: "Choc Obstructif",
+    icon: "⛔",
+    color: "#7C3AED",
+    profil: "Obstacle au remplissage ou à l'éjection — tamponnade, embolie, pneumothorax",
+    hemodynamique: {
+      "Débit cardiaque (IC)": "Bas",
+      "Résistances (RVS)": "Élevées (compensation)",
+      "Précharge": "Élevée en amont de l'obstacle (PVC haute)",
+      "Signe clé": "Turgescence jugulaire + auscultation pulmonaire claire",
+      "Lactate": "Élevé"
+    },
+    prise_en_charge: [
+      { etape: "1. Tamponnade péricardique", detail: "Péricardiocentèse en urgence sous échographie — drainage évacuateur", grade: "1A" },
+      { etape: "2. Embolie pulmonaire grave", detail: "Thrombolyse (altéplase) si choc + EP confirmée ou très probable — embolectomie si contre-indication", grade: "1A" },
+      { etape: "3. Pneumothorax compressif", detail: "Exsufflation à l'aiguille IMMÉDIATE (2ème EIC) puis drain thoracique", grade: "1A" },
+      { etape: "4. Support en attendant", detail: "Remplissage (augmente la précharge en amont de l'obstacle) + noradrénaline — mesure temporaire", grade: "GPS" },
+    ],
+    source: "ESC Embolie Pulmonaire 2019 · ERC 2021"
+  },
+];
+
+// ─── CALCULATEURS HÉMODYNAMIQUES ───────────────────────────────
+const HEMO_CALCULATORS = [
+  {
+    id: "ic",
+    nom: "Index Cardiaque (IC)",
+    formule: "IC = Débit cardiaque / Surface corporelle",
+    inputs: [
+      { id: "dc", label: "Débit cardiaque (L/min)", placeholder: "ex: 5.0" },
+      { id: "sc", label: "Surface corporelle (m²)", placeholder: "ex: 1.8" },
+    ],
+    compute: (v) => {
+      const ic = v.dc / v.sc;
+      let interp, color;
+      if (ic < 2.2) { interp = "Index cardiaque BAS — bas débit (choc cardiogénique, hypovolémie)"; color = "#DC2626"; }
+      else if (ic <= 4.0) { interp = "Index cardiaque normal (2,2–4,0 L/min/m²)"; color = "#15803D"; }
+      else { interp = "Index cardiaque ÉLEVÉ — état hyperdynamique (sepsis, anémie)"; color = "#D97706"; }
+      return { value: ic.toFixed(2), unit: "L/min/m²", interp, color };
+    },
+    normes: "Normal : 2,5–4,0 L/min/m²"
+  },
+  {
+    id: "rvs",
+    nom: "Résistances Vasculaires Systémiques (RVS)",
+    formule: "RVS = 80 × (PAM − PVC) / Débit cardiaque",
+    inputs: [
+      { id: "pam", label: "Pression artérielle moyenne (mmHg)", placeholder: "ex: 65" },
+      { id: "pvc", label: "Pression veineuse centrale (mmHg)", placeholder: "ex: 8" },
+      { id: "dc", label: "Débit cardiaque (L/min)", placeholder: "ex: 5.0" },
+    ],
+    compute: (v) => {
+      const rvs = 80 * (v.pam - v.pvc) / v.dc;
+      let interp, color;
+      if (rvs < 800) { interp = "RVS BASSES — vasoplégie (choc septique, anaphylaxie)"; color = "#DC2626"; }
+      else if (rvs <= 1200) { interp = "RVS normales (800–1200 dynes·s·cm⁻⁵)"; color = "#15803D"; }
+      else { interp = "RVS ÉLEVÉES — vasoconstriction (choc cardiogénique, hypovolémie)"; color = "#1D4ED8"; }
+      return { value: Math.round(rvs), unit: "dynes·s·cm⁻⁵", interp, color };
+    },
+    normes: "Normal : 800–1200 dynes·s·cm⁻⁵"
+  },
+  {
+    id: "do2",
+    nom: "Transport en Oxygène (DO₂)",
+    formule: "DO₂ = Débit cardiaque × [(1,34 × Hb × SaO₂) + (0,003 × PaO₂)] × 10",
+    inputs: [
+      { id: "dc", label: "Débit cardiaque (L/min)", placeholder: "ex: 5.0" },
+      { id: "hb", label: "Hémoglobine (g/dL)", placeholder: "ex: 10" },
+      { id: "sao2", label: "SaO₂ (en décimal, ex 0.98)", placeholder: "ex: 0.98" },
+      { id: "pao2", label: "PaO₂ (mmHg)", placeholder: "ex: 90" },
+    ],
+    compute: (v) => {
+      const cao2 = (1.34 * v.hb * v.sao2) + (0.003 * v.pao2);
+      const do2 = v.dc * cao2 * 10;
+      let interp, color;
+      if (do2 < 600) { interp = "DO₂ BAS — risque d'hypoxie tissulaire (< 600 mL/min)"; color = "#DC2626"; }
+      else if (do2 <= 1100) { interp = "DO₂ normal (600–1100 mL/min)"; color = "#15803D"; }
+      else { interp = "DO₂ élevé"; color = "#1D4ED8"; }
+      return { value: Math.round(do2), unit: "mL/min", interp, color, extra: `Contenu artériel en O₂ (CaO₂) : ${cao2.toFixed(1)} mL/dL` };
+    },
+    normes: "Normal : 600–1100 mL/min (indexé 500–600 mL/min/m²)"
+  },
+  {
+    id: "ppc",
+    nom: "Pression de Perfusion Cérébrale (PPC)",
+    formule: "PPC = PAM − PIC (Pression IntraCrânienne)",
+    inputs: [
+      { id: "pam", label: "Pression artérielle moyenne (mmHg)", placeholder: "ex: 85" },
+      { id: "pic", label: "Pression intracrânienne (mmHg)", placeholder: "ex: 15" },
+    ],
+    compute: (v) => {
+      const ppc = v.pam - v.pic;
+      let interp, color;
+      if (ppc < 60) { interp = "PPC INSUFFISANTE — risque d'ischémie cérébrale (cible ≥ 60 mmHg)"; color = "#DC2626"; }
+      else if (ppc <= 70) { interp = "PPC correcte (60–70 mmHg) — cible recommandée traumatisme crânien"; color = "#15803D"; }
+      else { interp = "PPC élevée — surveiller (risque SDRA si > 70 avec remplissage excessif)"; color = "#D97706"; }
+      return { value: ppc, unit: "mmHg", interp, color };
+    },
+    normes: "Cible TCG : 60–70 mmHg (BTF Guidelines 2016)"
+  },
+];
+
+// ─── MONITORAGE HÉMODYNAMIQUE ──────────────────────────────────
+const MONITORING_HEMO = [
+  {
+    id: "picco",
+    nom: "PiCCO — Thermodilution transpulmonaire",
+    icon: "📉",
+    color: "#1D4ED8",
+    params: [
+      { nom: "Index cardiaque (IC)", normes: "3,0–5,0 L/min/m²", interpretation: "Débit cardiaque indexé — bas = défaillance de pompe ou hypovolémie" },
+      { nom: "Volume télédiastolique global indexé (ITBVI)", normes: "850–1000 mL/m²", interpretation: "Marqueur de PRÉCHARGE — bas = hypovolémie, indication au remplissage" },
+      { nom: "Eau pulmonaire extravasculaire indexée (ELWI)", normes: "3,0–7,0 mL/kg", interpretation: "Marqueur d'ŒDÈME PULMONAIRE — élevé = surcharge hydrique ou SDRA — limite le remplissage" },
+      { nom: "Index de fonction cardiaque (CFI)", normes: "4,5–6,5 /min", interpretation: "Marqueur de CONTRACTILITÉ — bas = dysfonction systolique" },
+      { nom: "Variation du volume d'éjection (VVE/SVV)", normes: "< 10–13%", interpretation: "Marqueur de PRÉCHARGE-DÉPENDANCE — élevé = répond au remplissage (si ventilation contrôlée, rythme sinusal)" },
+    ],
+    note: "Le PiCCO nécessite un cathéter artériel fémoral thermistance + voie veineuse centrale. La calibration par thermodilution doit être répétée toutes les 8h ou après chaque changement thérapeutique majeur.",
+    source: "SRLF Monitorage Hémodynamique 2014"
+  },
+  {
+    id: "echo",
+    nom: "Échocardiographie de Réanimation",
+    icon: "🫀",
+    color: "#DC2626",
+    params: [
+      { nom: "Fraction d'éjection VG (FEVG)", normes: "> 55%", interpretation: "Contractilité globale du VG — < 40% = dysfonction systolique significative (évaluation visuelle ou Simpson biplan)" },
+      { nom: "Intégrale temps-vitesse sous-aortique (ITV)", normes: "18–22 cm", interpretation: "Reflet du volume d'éjection systolique — variation > 12% sous lever de jambe = précharge-dépendance" },
+      { nom: "Rapport E/A mitral", normes: "0,8–2,0", interpretation: "Fonction diastolique — E/A < 0,8 = trouble de relaxation, E/A > 2 = pression de remplissage élevée" },
+      { nom: "Diamètre VCI + variabilité respiratoire", normes: "VCI < 21 mm, variabilité < 50%", interpretation: "VCI petite et collabable = hypovolémie / précharge-dépendance ; VCI dilatée non variable = précharge haute" },
+      { nom: "Rapport VD/VG", normes: "< 0,6", interpretation: "Dilatation VD (rapport > 1) = cœur pulmonaire aigu, embolie pulmonaire, SDRA sévère" },
+    ],
+    note: "L'échographie cardiaque au lit du patient est l'outil de monitorage hémodynamique de première intention — non invasif, répétable, intégrant la fonction systolique, diastolique et la volémie.",
+    source: "SRLF/SFAR Échographie Réanimation 2019"
+  },
+  {
+    id: "plr",
+    nom: "Lever de Jambe Passif (PLR) & Précharge-dépendance",
+    icon: "🦵",
+    color: "#15803D",
+    params: [
+      { nom: "Technique du PLR", normes: "Tronc 45° → jambes 45°", interpretation: "Passer le patient de la position demi-assise (tronc 45°) à jambes surélevées 45°, tronc à plat — auto-transfusion de ~300 mL" },
+      { nom: "Réponse positive", normes: "↑ débit cardiaque > 10%", interpretation: "Augmentation du débit cardiaque ou de l'ITV sous-aortique > 10% = PRÉCHARGE-DÉPENDANT = répondra au remplissage" },
+      { nom: "Variation pression pulsée (VPP)", normes: "> 13% = répondeur", interpretation: "Valide UNIQUEMENT si : ventilation contrôlée, Vt ≥ 8 mL/kg, rythme sinusal, pas de ventilation spontanée" },
+      { nom: "Épreuve de remplissage (mini-fluid challenge)", normes: "100 mL en 1 min → ↑ITV > 10%", interpretation: "Alternative au PLR — perfusion rapide de 100 mL de cristalloïde et mesure de la réponse" },
+    ],
+    note: "Le PLR est l'épreuve de précharge-dépendance la plus fiable car réversible et indépendante des conditions de ventilation. À privilégier avant toute expansion volémique pour éviter la surcharge.",
+    source: "Monnet & Teboul ICM 2016 · SRLF 2014"
+  },
+];
+
+
+
+// ─── FACTEURS DE RISQUE BMR ─────────────────────────────────────
+const BMR_RISK_FACTORS = [
+  { id: "hospit_recent", label: "Hospitalisation > 48h dans les 90 derniers jours", score: 2 },
+  { id: "atb_recent", label: "Antibiothérapie dans les 90 derniers jours", score: 2 },
+  { id: "ehpad", label: "Séjour en EHPAD ou structure de soins de longue durée", score: 1 },
+  { id: "rea", label: "Séjour récent en réanimation ou soins intensifs", score: 2 },
+  { id: "sonde", label: "Dispositif invasif en place (cathéter central, sonde urinaire, ventilation)", score: 1 },
+  { id: "epc_connu", label: "Portage documenté de bactérie multirésistante (BLSE, SARM, EPC)", score: 3 },
+  { id: "immuno", label: "Immunodépression (VIH, corticoïdes prolongés, chimiothérapie, greffe)", score: 2 },
+  { id: "insuf_renale", label: "Insuffisance rénale chronique ou dialyse", score: 1 },
+  { id: "voyage", label: "Voyage récent en zone à haute prévalence de BMR (Asie du Sud-Est, Inde, Afrique)", score: 2 },
+  { id: "contact_bmr", label: "Exposition à un patient porteur de BMR dans les 30 jours", score: 2 },
+  { id: "abdo", label: "Chirurgie abdominale majeure ou digestive récente", score: 1 },
+  { id: "nutrition", label: "Nutrition parentérale prolongée > 7 jours", score: 1 },
+];
+
+// ─── ADAPTATION RÉNALE ─────────────────────────────────────────
+const RENAL_ADAPT = [
+  {
+    molecule: "Vancomycine",
+    classe: "Glycopeptide",
+    elimination: "Rénale > 90%",
+    normal: "30–45 mg/kg/j continu — cible AUC/CMI 400–600",
+    adapt: [
+      { dfg: "> 60", dose: "Dose standard — monitoring AUC ou résiduelle (15–20 mg/L si intermittent)" },
+      { dfg: "30–60", dose: "Réduire de 25–50% — monitoring renforcé toutes les 24–48h" },
+      { dfg: "15–30", dose: "Réduire de 50–75% — monitoring toutes les 24h" },
+      { dfg: "< 15 ou dialyse", dose: "Dose de charge 25 mg/kg puis adapter selon niveau résiduel (CRRT : 500 mg/j)" },
+    ]
+  },
+  {
+    molecule: "Pipéracilline-Tazobactam",
+    classe: "Pénicilline-inhibiteur",
+    elimination: "Rénale 68%",
+    normal: "4 g IV toutes les 6h ou 16 g/24h continu",
+    adapt: [
+      { dfg: "> 40", dose: "Dose standard" },
+      { dfg: "20–40", dose: "4 g toutes les 8h (ou 12 g/24h continu)" },
+      { dfg: "< 20", dose: "4 g toutes les 12h (ou 8 g/24h continu)" },
+      { dfg: "Dialyse (CRRT)", dose: "4 g toutes les 8h — dosage pharmacologique si disponible" },
+    ]
+  },
+  {
+    molecule: "Méropénème",
+    classe: "Carbapénème",
+    elimination: "Rénale 70%",
+    normal: "2 g IV toutes les 8h (perfusion 3h recommandée)",
+    adapt: [
+      { dfg: "> 50", dose: "Dose standard" },
+      { dfg: "26–50", dose: "1 g toutes les 12h" },
+      { dfg: "10–25", dose: "1 g toutes les 24h" },
+      { dfg: "< 10 ou CRRT", dose: "500 mg toutes les 12h — adapter selon dosage" },
+    ]
+  },
+  {
+    molecule: "Amikacine",
+    classe: "Aminoside",
+    elimination: "Rénale > 95%",
+    normal: "30 mg/kg IV en dose unique quotidienne",
+    adapt: [
+      { dfg: "> 60", dose: "Dose standard 30 mg/kg — espacer à 48h si DFG 40–60" },
+      { dfg: "30–60", dose: "20–25 mg/kg toutes les 48h — dosage résiduel avant 2ème dose (< 2,5 mg/L)" },
+      { dfg: "< 30", dose: "20 mg/kg — espacer selon résiduelle — 1 seule dose si oligurie" },
+      { dfg: "Dialyse", dose: "CONTRE-INDICATION relative — une seule dose si absolument nécessaire" },
+    ]
+  },
+  {
+    molecule: "Céfotaxime",
+    classe: "Céphalosporine 3G",
+    elimination: "Rénale 60%",
+    normal: "2 g IV toutes les 8h (méningite : 3 g toutes les 6h)",
+    adapt: [
+      { dfg: "> 60", dose: "Dose standard" },
+      { dfg: "20–60", dose: "2 g toutes les 12h" },
+      { dfg: "< 20", dose: "2 g toutes les 24h" },
+      { dfg: "Dialyse", dose: "2 g toutes les 24h après chaque séance" },
+    ]
+  },
+  {
+    molecule: "Fluconazole",
+    classe: "Azolé antifongique",
+    elimination: "Rénale > 80%",
+    normal: "800 mg dose de charge puis 400 mg/j",
+    adapt: [
+      { dfg: "> 50", dose: "Dose standard" },
+      { dfg: "< 50 sans dialyse", dose: "50% de la dose (400 mg charge puis 200 mg/j)" },
+      { dfg: "Dialyse (hémodialyse)", dose: "Dose standard — dialyse élimine le fluconazole — donner après chaque séance" },
+    ]
+  },
+  {
+    molecule: "Caspofungine",
+    classe: "Échinocandine",
+    elimination: "Hépatique — PAS d'adaptation rénale",
+    normal: "70 mg J1 puis 50 mg/j IV",
+    adapt: [
+      { dfg: "Tout DFG", dose: "AUCUNE adaptation rénale nécessaire — ajuster uniquement si insuffisance hépatique (Child B/C : 35 mg/j)" },
+    ]
+  },
+  {
+    molecule: "Voriconazole IV",
+    classe: "Azolé antifongique",
+    elimination: "Hépatique CYP2C19",
+    normal: "6 mg/kg × 2 J1 puis 4 mg/kg × 2/j",
+    adapt: [
+      { dfg: "> 50", dose: "Dose standard IV" },
+      { dfg: "< 50", dose: "⚠ BASCULER vers la forme ORALE (biodisponibilité 96%) — excipient sulfobutyl-éther-cyclodextrine du IV s'accumule en IRC et est néphrotoxique" },
+      { dfg: "Dialyse", dose: "Forme orale uniquement — 400 mg × 2/j à jeun ou 300 mg × 2/j avec repas" },
+    ]
+  },
+  {
+    molecule: "Linézolide",
+    classe: "Oxazolidinone",
+    elimination: "Hépatique/non rénale",
+    normal: "600 mg IV ou PO toutes les 12h",
+    adapt: [
+      { dfg: "Tout DFG", dose: "AUCUNE adaptation rénale — attention aux accumulations des métabolites (thrombopénie, neuropathie si > 14 jours)" },
+    ]
+  },
+  {
+    molecule: "Daptomycine",
+    classe: "Lipopeptide",
+    elimination: "Rénale 78%",
+    normal: "8–12 mg/kg IV toutes les 24h",
+    adapt: [
+      { dfg: "> 30", dose: "Dose standard toutes les 24h" },
+      { dfg: "< 30 ou CRRT", dose: "Dose standard toutes les 48h — ou 8 mg/kg/j avec monitoring CPK (myopathie)" },
+      { dfg: "Hémodialyse", dose: "Donner après la séance — 8 mg/kg toutes les 48h" },
+    ]
+  },
+];
+
+// ─── DURÉES DE TRAITEMENT ──────────────────────────────────────
+const DUREES = [
+  { infection: "Bactériémie à SARM ou E. faecalis", min: 14, max: 42, unite: "jours", note: "14 jours si source retirée et évolution favorable — 42 jours (6 semaines) si endocardite ou ostéite" },
+  { infection: "Endocardite sur valve native à Streptocoque", min: 28, max: 28, unite: "jours", note: "4 semaines — possible 2 semaines si streptocoque très sensible (CMI péni ≤ 0,125 mg/L) et échocardiographie favorable" },
+  { infection: "Endocardite sur prothèse valvulaire", min: 42, max: 42, unite: "jours", note: "6 semaines minimum — rifampicine associée au moins 6 semaines" },
+  { infection: "Méningite à pneumocoque", min: 10, max: 14, unite: "jours", note: "Selon évolution clinique et LCR de contrôle" },
+  { infection: "Méningite à méningocoque", min: 7, max: 7, unite: "jours", note: "7 jours suffisent si évolution favorable" },
+  { infection: "Méningite à Listeria", min: 21, max: 21, unite: "jours", note: "21 jours minimum — rhombencéphalite : 28 jours" },
+  { infection: "PAVM — non-Pseudomonas", min: 8, max: 8, unite: "jours", note: "8 jours — non inférieur à 15 jours (essai PRORATA 2010) — guider sur PCT" },
+  { infection: "PAVM à Pseudomonas aeruginosa", min: 14, max: 14, unite: "jours", note: "14 jours minimum — risque de rechute si arrêt précoce" },
+  { infection: "Pneumonie communautaire grave", min: 5, max: 7, unite: "jours", note: "5–7 jours — Legionella : 10–14 jours" },
+  { infection: "Sepsis urinaire (pyélonéphrite)", min: 7, max: 14, unite: "jours", note: "7 jours si fluoroquinolone et évolution rapide — 14 jours si carbapénème ou E. coli BLSE" },
+  { infection: "Candidémie (C. albicans)", min: 14, max: 14, unite: "jours après dernière HC négative", note: "Compter à partir de la première hémoculture négative — pas de la dernière positive" },
+  { infection: "Candidémie (Candida non-albicans)", min: 14, max: 21, unite: "jours après dernière HC négative", note: "21 jours si OEIL atteint ou localisations profondes (hépatosplénique)" },
+  { infection: "Aspergillose invasive pulmonaire", min: 42, max: 84, unite: "jours", note: "6 à 12 semaines — jusqu'à récupération immunitaire et stabilisation scanner" },
+  { infection: "Infection sur cathéter (SCN)", min: 7, max: 14, unite: "jours", note: "7 jours si cathéter retiré et hémocultures négatives à 72h" },
+  { infection: "Infection sur cathéter (S. aureus)", min: 14, max: 42, unite: "jours", note: "Minimum 14 jours — 28–42 jours si complication (endocardite, ostéite)" },
+  { infection: "Péritonite post-opératoire contrôlée", min: 5, max: 8, unite: "jours", note: "Arrêt possible dès apyrexie 48h + reprise transit + GB en normalisation" },
+  { infection: "Neutropénie fébrile — fièvre inexpliquée", min: 0, max: 0, unite: "", note: "Jusqu'à PNN > 500/mm³ et apyrexie 48h — pas de durée fixe" },
+  { infection: "Encéphalite herpétique (HSV)", min: 14, max: 21, unite: "jours", note: "21 jours dans les formes avec immunodépression ou PCR positive persistante" },
+  { infection: "Leptospirose sévère", min: 7, max: 7, unite: "jours", note: "Pénicilline G ou Ceftriaxone 7 jours" },
+  { infection: "Choc toxique streptococcique / staphylococcique", min: 10, max: 14, unite: "jours", note: "Jusqu'au contrôle du foyer et de l'état systémique" },
+];
+
+// ─── PK/PD — OPTIMISATION ──────────────────────────────────────
+const PKPD = [
+  {
+    classe: "Bêtalactamines (péni, céphalo, carbapénèmes)",
+    type: "Temps-dépendant",
+    objectif: "Maintenir la concentration plasmatique au-dessus de la CMI pendant 40–70% du temps (fT > CMI)",
+    icon: "⏱",
+    color: "#1D4ED8",
+    strategies: [
+      "Perfusion continue : diluer dans 50 mL, passer sur 24h — maximise le fT > CMI",
+      "Perfusion prolongée (3–4h) : alternative à la perfusion continue",
+      "Fractionner les doses plutôt qu'augmenter la dose unitaire",
+    ],
+    exemple: "Pipéracilline-Tazobactam : 4 g en perfusion continue sur 24h (au lieu de 4 g × 4 en 30 min) — fT > CMI passe de 50% à 100%",
+    monitoring: "Dosage pharmacologique si disponible — taux résiduel avant prochaine dose"
+  },
+  {
+    classe: "Aminosides (amikacine, gentamicine, tobramycine)",
+    type: "Concentration-dépendant",
+    objectif: "Cmax/CMI ≥ 8–10 — une seule dose élevée quotidienne maximise l'effet bactéricide",
+    icon: "📈",
+    color: "#DC2626",
+    strategies: [
+      "UNE SEULE DOSE élevée par 24h (jamais de doses fractionnées)",
+      "Pic plasmatique à H1 : cible amikacine > 60–80 mg/L",
+      "Résiduelle avant J2 : amikacine < 2,5 mg/L (toxicité rénale et cochléaire)",
+      "Fenêtre thérapeutique : arrêter à 3–5 jours, jamais au-delà de 7 jours",
+    ],
+    exemple: "Amikacine 30 mg/kg (2 100 mg pour 70 kg) en injection IV de 30 min — dosage résiduel à H24 pour adapter J2",
+    monitoring: "Résiduelle OBLIGATOIRE avant chaque injection à partir de J2"
+  },
+  {
+    classe: "Fluoroquinolones",
+    type: "Mixte (AUC/CMI et Cmax/CMI)",
+    objectif: "AUC24/CMI ≥ 100–125 pour les infections sévères",
+    icon: "📊",
+    color: "#7C3AED",
+    strategies: [
+      "Biodisponibilité orale = IV (switch précoce justifié dès stabilisation)",
+      "Augmenter les doses en cas de Pseudomonas (CMI plus élevée)",
+      "Ciprofloxacine IV : 400 mg × 3/j (pas 2×/j) si Pseudomonas",
+    ],
+    exemple: "Lévofloxacine 750 mg/j PO = 500 mg IV × 2/j — switch oral possible dès J3–J5 si tube digestif fonctionnel",
+    monitoring: "Pas de monitoring systématique — allongement QT en cas d'association (ECG)"
+  },
+  {
+    classe: "Vancomycine",
+    type: "AUC-dépendant",
+    objectif: "AUC/CMI ≥ 400 mg·h/L (AUC cible 400–600) — résiduelle 15–20 mg/L si dosage intermittent",
+    icon: "🎯",
+    color: "#0F766E",
+    strategies: [
+      "Perfusion continue : plus simple pour atteindre la cible AUC — moins de variabilité",
+      "Dose de charge 25 mg/kg en 1–2h pour atteindre rapidement la cible",
+      "Monitoring AUC : calculé à partir de 2 dosages (pic + résiduelle) ou logiciel bayésien",
+      "Néphrotoxicité : corrélée à l'AUC excessive (> 650) — réduire si créatinine augmente > 50%",
+    ],
+    exemple: "Vancomycine 2 500 mg (35 mg/kg pour 70 kg) en perfusion continue sur 24h — dosage résiduelle à H24 (cible 20–25 mg/L si continu)",
+    monitoring: "Créatinine et dosage vancomycine QUOTIDIENS en réanimation"
+  },
+  {
+    classe: "Échinocandines (caspofungine, micafungine, anidulafungine)",
+    type: "Concentration-dépendant (AUC/CMI)",
+    objectif: "Cmax/CMI ≥ 5–10 — dose unique quotidienne optimale",
+    icon: "🍄",
+    color: "#BE185D",
+    strategies: [
+      "Dose de charge indispensable (70 mg J1 pour caspofungine) pour atteindre rapidement la cible",
+      "Aucune adaptation rénale — adapter si insuffisance hépatique (Child B/C)",
+      "Switch oral vers fluconazole possible si C. albicans sensible et patient stable (step-down)",
+    ],
+    exemple: "Caspofungine 70 mg J1, puis 50 mg/j IV — step-down vers fluconazole 400 mg/j PO après 5–7j si hémocultures négatives et C. albicans sensible",
+    monitoring: "Pas de monitoring systématique — surveiller transaminases (hépatotoxicité rare)"
+  },
+];
+
+// ═══ MODULE INFECTIOLOGIE SCREENS ═══
+// ═══════════════════════════════════════════════════════════════
+// ÉCRANS MODULE INFECTIOLOGIE — RéaGuard
+// ═══════════════════════════════════════════════════════════════
+
+// ─── ÉCRAN ANTIBIOTHÉRAPIE PROBABILISTE ────────────────────────
+const AntibioProbScreen = ({ C }) => {
+  const [selected, setSelected] = useState(null);
+  const [profil, setProfil] = useState("standard");
+  const [weight, setWeight] = useState("");
+  const w = parseFloat(weight);
+
+  const situation = selected ? INFECTO_SITUATIONS.find(s => s.id === selected) : null;
+  const traitement = situation ? situation.probabiliste[profil] : null;
+
+  if (selected && situation) {
+    return (
+      <div>
+        <button onClick={() => setSelected(null)} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>
+          ← Antibiothérapie probabiliste
+        </button>
+        <div style={{ background:`${situation.color}12`, border:`1px solid ${situation.color}30`, borderLeft:`3px solid ${situation.color}`, borderRadius:10, padding:"12px 14px", marginBottom:14 }}>
+          <div style={{ fontSize:15, fontWeight:800, color:situation.color }}>{situation.icon} {situation.name}</div>
+        </div>
+
+        {/* Profil BMR */}
+        <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+          <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+            <span style={{ fontSize:11, fontWeight:700, color:C.text }}>Profil du patient</span>
+          </div>
+          <div style={{ padding:"10px 14px", display:"flex", flexDirection:"column", gap:6 }}>
+            {[
+              { id:"standard", label:"Pas de facteur de risque BMR", sub:"Communautaire / faible risque" },
+              { id:"bmr", label:"Facteur de risque BMR", sub:"Nosocomial / exposition ATB récente" },
+              { id:"choc", label:"Choc septique", sub:"Couverture maximale d'emblée" },
+            ].map(p => (
+              <button key={p.id} onClick={() => setProfil(p.id)} style={{ padding:"10px 12px", background: profil===p.id ? situation.color+"15" : "#fff", border:`1.5px solid ${profil===p.id ? situation.color : C.border}`, borderRadius:8, cursor:"pointer", textAlign:"left", fontFamily:"inherit" }}>
+                <div style={{ fontSize:13, fontWeight:600, color: profil===p.id ? situation.color : C.text }}>{p.label}</div>
+                <div style={{ fontSize:11, color:C.textSoft, marginTop:2 }}>{p.sub}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {traitement && (
+          <>
+            {/* Calculateur poids */}
+            <div style={{ background:C.blueBg, border:`1px solid ${C.blueBorder}`, borderRadius:10, padding:"10px 14px", marginBottom:12 }}>
+              <div style={{ fontSize:11, fontWeight:700, color:C.blue, marginBottom:8 }}>💊 Calculateur de doses (poids en kg)</div>
+              <input type="number" value={weight} onChange={e=>setWeight(e.target.value)} placeholder="Poids du patient (kg)" style={{ width:"100%", border:`1.5px solid ${C.blueBorder}`, borderRadius:8, padding:"8px 10px", fontSize:14, color:C.text, outline:"none", fontFamily:"inherit", background:"#fff", boxSizing:"border-box" }} />
+            </div>
+
+            {/* Molécules recommandées */}
+            <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+              <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+                <div style={{ fontSize:11, fontWeight:700, color:situation.color }}>{traitement.label}</div>
+              </div>
+              {traitement.molecules.map((mol, i) => {
+                // Calculate dose if weight provided
+                let calcDose = null;
+                if (w > 0) {
+                  if (mol.dose.includes("mg/kg") || mol.dose.includes("MUI/kg")) {
+                    const match = mol.dose.match(/(\d+(?:\.\q+)?)\s*(?:–\s*(\d+(?:\.\d+)?))?\s*mg\/kg/);
+                    if (match) {
+                      const doseMin = parseFloat(match[1]);
+                      const doseMax = match[2] ? parseFloat(match[2]) : doseMin;
+                      const calcMin = Math.round(doseMin * w);
+                      const calcMax = Math.round(doseMax * w);
+                      calcDose = calcMin === calcMax ? `${calcMin} mg` : `${calcMin}–${calcMax} mg`;
+                    }
+                  }
+                }
+                return (
+                  <div key={i} style={{ padding:"12px 14px", borderBottom: i < traitement.molecules.length-1 ? `1px solid ${C.border}` : "none" }}>
+                    <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", gap:8, marginBottom:4 }}>
+                      <div style={{ fontSize:13, fontWeight:700, color:C.text, flex:1 }}>{mol.name}</div>
+                      {calcDose && <div style={{ fontSize:13, fontWeight:800, color:situation.color, whiteSpace:"nowrap", background:situation.color+"10", padding:"2px 8px", borderRadius:6 }}>{calcDose}</div>}
+                    </div>
+                    <div style={{ fontSize:12, color:C.blue, marginBottom:2 }}>📍 {mol.dose} — {mol.frequence}</div>
+                    <div style={{ fontSize:11, color:"#D97706", marginBottom: mol.note ? 2 : 0 }}>⏱ Durée : {mol.duree}</div>
+                    {mol.note && <div style={{ fontSize:11, color:C.textSoft, lineHeight:1.5, marginTop:4, padding:"6px 8px", background:C.slateBg, borderRadius:6 }}>💡 {mol.note}</div>}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div style={{ background:"#fff", borderRadius:8, border:`1px solid ${C.border}`, padding:"8px 12px", marginBottom:12 }}>
+              <div style={{ fontSize:9, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.1em", marginBottom:4 }}>Source</div>
+              <div style={{ fontSize:11, color:C.textSoft }}>{traitement.source}</div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Sélectionnez la situation clinique pour obtenir l'antibiothérapie probabiliste adaptée au profil du patient.
+      </div>
+      <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+        {INFECTO_SITUATIONS.map(sit => (
+          <button key={sit.id} onClick={() => { setSelected(sit.id); setProfil("standard"); }} style={{ background:"#fff", border:`1px solid ${C.border}`, borderLeft:`3px solid ${sit.color}`, borderRadius:10, padding:"13px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:12 }}>
+            <span style={{ fontSize:22 }}>{sit.icon}</span>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{sit.name}</div>
+              <div style={{ fontSize:10, color:C.textSoft, marginTop:2 }}>3 profils : standard · BMR · choc</div>
+            </div>
+            <span style={{ color:C.textXsoft, fontSize:18 }}>›</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ─── ÉCRAN DÉSESCALADE ─────────────────────────────────────────
+const DesescaladeScreen = ({ C }) => {
+  const [query, setQuery] = useState("");
+  const [selected, setSelected] = useState(null);
+
+  const germes = Object.keys(DESESCALADE);
+  const filtered = query.length > 1
+    ? germes.filter(g => g.toLowerCase().includes(query.toLowerCase()))
+    : germes;
+
+  const info = selected ? DESESCALADE[selected] : null;
+
+  if (selected && info) {
+    return (
+      <div>
+        <button onClick={() => setSelected(null)} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>
+          ← Désescalade antibiotique
+        </button>
+        <div style={{ background:`${info.color}12`, border:`1px solid ${info.color}30`, borderLeft:`3px solid ${info.color}`, borderRadius:10, padding:"12px 14px", marginBottom:14 }}>
+          <div style={{ fontSize:13, fontWeight:800, color:info.color, lineHeight:1.4 }}>{selected}</div>
+        </div>
+
+        {info.arret_vanco && (
+          <div style={{ background:"#FEF3C7", border:"1px solid #FDE68A", borderRadius:8, padding:"10px 12px", marginBottom:12 }}>
+            <div style={{ fontSize:12, color:"#92400E", fontWeight:600, lineHeight:1.5 }}>{info.arret_vanco}</div>
+          </div>
+        )}
+
+        <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+          <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+            <span style={{ fontSize:11, fontWeight:700, color:info.color }}>Antibiotiques de désescalade — du plus étroit au plus large</span>
+          </div>
+          {info.molecules.map((mol, i) => (
+            <div key={i} style={{ padding:"12px 14px", borderBottom: i < info.molecules.length-1 ? `1px solid ${C.border}` : "none" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:6 }}>
+                <div style={{ width:20, height:20, borderRadius:"50%", background:info.color, color:"#fff", fontSize:10, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>{i+1}</div>
+                <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{mol.name}</div>
+              </div>
+              <div style={{ fontSize:12, color:C.blue, marginBottom:2 }}>📍 {mol.dose}</div>
+              <div style={{ fontSize:11, color:"#D97706", marginBottom: mol.note ? 4 : 0 }}>⏱ {mol.duree}</div>
+              {mol.note && <div style={{ fontSize:11, color:C.textSoft, lineHeight:1.5, padding:"6px 8px", background:C.slateBg, borderRadius:6 }}>💡 {mol.note}</div>}
+            </div>
+          ))}
+        </div>
+        <div style={{ fontSize:10, color:C.textXsoft, textAlign:"center" }}>Vérifier l'antibiogramme — désescalade systématique à 48–72h</div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:12, lineHeight:1.5 }}>
+        Germe identifié à l'antibiogramme → antibiotique le plus étroit possible. Désescalade systématique à 48–72h.
+      </div>
+
+      {/* Catégories */}
+      {[
+        { label: "🔵 Cocci Gram Positif", color:"#1D4ED8", items: ["Staphylococcus aureus sensible méticilline (SAMS)", "Staphylococcus aureus résistant méticilline (SARM)", "Staphylocoque à coagulase négative (SCN)", "Streptocoque β-hémolytique (A, B, G)", "Streptococcus pneumoniae (Pneumocoque)", "Enterococcus faecalis", "Enterococcus faecium (ERV — résistant vancomycine)"] },
+        { label: "🟠 Bacilles Gram Négatif", color:"#D97706", items: ["Escherichia coli sensible (sans BLSE)", "E. coli BLSE / Klebsiella BLSE", "Pseudomonas aeruginosa sensible", "Pseudomonas aeruginosa résistant (multi-R)", "Klebsiella pneumoniae EPC (carbapénémase)", "Acinetobacter baumannii multi-résistant", "Bacteroides fragilis / anaérobies"] },
+        { label: "🟣 Champignons — Candida & Aspergillus", color:"#7C3AED", items: ["Candida albicans (candidémie confirmée)", "Candida glabrata / tropicalis / krusei", "Aspergillus fumigatus (aspergillose invasive confirmée ou probable)", "Aspergillus résistant voriconazole"] },
+      ].map(cat => (
+        <div key={cat.label} style={{ marginBottom:16 }}>
+          <div style={{ fontSize:11, fontWeight:700, color:C.textSoft, textTransform:"uppercase", letterSpacing:"0.07em", marginBottom:8 }}>{cat.label}</div>
+          <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+            {cat.items.map((item, i) => (
+              <button key={item} onClick={() => setSelected(item)} style={{ width:"100%", background:"none", border:"none", borderBottom: i < cat.items.length-1 ? `1px solid ${C.border}` : "none", padding:"11px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", justifyContent:"space-between", gap:8 }}>
+                <div style={{ flex:1 }}>
+                  <div style={{ fontSize:12.5, fontWeight:600, color:C.text, lineHeight:1.4 }}>{item}</div>
+                  <div style={{ fontSize:10, color:C.textSoft, marginTop:2 }}>{DESESCALADE[item]?.molecules?.length} option{DESESCALADE[item]?.molecules?.length > 1 ? "s" : ""}</div>
+                </div>
+                <span style={{ color:C.textXsoft, fontSize:16, flexShrink:0 }}>›</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// ─── ÉCRAN ADAPTATION RÉNALE ───────────────────────────────────
+const RenalAdaptScreen = ({ C }) => {
+  const [dfg, setDfg] = useState("");
+  const dfgNum = parseFloat(dfg);
+
+  const getDfgCategory = (val) => {
+    if (val > 60) return "> 60";
+    if (val >= 30) return "30–60";
+    if (val >= 15) return "15–30";
+    if (val >= 10) return "10–25";
+    if (val >= 20) return "20–40";
+    return "< 15 ou dialyse";
+  };
+
+  const findAdaptation = (mol, dfgVal) => {
+    for (const adapt of mol.adapt) {
+      const range = adapt.dfg;
+      if (range.includes("Tout DFG")) return adapt;
+      if (range.includes("Dialyse") && dfgVal < 15) return adapt;
+      if (range.includes(">") && !range.includes("Tout")) {
+        const threshold = parseFloat(range.replace(/[^0-9.]/g, ""));
+        if (dfgVal > threshold) return adapt;
+      }
+      if (range.includes("<") && !range.includes("Tout")) {
+        const threshold = parseFloat(range.replace(/[^0-9.]/g, ""));
+        if (dfgVal < threshold) return adapt;
+      }
+      if (range.includes("–") || range.includes("-")) {
+        const parts = range.replace(/[^0-9.\-–]/g, "").split(/[–-]/);
+        if (parts.length === 2) {
+          const lo = parseFloat(parts[0]);
+          const hi = parseFloat(parts[1]);
+          if (!isNaN(lo) && !isNaN(hi) && dfgVal >= lo && dfgVal <= hi) return adapt;
+        }
+      }
+    }
+    return mol.adapt[0];
+  };
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Entrez le DFG (clairance calculée selon CKD-EPI ou Cockcroft) pour obtenir les doses adaptées à la fonction rénale.
+      </div>
+
+      <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, padding:"14px", marginBottom:14 }}>
+        <div style={{ fontSize:12, color:C.textSoft, marginBottom:8 }}>DFG estimé (mL/min/1,73 m²) — ou "0" si dialyse</div>
+        <input type="number" value={dfg} onChange={e => setDfg(e.target.value)} placeholder="ex: 45" style={{ width:"100%", border:`1.5px solid ${C.border}`, borderRadius:8, padding:"10px 12px", fontSize:16, color:C.text, outline:"none", fontFamily:"inherit", boxSizing:"border-box" }} />
+        {dfgNum >= 0 && dfg !== "" && (
+          <div style={{ marginTop:8, padding:"6px 10px", background: dfgNum > 60 ? C.greenBg : dfgNum > 30 ? C.orangeBg : C.redBg, borderRadius:6 }}>
+            <span style={{ fontSize:11, fontWeight:700, color: dfgNum > 60 ? C.green : dfgNum > 30 ? C.orange : C.red }}>
+              {dfgNum === 0 ? "Dialyse / anurie" : dfgNum > 90 ? "Fonction rénale normale" : dfgNum > 60 ? "IRC légère" : dfgNum > 30 ? "IRC modérée" : dfgNum > 15 ? "IRC sévère" : "IRC terminale"}
+            </span>
+          </div>
+        )}
+      </div>
+
+      <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+        {RENAL_ADAPT.map((mol, i) => {
+          const adapt = dfgNum >= 0 && dfg !== "" ? findAdaptation(mol, dfgNum) : null;
+          return (
+            <div key={i} style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+              <div style={{ padding:"10px 14px", borderBottom: adapt ? `1px solid ${C.border}` : "none", background:C.slateBg, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                <div>
+                  <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{mol.molecule}</div>
+                  <div style={{ fontSize:10, color:C.textSoft, marginTop:1 }}>{mol.classe} · {mol.elimination}</div>
+                </div>
+              </div>
+              {adapt && (
+                <div style={{ padding:"10px 14px" }}>
+                  <div style={{ fontSize:10, color:C.textSoft, marginBottom:4 }}>DFG {adapt.dfg}</div>
+                  <div style={{ fontSize:13, color:C.text, lineHeight:1.6, fontWeight: adapt.dose.includes("⚠") || adapt.dose.includes("CONTRE") ? 700 : 400, color: adapt.dose.includes("⚠") || adapt.dose.includes("CONTRE") ? C.red : C.text }}>{adapt.dose}</div>
+                </div>
+              )}
+              {!adapt && (
+                <div style={{ padding:"10px 14px" }}>
+                  <div style={{ fontSize:11, color:C.textSoft }}>Dose standard : {mol.normal}</div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+// ─── ÉCRAN DURÉES DE TRAITEMENT ────────────────────────────────
+const DureesScreen = ({ C }) => {
+  const [query, setQuery] = useState("");
+  const filtered = query.length > 1
+    ? DUREES.filter(d => d.infection.toLowerCase().includes(query.toLowerCase()))
+    : DUREES;
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:12, lineHeight:1.5 }}>
+        Durées recommandées selon les guidelines en vigueur. Guider sur la procalcitonine (PCT) et l'évolution clinique.
+      </div>
+      <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Rechercher une infection…" style={{ width:"100%", border:`1.5px solid ${C.border}`, borderRadius:8, padding:"9px 12px", fontSize:14, color:C.text, outline:"none", fontFamily:"inherit", background:"#fff", boxSizing:"border-box", marginBottom:12 }} />
+      <div style={{ background:"#fff", borderRadius:12, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+        {filtered.map((d, i) => (
+          <div key={i} style={{ padding:"12px 14px", borderBottom: i < filtered.length-1 ? `1px solid ${C.border}` : "none" }}>
+            <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", gap:10 }}>
+              <div style={{ fontSize:13, fontWeight:600, color:C.text, flex:1, lineHeight:1.4 }}>{d.infection}</div>
+              <div style={{ fontSize:14, fontWeight:900, color:C.blue, flexShrink:0, textAlign:"right", minWidth:60 }}>
+                {d.min === 0 ? "Variable" : d.min === d.max ? `${d.min}j` : `${d.min}–${d.max}j`}
+              </div>
+            </div>
+            {d.unite && <div style={{ fontSize:10, color:C.textSoft, marginTop:2 }}>{d.unite !== "jours" ? d.unite : ""}</div>}
+            {d.note && <div style={{ fontSize:11, color:C.textSoft, marginTop:5, lineHeight:1.5, padding:"5px 8px", background:C.slateBg, borderRadius:5 }}>💡 {d.note}</div>}
+          </div>
+        ))}
+      </div>
+      <div style={{ fontSize:11, color:C.textSoft, textAlign:"center", marginTop:12, padding:"8px", background:"#FFF7ED", borderRadius:8, border:"1px solid #FDE68A" }}>
+        ⚠ Guider l'arrêt sur PCT : arrêt si PCT diminue de 80% depuis le pic OU PCT &lt; 0,5 µg/L
+      </div>
+    </div>
+  );
+};
+
+// ─── ÉCRAN PK/PD ──────────────────────────────────────────────
+const PkPdScreen = ({ C }) => {
+  const [open, setOpen] = useState(null);
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Optimisation pharmacocinétique/pharmacodynamique des antibiotiques en réanimation. Adapter les modalités d'administration selon la classe d'antibiotique.
+      </div>
+
+      {PKPD.map((pk, i) => (
+        <div key={i} style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, marginBottom:10, overflow:"hidden" }}>
+          <button onClick={() => setOpen(open === i ? null : i)} style={{ width:"100%", background:"none", border:"none", padding:"13px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:12 }}>
+            <div style={{ width:36, height:36, borderRadius:9, background:pk.color+"15", display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, flexShrink:0 }}>{pk.icon}</div>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{pk.classe}</div>
+              <div style={{ fontSize:10, color:pk.color, fontWeight:600, marginTop:2 }}>{pk.type}</div>
+            </div>
+            <span style={{ color:C.textXsoft, fontSize:18 }}>{open === i ? "▲" : "▼"}</span>
+          </button>
+          {open === i && (
+            <div style={{ borderTop:`1px solid ${C.border}` }}>
+              <div style={{ padding:"10px 14px", borderBottom:`1px solid ${C.border}`, background:pk.color+"08" }}>
+                <div style={{ fontSize:11, fontWeight:700, color:pk.color, marginBottom:4 }}>🎯 Objectif PK/PD</div>
+                <div style={{ fontSize:12, color:C.textMed, lineHeight:1.6 }}>{pk.objectif}</div>
+              </div>
+              <div style={{ padding:"10px 14px", borderBottom:`1px solid ${C.border}` }}>
+                <div style={{ fontSize:11, fontWeight:700, color:C.text, marginBottom:8 }}>Stratégies d'optimisation</div>
+                {pk.strategies.map((s, si) => (
+                  <div key={si} style={{ display:"flex", gap:8, marginBottom:6 }}>
+                    <div style={{ width:16, height:16, borderRadius:"50%", background:pk.color, color:"#fff", fontSize:9, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, marginTop:1 }}>{si+1}</div>
+                    <div style={{ fontSize:12, color:C.textMed, lineHeight:1.5 }}>{s}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ padding:"10px 14px", borderBottom:`1px solid ${C.border}`, background:"#F0FDF4" }}>
+                <div style={{ fontSize:10, fontWeight:700, color:"#15803D", textTransform:"uppercase", letterSpacing:"0.08em", marginBottom:5 }}>Exemple pratique</div>
+                <div style={{ fontSize:12, color:"#166534", lineHeight:1.6 }}>{pk.exemple}</div>
+              </div>
+              <div style={{ padding:"10px 14px", background:"#FFF7ED" }}>
+                <div style={{ fontSize:10, fontWeight:700, color:"#D97706", textTransform:"uppercase", letterSpacing:"0.08em", marginBottom:5 }}>Monitoring recommandé</div>
+                <div style={{ fontSize:12, color:"#92400E", lineHeight:1.6 }}>{pk.monitoring}</div>
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// ─── CALCULATEUR RISQUE BMR ────────────────────────────────────
+const BmrRiskScreen = ({ C }) => {
+  const [checked, setChecked] = useState({});
+  const toggle = (id) => setChecked(p => ({ ...p, [id]: !p[id] }));
+  const score = BMR_RISK_FACTORS.filter(f => checked[f.id]).reduce((a, f) => a + f.score, 0);
+
+  const getRisk = () => {
+    if (score === 0) return { level: "Faible", color: C.green, bg: C.greenBg, text: "Antibiothérapie probabiliste standard — pas d'élargissement du spectre justifié", reco: "standard" };
+    if (score <= 3) return { level: "Modéré", color: C.orange, bg: C.orangeBg, text: "Discuter l'élargissement du spectre selon le contexte clinique et l'écologie locale du service", reco: "discuter" };
+    return { level: "Élevé", color: C.red, bg: C.redBg, text: "Antibiothérapie large spectre d'emblée — couvrir les BMR — avis infectiologue recommandé", reco: "bmr" };
+  };
+
+  const risk = getRisk();
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Évaluez le risque de bactérie multirésistante pour adapter l'antibiothérapie probabiliste. Cochez les facteurs présents.
+      </div>
+
+      <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:14 }}>
+        {BMR_RISK_FACTORS.map((f, i) => (
+          <button key={f.id} onClick={() => toggle(f.id)} style={{ width:"100%", background: checked[f.id] ? "#FEF3C7" : "none", border:"none", borderBottom: i < BMR_RISK_FACTORS.length-1 ? `1px solid ${C.border}` : "none", padding:"11px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:10 }}>
+            <div style={{ width:22, height:22, borderRadius:6, border:`2px solid ${checked[f.id] ? C.orange : C.border}`, background: checked[f.id] ? C.orange : "#fff", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+              {checked[f.id] && <span style={{ color:"#fff", fontSize:13, fontWeight:900 }}>✓</span>}
+            </div>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:12.5, color: checked[f.id] ? "#92400E" : C.text, fontWeight: checked[f.id] ? 600 : 400, lineHeight:1.4 }}>{f.label}</div>
+            </div>
+            <div style={{ fontSize:11, fontWeight:700, color: checked[f.id] ? C.orange : C.textXsoft, flexShrink:0 }}>+{f.score}</div>
+          </button>
+        ))}
+      </div>
+
+      <div style={{ background: risk.bg, border:`2px solid ${risk.color}`, borderRadius:12, padding:"14px 16px", marginBottom:14 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:8 }}>
+          <div style={{ fontSize:28, fontWeight:900, color:risk.color, fontFamily:"monospace" }}>{score}</div>
+          <div>
+            <div style={{ fontSize:14, fontWeight:800, color:risk.color }}>Risque BMR {risk.level}</div>
+            <div style={{ fontSize:10, color:risk.color, opacity:0.8 }}>Score sur 20</div>
+          </div>
+        </div>
+        <div style={{ fontSize:12, color:risk.color, lineHeight:1.6, fontWeight:500 }}>{risk.text}</div>
+      </div>
+
+      {Object.values(checked).some(Boolean) && (
+        <button onClick={() => setChecked({})} style={{ width:"100%", background:"none", border:`1px solid ${C.border}`, borderRadius:8, padding:"9px", cursor:"pointer", fontSize:12, color:C.textSoft, fontFamily:"inherit" }}>
+          ↺ Réinitialiser
+        </button>
+      )}
+    </div>
+  );
+};
+
+// ─── ÉCRAN PRINCIPAL INFECTIOLOGIE ────────────────────────────
+const InfectoScreen = ({ C }) => {
+  const [subview, setSubview] = useState("menu");
+
+  const screens = {
+    antibio: <AntibioProbScreen C={C} />,
+    desescalade: <DesescaladeScreen C={C} />,
+    nouveaux: <NouveauxAtbScreen C={C} />,
+    renal: <RenalAdaptScreen C={C} />,
+    durees: <DureesScreen C={C} />,
+    pkpd: <PkPdScreen C={C} />,
+    bmr: <BmrRiskScreen C={C} />,
+  };
+
+  const titles = {
+    antibio: "Antibiothérapie Probabiliste",
+    desescalade: "Désescalade Antibiotique",
+    nouveaux: "Nouveaux Antibiotiques BGN — SRLF 2022",
+    renal: "Adaptation à la Fonction Rénale",
+    durees: "Durées de Traitement",
+    pkpd: "PK/PD — Optimisation",
+    bmr: "Score de Risque BMR",
+  };
+
+  if (subview !== "menu") {
+    return (
+      <div>
+        <button onClick={() => setSubview("menu")} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>
+          ← Infectiologie
+        </button>
+        <div style={{ fontSize:15, fontWeight:700, marginBottom:14, color:C.text }}>{titles[subview]}</div>
+        {screens[subview]}
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ background:"linear-gradient(135deg, #DC2626 0%, #991B1B 100%)", borderRadius:12, padding:"16px", marginBottom:16, color:"#fff" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+          <span style={{ fontSize:24 }}>🦠</span>
+          <div>
+            <div style={{ fontSize:16, fontWeight:800 }}>Infectiologie</div>
+            <div style={{ fontSize:10, opacity:0.8, letterSpacing:"0.06em" }}>ANTIBIOTHÉRAPIE · DÉSESCALADE · PK/PD</div>
+          </div>
+        </div>
+        <div style={{ fontSize:12, opacity:0.9, lineHeight:1.6 }}>
+          Antibiothérapie probabiliste par situation, désescalade par germe (SAMS, SARM, BLSE, EPC, Candida, Aspergillus), adaptation rénale et optimisation PK/PD.
+        </div>
+      </div>
+
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:16 }}>
+        {[
+          { id:"antibio", icon:"💊", title:"Antibiothérapie probabiliste", desc:"Par situation clinique et profil BMR", color:"#DC2626" },
+          { id:"desescalade", icon:"🎯", title:"Désescalade par germe", desc:"SAMS · SARM · BLSE · EPC · Candida · Aspergillus", color:"#15803D" },
+          { id:"nouveaux", icon:"🆕", title:"Nouveaux ATB BGN", desc:"SRLF 2022 · CAZ-AVI · C/T · céfidérocol", color:"#B91C1C" },
+          { id:"bmr", icon:"⚠️", title:"Risque BMR", desc:"Score de risque de résistance", color:"#D97706" },
+          { id:"renal", icon:"🫘", title:"Adaptation rénale", desc:"DFG → doses adaptées", color:"#0F766E" },
+          { id:"durees", icon:"📅", title:"Durées de traitement", desc:"Par infection et guidage PCT", color:"#1D4ED8" },
+          { id:"pkpd", icon:"📈", title:"PK/PD & Optimisation", desc:"Temps-dépendant · Conc.-dépendant", color:"#7C3AED" },
+        ].map(item => (
+          <button key={item.id} onClick={() => setSubview(item.id)} style={{ background:"#fff", border:`1px solid ${C.border}`, borderTop:`3px solid ${item.color}`, borderRadius:12, padding:"13px 12px", cursor:"pointer", textAlign:"left" }}>
+            <div style={{ fontSize:22, marginBottom:6 }}>{item.icon}</div>
+            <div style={{ fontSize:11, fontWeight:700, color:C.text, lineHeight:1.3, marginBottom:3 }}>{item.title}</div>
+            <div style={{ fontSize:9, color:C.textSoft, lineHeight:1.4 }}>{item.desc}</div>
+          </button>
+        ))}
+      </div>
+
+      {/* Rappel */}
+      <div style={{ background:"#FEF2F2", border:"1px solid #FECACA", borderRadius:10, padding:"10px 14px" }}>
+        <div style={{ fontSize:11, fontWeight:700, color:"#DC2626", marginBottom:4 }}>⚠ Règles fondamentales en réanimation</div>
+        {[
+          "Hémocultures AVANT les antibiotiques (sans retarder > 1h)",
+          "Désescalade SYSTÉMATIQUE à 48–72h sur antibiogramme",
+          "Durée guidée par la PCT + évolution clinique",
+          "Avis infectiologue si BMR ou échec thérapeutique",
+        ].map((r, i) => (
+          <div key={i} style={{ fontSize:11, color:"#991B1B", display:"flex", gap:6, marginBottom:3 }}>
+            <span>•</span><span>{r}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+
+// ─── ÉCRAN NOUVEAUX ANTIBIOTIQUES BGN (SRLF 2022) ──────────────
+const NouveauxAtbScreen = ({ C }) => {
+  const [selected, setSelected] = useState(null);
+  const meca = selected ? NOUVEAUX_ATB_BGN.mecanismes.find(m => m.id === selected) : null;
+
+  if (selected && meca) {
+    return (
+      <div>
+        <button onClick={() => setSelected(null)} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>
+          ← Nouveaux antibiotiques BGN
+        </button>
+        <div style={{ background:`${meca.color}12`, border:`1px solid ${meca.color}30`, borderLeft:`3px solid ${meca.color}`, borderRadius:10, padding:"12px 14px", marginBottom:14 }}>
+          <div style={{ fontSize:14, fontWeight:800, color:meca.color, lineHeight:1.4, marginBottom:6 }}>{meca.nom}</div>
+          <div style={{ fontSize:11.5, color:C.textMed, lineHeight:1.6 }}>{meca.definition}</div>
+        </div>
+
+        {/* Première intention */}
+        <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+          <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:"#F0FDF4" }}>
+            <span style={{ fontSize:11, fontWeight:700, color:"#15803D" }}>✓ Première intention</span>
+          </div>
+          {meca.premiere_intention.map((mol, i) => (
+            <div key={i} style={{ padding:"12px 14px", borderBottom: i < meca.premiere_intention.length-1 ? `1px solid ${C.border}` : "none" }}>
+              <div style={{ fontSize:13, fontWeight:700, color:C.text, marginBottom:4 }}>{mol.name}</div>
+              <div style={{ fontSize:12, color:C.blue, marginBottom: mol.note?4:0 }}>📍 {mol.dose} — {mol.frequence}</div>
+              {mol.note && <div style={{ fontSize:11, color:C.textSoft, lineHeight:1.5, padding:"6px 8px", background:C.slateBg, borderRadius:6 }}>💡 {mol.note}</div>}
+            </div>
+          ))}
+        </div>
+
+        {/* Alternatives */}
+        {meca.alternatives && (
+          <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+            <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:"#FFFBEB" }}>
+              <span style={{ fontSize:11, fontWeight:700, color:"#D97706" }}>↳ Alternatives (si résistance ou échec)</span>
+            </div>
+            {meca.alternatives.map((mol, i) => (
+              <div key={i} style={{ padding:"12px 14px", borderBottom: i < meca.alternatives.length-1 ? `1px solid ${C.border}` : "none" }}>
+                <div style={{ fontSize:13, fontWeight:700, color:C.text, marginBottom:4 }}>{mol.name}</div>
+                {mol.dose && <div style={{ fontSize:12, color:C.blue, marginBottom: mol.note?4:0 }}>📍 {mol.dose}{mol.frequence?` — ${mol.frequence}`:""}</div>}
+                {mol.note && <div style={{ fontSize:11, color:C.textSoft, lineHeight:1.5, padding:"6px 8px", background:C.slateBg, borderRadius:6 }}>💡 {mol.note}</div>}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Épargne */}
+        {meca.epargne && (
+          <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+            <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+              <span style={{ fontSize:11, fontWeight:700, color:C.textMed }}>Options d'épargne des carbapénèmes</span>
+            </div>
+            {meca.epargne.map((mol, i) => (
+              <div key={i} style={{ padding:"10px 14px", borderBottom: i < meca.epargne.length-1 ? `1px solid ${C.border}` : "none" }}>
+                <div style={{ fontSize:12.5, fontWeight:600, color:C.text, marginBottom:2 }}>{mol.name}</div>
+                <div style={{ fontSize:11, color:C.textSoft, lineHeight:1.5 }}>{mol.note}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Dernier recours */}
+        {meca.dernier_recours && (
+          <div style={{ background:"#FEF2F2", border:"1px solid #FECACA", borderRadius:10, padding:"10px 14px", marginBottom:12 }}>
+            <div style={{ fontSize:11, fontWeight:700, color:"#DC2626", marginBottom:6 }}>⚠ Dernier recours</div>
+            {meca.dernier_recours.map((mol, i) => (
+              <div key={i}>
+                <div style={{ fontSize:12.5, fontWeight:600, color:"#991B1B" }}>{mol.name}</div>
+                <div style={{ fontSize:11, color:"#991B1B", lineHeight:1.5, marginTop:2 }}>{mol.note}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div style={{ background:"#fff", borderRadius:8, border:`1px solid ${C.border}`, padding:"8px 12px" }}>
+          <div style={{ fontSize:9, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.1em", marginBottom:4 }}>Source</div>
+          <div style={{ fontSize:11, color:C.textSoft }}>{meca.source}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ background:"#EFF6FF", border:"1px solid #BFDBFE", borderRadius:10, padding:"11px 14px", marginBottom:14 }}>
+        <div style={{ fontSize:12, color:"#1E40AF", lineHeight:1.6 }}>{NOUVEAUX_ATB_BGN.intro}</div>
+      </div>
+
+      <div style={{ fontSize:11, fontWeight:700, color:C.textXsoft, letterSpacing:"0.07em", textTransform:"uppercase", marginBottom:10 }}>
+        Choisir par mécanisme de résistance
+      </div>
+      <div style={{ display:"flex", flexDirection:"column", gap:8, marginBottom:16 }}>
+        {NOUVEAUX_ATB_BGN.mecanismes.map(m => (
+          <button key={m.id} onClick={() => setSelected(m.id)} style={{ background:"#fff", border:`1px solid ${C.border}`, borderLeft:`3px solid ${m.color}`, borderRadius:10, padding:"12px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:10 }}>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:12.5, fontWeight:700, color:C.text, lineHeight:1.4 }}>{m.nom}</div>
+              <div style={{ fontSize:10, color:m.color, fontWeight:600, marginTop:3 }}>{m.premiere_intention[0].name.split(" (")[0]}</div>
+            </div>
+            <span style={{ color:C.textXsoft, fontSize:18, flexShrink:0 }}>›</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Principes généraux */}
+      <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+        <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+          <span style={{ fontSize:11, fontWeight:700, color:C.text }}>Principes fondamentaux SRLF 2022</span>
+        </div>
+        {NOUVEAUX_ATB_BGN.principes.map((p, i) => (
+          <div key={i} style={{ padding:"10px 14px", borderBottom: i < NOUVEAUX_ATB_BGN.principes.length-1 ? `1px solid ${C.border}` : "none", display:"flex", gap:10 }}>
+            <span style={{ color:"#1D4ED8", fontWeight:700, flexShrink:0 }}>•</span>
+            <span style={{ fontSize:12, color:C.textMed, lineHeight:1.55 }}>{p}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+
+// ═══ MODULE HÉMODYNAMIQUE — SCHÉMA FRANK-STARLING SVG ═══
+const FrankStarlingDiagram = ({ state = "normal" }) => {
+  const W = 300, H = 200, padX = 40, padY = 20;
+  const gW = W - padX - 15, gH = H - padY - 30;
+  const toX = (p) => padX + (p / 25) * gW;
+  const toY = (v) => padY + gH - (v / 100) * gH;
+
+  // Frank-Starling curves: normal, hypercontractile (sepsis early), failing (cardiogenic)
+  const curves = {
+    normal: { color: "#15803D", label: "Normal", pts: [[0,5],[5,40],[10,68],[15,85],[20,93],[25,97]] },
+    failing: { color: "#DC2626", label: "Insuffisance cardiaque", pts: [[0,2],[5,15],[10,28],[15,38],[20,45],[25,50]] },
+    hyper: { color: "#D97706", label: "Hypercontractile", pts: [[0,8],[5,55],[10,85],[15,98],[20,103],[25,105]] },
+  };
+
+  return (
+    <svg width="100%" viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: 360, display: "block" }}>
+      <rect width={W} height={H} fill="#F8FAFC" rx="8"/>
+      {/* Grid */}
+      {[0,5,10,15,20,25].map(p => (
+        <g key={p}>
+          <line x1={toX(p)} y1={padY} x2={toX(p)} y2={padY+gH} stroke="#E2E8F0" strokeWidth="0.5"/>
+          <text x={toX(p)} y={padY+gH+12} fontSize="7" fill="#94A3B8" textAnchor="middle">{p}</text>
+        </g>
+      ))}
+      {/* Axes */}
+      <line x1={padX} y1={padY} x2={padX} y2={padY+gH} stroke="#64748B" strokeWidth="1.5"/>
+      <line x1={padX} y1={padY+gH} x2={padX+gW} y2={padY+gH} stroke="#64748B" strokeWidth="1.5"/>
+      <text x={W/2} y={H-4} fontSize="8" fill="#475569" textAnchor="middle">Précharge (pression télédiastolique VG)</text>
+      <text x={12} y={H/2} fontSize="8" fill="#475569" textAnchor="middle" transform={`rotate(-90, 12, ${H/2})`}>Volume d'éjection</text>
+      {/* Curves */}
+      {Object.entries(curves).map(([key, c]) => {
+        const active = state === key || state === "all";
+        const path = c.pts.map((p,i) => `${i===0?"M":"L"}${toX(p[0])},${toY(p[1])}`).join(" ");
+        return (
+          <g key={key} opacity={active ? 1 : 0.2}>
+            <path d={path} fill="none" stroke={c.color} strokeWidth={active?2.5:1.5} strokeLinecap="round"/>
+            {active && <text x={toX(c.pts[5][0])-2} y={toY(c.pts[5][1])-4} fontSize="8" fill={c.color} fontWeight="700" textAnchor="end">{c.label}</text>}
+          </g>
+        );
+      })}
+    </svg>
+  );
+};
+
+// ═══ ÉCRAN PROFILS DE CHOC ═══
+const ChocProfileScreen = ({ C }) => {
+  const [selected, setSelected] = useState(null);
+  const choc = selected ? CHOC_PROFILES.find(c => c.id === selected) : null;
+
+  if (selected && choc) {
+    return (
+      <div>
+        <button onClick={() => setSelected(null)} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>← Profils de choc</button>
+        <div style={{ background:`${choc.color}12`, border:`1px solid ${choc.color}30`, borderLeft:`3px solid ${choc.color}`, borderRadius:10, padding:"12px 14px", marginBottom:14 }}>
+          <div style={{ fontSize:15, fontWeight:800, color:choc.color }}>{choc.icon} {choc.nom}</div>
+          <div style={{ fontSize:12, color:C.textMed, marginTop:4, fontWeight:600 }}>{choc.profil}</div>
+        </div>
+
+        <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+          <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+            <span style={{ fontSize:11, fontWeight:700, color:choc.color }}>Profil hémodynamique</span>
+          </div>
+          {Object.entries(choc.hemodynamique).map(([k,v], i, arr) => (
+            <div key={k} style={{ padding:"9px 14px", borderBottom: i<arr.length-1?`1px solid ${C.border}`:"none", display:"flex", justifyContent:"space-between", gap:10 }}>
+              <span style={{ fontSize:12, color:C.textSoft, flexShrink:0, maxWidth:"45%" }}>{k}</span>
+              <span style={{ fontSize:12, fontWeight:600, color:C.text, textAlign:"right" }}>{v}</span>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+          <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+            <span style={{ fontSize:11, fontWeight:700, color:choc.color }}>Prise en charge — étape par étape</span>
+          </div>
+          {choc.prise_en_charge.map((e, i) => (
+            <div key={i} style={{ padding:"11px 14px", borderBottom: i<choc.prise_en_charge.length-1?`1px solid ${C.border}`:"none" }}>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:3 }}>
+                <span style={{ fontSize:12.5, fontWeight:700, color:C.text }}>{e.etape}</span>
+                <GradeBadge grade={e.grade} />
+              </div>
+              <div style={{ fontSize:12, color:C.textMed, lineHeight:1.55 }}>{e.detail}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ background:"#fff", borderRadius:8, border:`1px solid ${C.border}`, padding:"8px 12px" }}>
+          <div style={{ fontSize:9, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.1em", marginBottom:4 }}>Source</div>
+          <div style={{ fontSize:11, color:C.textSoft }}>{choc.source}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Les 4 grands profils hémodynamiques de choc. Identifier le profil oriente le traitement (remplissage, vasopresseur, inotrope).
+      </div>
+      <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+        {CHOC_PROFILES.map(c => (
+          <button key={c.id} onClick={() => setSelected(c.id)} style={{ background:"#fff", border:`1px solid ${C.border}`, borderLeft:`3px solid ${c.color}`, borderRadius:10, padding:"13px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:12 }}>
+            <span style={{ fontSize:22 }}>{c.icon}</span>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{c.nom}</div>
+              <div style={{ fontSize:10.5, color:C.textSoft, marginTop:2, lineHeight:1.4 }}>{c.profil}</div>
+            </div>
+            <span style={{ color:C.textXsoft, fontSize:18 }}>›</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ═══ ÉCRAN CALCULATEURS HÉMODYNAMIQUES ═══
+const HemoCalcScreen = ({ C }) => {
+  const [selected, setSelected] = useState(null);
+  const [vals, setVals] = useState({});
+  const calc = selected ? HEMO_CALCULATORS.find(c => c.id === selected) : null;
+
+  if (selected && calc) {
+    const allFilled = calc.inputs.every(inp => vals[inp.id] && !isNaN(parseFloat(vals[inp.id])));
+    const numVals = {};
+    calc.inputs.forEach(inp => numVals[inp.id] = parseFloat(vals[inp.id]));
+    const result = allFilled ? calc.compute(numVals) : null;
+
+    return (
+      <div>
+        <button onClick={() => { setSelected(null); setVals({}); }} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>← Calculateurs</button>
+        <div style={{ fontSize:15, fontWeight:700, color:C.text, marginBottom:6 }}>{calc.nom}</div>
+        <div style={{ background:C.slateBg, borderRadius:8, padding:"8px 12px", marginBottom:14 }}>
+          <div style={{ fontSize:11, color:C.textMed, fontFamily:"monospace", lineHeight:1.5 }}>{calc.formule}</div>
+        </div>
+        <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:14 }}>
+          {calc.inputs.map((inp, i) => (
+            <div key={inp.id} style={{ padding:"10px 14px", borderBottom: i<calc.inputs.length-1?`1px solid ${C.border}`:"none" }}>
+              <div style={{ fontSize:11, color:C.textSoft, marginBottom:5 }}>{inp.label}</div>
+              <input type="number" step="any" value={vals[inp.id]||""} onChange={e => setVals(p => ({...p, [inp.id]: e.target.value}))} placeholder={inp.placeholder} style={{ width:"100%", border:`1.5px solid ${C.border}`, borderRadius:8, padding:"9px 12px", fontSize:15, color:C.text, outline:"none", fontFamily:"inherit", boxSizing:"border-box" }} />
+            </div>
+          ))}
+        </div>
+        {result && (
+          <div style={{ background:"#fff", borderRadius:12, border:`2px solid ${result.color}`, padding:"16px", marginBottom:14 }}>
+            <div style={{ display:"flex", alignItems:"baseline", gap:8, marginBottom:8 }}>
+              <span style={{ fontSize:32, fontWeight:900, color:result.color, fontFamily:"monospace" }}>{result.value}</span>
+              <span style={{ fontSize:14, color:C.textSoft }}>{result.unit}</span>
+            </div>
+            <div style={{ fontSize:12.5, color:result.color, fontWeight:600, lineHeight:1.5 }}>{result.interp}</div>
+            {result.extra && <div style={{ fontSize:11, color:C.textSoft, marginTop:6 }}>{result.extra}</div>}
+          </div>
+        )}
+        <div style={{ background:C.blueBg, borderRadius:8, padding:"8px 12px" }}>
+          <div style={{ fontSize:11, color:C.blue, fontWeight:600 }}>{calc.normes}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14 }}>Calculateurs hémodynamiques de réanimation.</div>
+      <div style={{ background:"#fff", borderRadius:12, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+        {HEMO_CALCULATORS.map((c, i) => (
+          <button key={c.id} onClick={() => { setSelected(c.id); setVals({}); }} style={{ width:"100%", background:"none", border:"none", borderBottom: i<HEMO_CALCULATORS.length-1?`1px solid ${C.border}`:"none", padding:"13px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:12 }}>
+            <div style={{ width:34, height:34, borderRadius:9, background:C.blueBg, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+              <span style={{ fontSize:16 }}>🧮</span>
+            </div>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13, fontWeight:600, color:C.text }}>{c.nom}</div>
+              <div style={{ fontSize:10, color:C.textSoft, marginTop:1 }}>{c.normes}</div>
+            </div>
+            <span style={{ color:C.textXsoft, fontSize:16 }}>›</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ═══ ÉCRAN MONITORAGE ═══
+const MonitoringScreen = ({ C }) => {
+  const [open, setOpen] = useState(null);
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Interprétation des outils de monitorage hémodynamique en réanimation.
+      </div>
+      {MONITORING_HEMO.map((m, i) => (
+        <div key={m.id} style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, marginBottom:10, overflow:"hidden" }}>
+          <button onClick={() => setOpen(open===i?null:i)} style={{ width:"100%", background:"none", border:"none", padding:"13px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:12 }}>
+            <div style={{ width:36, height:36, borderRadius:9, background:m.color+"15", display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, flexShrink:0 }}>{m.icon}</div>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{m.nom}</div>
+            </div>
+            <span style={{ color:C.textXsoft, fontSize:16 }}>{open===i?"▲":"▼"}</span>
+          </button>
+          {open===i && (
+            <div style={{ borderTop:`1px solid ${C.border}` }}>
+              {m.params.map((p, pi) => (
+                <div key={pi} style={{ padding:"10px 14px", borderBottom:`1px solid ${C.border}` }}>
+                  <div style={{ display:"flex", justifyContent:"space-between", gap:8, marginBottom:3 }}>
+                    <span style={{ fontSize:12.5, fontWeight:700, color:C.text }}>{p.nom}</span>
+                    <span style={{ fontSize:11, fontWeight:600, color:m.color, flexShrink:0 }}>{p.normes}</span>
+                  </div>
+                  <div style={{ fontSize:11.5, color:C.textMed, lineHeight:1.5 }}>{p.interpretation}</div>
+                </div>
+              ))}
+              <div style={{ padding:"10px 14px", background:C.blueBg }}>
+                <div style={{ fontSize:11, color:"#1E40AF", lineHeight:1.6 }}>💡 {m.note}</div>
+              </div>
+              <div style={{ padding:"7px 14px", background:C.slateBg }}>
+                <div style={{ fontSize:10, color:C.textSoft }}>{m.source}</div>
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// ═══ ÉCRAN FRANK-STARLING ═══
+const FrankStarlingScreen = ({ C }) => {
+  const [state, setState] = useState("all");
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        La courbe de Frank-Starling relie la précharge (pression télédiastolique) au volume d'éjection. Elle explique la précharge-dépendance.
+      </div>
+      <div style={{ background:"#fff", borderRadius:12, border:`1px solid ${C.border}`, padding:"14px", marginBottom:14 }}>
+        <div style={{ display:"flex", gap:6, marginBottom:12, flexWrap:"wrap" }}>
+          {[["all","Toutes"],["normal","Normal"],["failing","Insuff. card."],["hyper","Hypercontractile"]].map(([k,l]) => (
+            <button key={k} onClick={() => setState(k)} style={{ padding:"5px 10px", borderRadius:6, border:`1.5px solid ${state===k?C.accent:C.border}`, background: state===k?C.accent+"15":"#fff", color: state===k?C.accent:C.textSoft, fontSize:10.5, cursor:"pointer", fontFamily:"inherit", fontWeight: state===k?700:400 }}>{l}</button>
+          ))}
+        </div>
+        <FrankStarlingDiagram state={state} />
+      </div>
+      <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+        <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+          <span style={{ fontSize:11, fontWeight:700, color:C.text }}>Lecture clinique</span>
+        </div>
+        {[
+          ["Partie ascendante (raide)", "Le patient est PRÉCHARGE-DÉPENDANT : une expansion volémique augmente le volume d'éjection. Le remplissage est utile."],
+          ["Plateau de la courbe", "Le patient n'est PLUS précharge-dépendant : le remplissage augmente la pression sans augmenter le débit → risque de surcharge et d'œdème pulmonaire."],
+          ["Courbe abaissée (insuffisance cardiaque)", "À précharge égale, le volume d'éjection est plus bas. Le cœur défaillant atteint son plateau pour des pressions de remplissage basses → tolérance réduite au remplissage."],
+        ].map(([t, d], i, arr) => (
+          <div key={i} style={{ padding:"10px 14px", borderBottom: i<arr.length-1?`1px solid ${C.border}`:"none" }}>
+            <div style={{ fontSize:12.5, fontWeight:700, color:C.text, marginBottom:3 }}>{t}</div>
+            <div style={{ fontSize:11.5, color:C.textMed, lineHeight:1.55 }}>{d}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ═══ ÉCRAN PRINCIPAL HÉMODYNAMIQUE ═══
+
+// ─── DROGUES VASOACTIVES & INOTROPES ───────────────────────────
+const VASOACTIVES = [
+  {
+    id: "noradre", nom: "Noradrénaline", classe: "Vasopresseur", color: "#DC2626",
+    recepteurs: "α1 +++ , β1 +",
+    effet: "Vasoconstriction puissante (↑ RVS, ↑ PAM), effet inotrope modéré. Augmente peu la fréquence cardiaque.",
+    indication: "Vasopresseur de PREMIÈRE INTENTION du choc septique et de la plupart des chocs vasoplégiques.",
+    dose: "0,1 à 0,5 µg/kg/min (jusqu'à 1–3 µg/kg/min dans les formes réfractaires)",
+    dilution: "Voie veineuse CENTRALE de préférence — dilution usuelle 8 mg/40 mL ou selon protocole local",
+    surveillance: "PAM cible ≥ 65 mmHg, diurèse, lactates, perfusion périphérique. Risque d'ischémie distale aux fortes doses.",
+    grade: "1A",
+  },
+  {
+    id: "adre", nom: "Adrénaline", classe: "Vasopresseur + Inotrope", color: "#B91C1C",
+    recepteurs: "α1, β1, β2 (dose-dépendant)",
+    effet: "Faibles doses : effet β (inotrope, chronotrope, vasodilatation). Fortes doses : effet α (vasoconstriction).",
+    indication: "Arrêt cardiaque (1 mg IV/3–5 min), choc anaphylactique, choc cardiogénique ou septique réfractaire, bradycardie.",
+    dose: "ACR : 1 mg IVD toutes les 3–5 min · Anaphylaxie : 0,5 mg IM (0,01 mg/kg) · Perfusion : 0,05–0,5 µg/kg/min",
+    dilution: "Voie centrale en perfusion continue · IM (face antéro-latérale de cuisse) dans l'anaphylaxie",
+    surveillance: "Tachycardie, arythmies, hyperlactatémie, hyperglycémie. Effet pro-arythmogène.",
+    grade: "1A",
+  },
+  {
+    id: "dobu", nom: "Dobutamine", classe: "Inotrope", color: "#1D4ED8",
+    recepteurs: "β1 +++ , β2 +",
+    effet: "Inotrope positif (↑ contractilité et débit cardiaque), vasodilatation périphérique modérée (peut baisser la PAM).",
+    indication: "Choc cardiogénique, dysfonction myocardique du choc septique (après optimisation de la précharge et de la PAM).",
+    dose: "2,5 à 20 µg/kg/min",
+    dilution: "Voie centrale de préférence — titrer par paliers sur le débit cardiaque et la perfusion",
+    surveillance: "Débit cardiaque, ScvO₂, lactates. Risque de tachycardie, d'arythmie et d'hypotension (vasodilatation).",
+    grade: "1B",
+  },
+  {
+    id: "vaso", nom: "Vasopressine", classe: "Vasopresseur (non catécholaminergique)", color: "#7C3AED",
+    recepteurs: "Récepteurs V1 vasculaires",
+    effet: "Vasoconstriction indépendante des récepteurs adrénergiques. Épargne catécholaminergique.",
+    indication: "Choc septique en ajout de la noradrénaline (épargne, ou si dose de noradrénaline élevée).",
+    dose: "0,01 à 0,03 U/min (dose FIXE, non titrée au poids)",
+    dilution: "Voie centrale — ne pas dépasser 0,04 U/min (risque ischémique)",
+    surveillance: "Ischémie digitale, mésentérique, coronaire. Ne pas utiliser en monothérapie de première intention.",
+    grade: "2B",
+  },
+  {
+    id: "dopa", nom: "Dopamine", classe: "Vasopresseur + Inotrope", color: "#D97706",
+    recepteurs: "Dopaminergiques, β1, α1 (dose-dépendant)",
+    effet: "Effet dose-dépendant. Largement délaissée en réanimation au profit de la noradrénaline.",
+    indication: "N'est PLUS recommandée en première intention (plus d'arythmies et surmortalité vs noradrénaline — essai SOAP II).",
+    dose: "Historique : 5–20 µg/kg/min — non recommandée en routine",
+    dilution: "Voie centrale",
+    surveillance: "Tachyarythmies fréquentes. La « dose rénale » de dopamine est un concept abandonné (inefficace).",
+    grade: "2B",
+  },
+  {
+    id: "milri", nom: "Milrinone", classe: "Inodilatateur (inhibiteur PDE-3)", color: "#0F766E",
+    recepteurs: "Inhibition de la phosphodiestérase 3",
+    effet: "Inotrope positif + vasodilatateur (systémique et pulmonaire), indépendant des récepteurs β. « Inodilatateur ».",
+    indication: "Choc cardiogénique, insuffisance cardiaque avec hypertension pulmonaire, dysfonction du VD — alternative à la dobutamine.",
+    dose: "0,375 à 0,75 µg/kg/min (dose de charge souvent omise en réanimation)",
+    dilution: "Voie centrale — élimination rénale (réduire si insuffisance rénale)",
+    surveillance: "Hypotension (vasodilatation), arythmies. Demi-vie longue (effet prolongé après arrêt).",
+    grade: "2B",
+  },
+];
+
+// ─── ÉCRAN DROGUES VASOACTIVES ─────────────────────────────────
+const VasoactivesScreen = ({ C }) => {
+  const [open, setOpen] = useState(null);
+  return (
+    <div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>
+        Catécholamines, vasopresseurs et inotropes : choix selon le profil de choc, posologies et surveillance.
+      </div>
+      {VASOACTIVES.map((d, i) => (
+        <div key={d.id} style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, borderLeft:`3px solid ${d.color}`, marginBottom:10, overflow:"hidden" }}>
+          <button onClick={() => setOpen(open===i?null:i)} style={{ width:"100%", background:"none", border:"none", padding:"12px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:10 }}>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13.5, fontWeight:800, color:C.text }}>{d.nom}</div>
+              <div style={{ fontSize:10.5, color:d.color, fontWeight:600, marginTop:2 }}>{d.classe} · {d.recepteurs}</div>
+            </div>
+            <GradeBadge grade={d.grade} />
+            <span style={{ color:C.textXsoft, fontSize:15 }}>{open===i?"▲":"▼"}</span>
+          </button>
+          {open===i && (
+            <div style={{ borderTop:`1px solid ${C.border}` }}>
+              {[
+                ["Effet", d.effet],
+                ["Indication", d.indication],
+                ["Posologie", d.dose],
+                ["Administration", d.dilution],
+                ["Surveillance", d.surveillance],
+              ].map(([label, val], li) => (
+                <div key={li} style={{ padding:"9px 14px", borderBottom: li<4?`1px solid ${C.border}`:"none" }}>
+                  <div style={{ fontSize:9.5, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.07em", marginBottom:3 }}>{label}</div>
+                  <div style={{ fontSize:12, color: label==="Posologie"?d.color:C.textMed, fontWeight: label==="Posologie"?700:400, lineHeight:1.55 }}>{val}</div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+      <div style={{ background:C.blueBg, border:`1px solid ${C.blueBorder}`, borderRadius:10, padding:"11px 14px", marginTop:6 }}>
+        <div style={{ fontSize:11, color:"#1E40AF", lineHeight:1.6 }}>
+          💡 Règle d'or : un vasopresseur (noradrénaline) corrige la vasoplégie, un inotrope (dobutamine) corrige la défaillance de pompe. Identifier le profil de choc AVANT de choisir la drogue.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const HemodynamiqueScreen = ({ C }) => {
+  const [subview, setSubview] = useState("menu");
+  const screens = {
+    profils: <ChocProfileScreen C={C} />,
+    vaso: <VasoactivesScreen C={C} />,
+    calc: <HemoCalcScreen C={C} />,
+    monitoring: <MonitoringScreen C={C} />,
+    starling: <FrankStarlingScreen C={C} />,
+  };
+  const titles = { profils:"Profils de Choc", vaso:"Drogues Vasoactives & Inotropes", calc:"Calculateurs", monitoring:"Monitorage", starling:"Courbe de Frank-Starling" };
+
+  if (subview !== "menu") {
+    return (
+      <div>
+        <button onClick={() => setSubview("menu")} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>← Hémodynamique</button>
+        <div style={{ fontSize:15, fontWeight:700, marginBottom:14, color:C.text }}>{titles[subview]}</div>
+        {screens[subview]}
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ background:"linear-gradient(135deg, #BE123C 0%, #881337 100%)", borderRadius:12, padding:"16px", marginBottom:16, color:"#fff" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+          <span style={{ fontSize:24 }}>💉</span>
+          <div>
+            <div style={{ fontSize:16, fontWeight:800 }}>Hémodynamique</div>
+            <div style={{ fontSize:10, opacity:0.85, letterSpacing:"0.06em" }}>CHOC · DROGUES · MONITORAGE · CALCULS</div>
+          </div>
+        </div>
+        <div style={{ fontSize:12, opacity:0.92, lineHeight:1.6 }}>
+          Profils de choc, drogues vasoactives et inotropes, monitorage (PiCCO, échographie, PLR/VPP), calculateurs et courbe de Frank-Starling.
+        </div>
+      </div>
+
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:16 }}>
+        {[
+          { id:"profils", icon:"🩺", title:"Profils de choc", desc:"Septique · Cardiogénique · Hypovolémique · Obstructif", color:"#DC2626" },
+          { id:"vaso", icon:"💊", title:"Drogues vasoactives", desc:"Noradré · Adré · Dobutamine · Vasopressine", color:"#BE123C" },
+          { id:"monitoring", icon:"📊", title:"Monitorage", desc:"PiCCO · Échographie · PLR/VPP", color:"#1D4ED8" },
+          { id:"calc", icon:"🧮", title:"Calculateurs", desc:"IC · RVS · DO₂ · PPC", color:"#15803D" },
+          { id:"starling", icon:"📈", title:"Frank-Starling", desc:"Précharge-dépendance", color:"#7C3AED" },
+        ].map(item => (
+          <button key={item.id} onClick={() => setSubview(item.id)} style={{ background:"#fff", border:`1px solid ${C.border}`, borderTop:`3px solid ${item.color}`, borderRadius:12, padding:"14px 12px", cursor:"pointer", textAlign:"left" }}>
+            <div style={{ fontSize:24, marginBottom:8 }}>{item.icon}</div>
+            <div style={{ fontSize:12, fontWeight:700, color:C.text, lineHeight:1.3, marginBottom:3 }}>{item.title}</div>
+            <div style={{ fontSize:9.5, color:C.textSoft, lineHeight:1.4 }}>{item.desc}</div>
+          </button>
+        ))}
+      </div>
+
+      <div style={{ background:"#FEF2F2", border:"1px solid #FECACA", borderRadius:10, padding:"10px 14px" }}>
+        <div style={{ fontSize:11, fontWeight:700, color:"#BE123C", marginBottom:4 }}>⚠ Principe fondamental</div>
+        <div style={{ fontSize:11.5, color:"#991B1B", lineHeight:1.6 }}>
+          Avant toute expansion volémique, évaluer la précharge-dépendance (PLR, VPP, variation ITV). Remplir un patient non précharge-dépendant aggrave l'œdème sans améliorer le débit.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 const VentCalculator = ({ pathId, onBack, C }) => {
   const path = VENT_PATHOLOGIES.find(p => p.id === pathId);
   const [sexe, setSexe] = useState("homme");
@@ -4274,6 +7274,618 @@ const VentilationScreen = ({ C }) => {
   );
 };
 
+const AboutScreen = ({ C }) => {
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ background: "linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%)", borderRadius: 14, padding: "20px", marginBottom: 16, color: "#fff" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+          <div style={{ width: 44, height: 44, borderRadius: 11, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22 }}>🏥</div>
+          <div>
+            <div style={{ fontSize: 20, fontWeight: 900, letterSpacing: "-0.02em" }}>RéaGuard</div>
+            <div style={{ fontSize: 10, opacity: 0.85, letterSpacing: "0.08em" }}>OUTIL PÉDAGOGIQUE DE RÉANIMATION</div>
+          </div>
+        </div>
+        <div style={{ fontSize: 12.5, opacity: 0.92, lineHeight: 1.6 }}>
+          Aide-mémoire clinique destiné à la formation des internes, résidents, étudiants en médecine et personnels paramédicaux de réanimation et de médecine intensive.
+        </div>
+      </div>
+
+      {/* Positionnement */}
+      <div style={{ background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: 12, padding: "14px 16px", marginBottom: 14 }}>
+        <div style={{ fontSize: 13, fontWeight: 800, color: "#DC2626", marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+          <span>⚠️</span> Statut et avertissement
+        </div>
+        <div style={{ fontSize: 12, color: "#991B1B", lineHeight: 1.7 }}>
+          <strong>RéaGuard est un outil pédagogique et universitaire.</strong> Il ne constitue PAS un dispositif médical ni un outil d'aide à la décision médicale au sens réglementaire. Les informations fournies sont des aide-mémoire de formation. <strong>Le jugement clinique du médecin prime sur tout protocole.</strong> La responsabilité de toute décision diagnostique ou thérapeutique incombe au praticien, qui doit se référer aux recommandations officielles en vigueur et aux protocoles locaux de son établissement.
+        </div>
+      </div>
+
+      {/* Méthodologie */}
+      <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 14 }}>
+        <div style={{ padding: "11px 14px", borderBottom: `1px solid ${C.border}`, background: C.slateBg }}>
+          <span style={{ fontSize: 12, fontWeight: 800, color: C.text }}>📚 Méthodologie et sources</span>
+        </div>
+        <div style={{ padding: "12px 14px" }}>
+          {[
+            "Chaque protocole est sourcé à partir des recommandations des sociétés savantes françaises (SFAR, SRLF, SPILF, SFMU, HAS) et internationales (ESC, IDSA, KDIGO, Surviving Sepsis Campaign).",
+            "Les niveaux de preuve suivent la méthodologie GRADE (1A à 2C, GPS pour les bonnes pratiques).",
+            "Priorité donnée aux sources publiées depuis 2020. La date et la référence de chaque recommandation sont affichées en bas de chaque protocole.",
+            "Les calculateurs de doses sont fournis à titre indicatif et doivent toujours être recoupés avec le Vidal et la fonction rénale du patient.",
+          ].map((t, i) => (
+            <div key={i} style={{ display: "flex", gap: 9, marginBottom: 9 }}>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: C.accent, marginTop: 7, flexShrink: 0 }} />
+              <div style={{ fontSize: 12, color: C.textMed, lineHeight: 1.6 }}>{t}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Contenu */}
+      <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 14 }}>
+        <div style={{ padding: "11px 14px", borderBottom: `1px solid ${C.border}`, background: C.slateBg }}>
+          <span style={{ fontSize: 12, fontWeight: 800, color: C.text }}>🗂 Contenu de l'application</span>
+        </div>
+        <div style={{ padding: "12px 14px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+          {[
+            { n: SPECS.reduce((a, s) => a + (s.protos ? s.protos.length : 0), 0), l: "Protocoles cliniques" },
+            { n: SPECS.length, l: "Spécialités" },
+            { n: "6", l: "Modules interactifs" },
+            { n: SCORES.length, l: "Scores & calculateurs" },
+          ].map((x, i) => (
+            <div key={i} style={{ background: C.bg, borderRadius: 9, padding: "10px 12px", textAlign: "center" }}>
+              <div style={{ fontSize: 22, fontWeight: 900, color: C.accent, fontFamily: "monospace" }}>{x.n}</div>
+              <div style={{ fontSize: 10, color: C.textSoft, marginTop: 2 }}>{x.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Comité scientifique - placeholder */}
+      <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 14 }}>
+        <div style={{ padding: "11px 14px", borderBottom: `1px solid ${C.border}`, background: C.slateBg }}>
+          <span style={{ fontSize: 12, fontWeight: 800, color: C.text }}>🎓 Validation scientifique</span>
+        </div>
+        <div style={{ padding: "12px 14px" }}>
+          <div style={{ fontSize: 12, color: C.textMed, lineHeight: 1.7 }}>
+            Le contenu de cette application est en cours de relecture par un comité scientifique de médecins seniors en médecine intensive et réanimation. Les noms et qualités des validateurs seront affichés ici à l'issue du processus de validation.
+          </div>
+          <div style={{ marginTop: 10, padding: "8px 12px", background: "#FFFBEB", border: "1px solid #FDE68A", borderRadius: 8 }}>
+            <div style={{ fontSize: 11, color: "#92400E", lineHeight: 1.6 }}>
+              <strong>Version en cours de validation pédagogique.</strong> Destinée à la relecture par les responsables de l'enseignement de la spécialité.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Auteur */}
+      <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, padding: "14px 16px", marginBottom: 14 }}>
+        <div style={{ fontSize: 10, fontWeight: 700, color: C.textXsoft, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 6 }}>Auteur</div>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.text }}>Yanis DJELAILIA</div>
+        <div style={{ fontSize: 12, color: C.textSoft, marginTop: 2 }}>Interne en médecine</div>
+      </div>
+
+      <div style={{ fontSize: 10, color: C.textXsoft, textAlign: "center", lineHeight: 1.6, padding: "0 8px 8px" }}>
+        RéaGuard v8 · Outil pédagogique · Ne remplace pas le jugement clinique<br />
+        Conforme à un usage de formation — non destiné à un usage diagnostique direct
+      </div>
+    </div>
+  );
+};
+
+
+// ═══════════════════════════════════════════════════════════════
+// ÉCRAN SCORES — onglet dédié
+// ═══════════════════════════════════════════════════════════════
+const ScoresScreen = ({ C }) => {
+  const [selected, setSelected] = useState(null);
+  const [vals, setVals] = useState({});
+  const [query, setQuery] = useState("");
+
+  const levelColor = (level) => level === "ok" ? C.green : level === "warn" ? C.orange : C.red;
+  const levelBg = (level) => level === "ok" ? C.greenBg : level === "warn" ? C.orangeBg : C.redBg;
+
+  const cats = [...new Set(SCORES.map(s => s.cat))];
+
+  if (selected) {
+    const sc = SCORES.find(s => s.id === selected);
+    // Compute result
+    let total = 0;
+    let computed = null;
+    if (sc.compute) {
+      computed = sc.compute(vals);
+      total = computed;
+    } else {
+      total = sc.fields.reduce((a, f) => {
+        const v = vals[f.id];
+        return a + (typeof v === "number" ? v : 0);
+      }, 0);
+    }
+    const allAnswered = sc.compute
+      ? sc.fields.every(f => vals[f.id] !== undefined && vals[f.id] !== "")
+      : sc.fields.every(f => vals[f.id] !== undefined);
+    const result = allAnswered ? sc.interp(total, vals) : null;
+
+    return (
+      <div>
+        <button onClick={() => { setSelected(null); setVals({}); }} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>
+          ← Tous les scores
+        </button>
+        <div style={{ marginBottom:6 }}>
+          <div style={{ fontSize:17, fontWeight:800, color:C.text }}>{sc.name}</div>
+          <div style={{ fontSize:11, color:C.textSoft, marginTop:2 }}>{sc.cat} · {sc.short}</div>
+        </div>
+
+        {/* Fields */}
+        <div style={{ display:"flex", flexDirection:"column", gap:10, marginTop:14, marginBottom:14 }}>
+          {sc.fields.map(f => (
+            <div key={f.id} style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, padding:"11px 13px" }}>
+              <div style={{ fontSize:12, fontWeight:600, color:C.text, marginBottom:8, lineHeight:1.4 }}>{f.label}</div>
+              {f.type === "number" ? (
+                <input type="number" step="any" value={vals[f.id] || ""} onChange={e => setVals(p => ({ ...p, [f.id]: e.target.value }))} placeholder={f.placeholder} style={{ width:"100%", border:`1.5px solid ${C.border}`, borderRadius:8, padding:"9px 12px", fontSize:15, color:C.text, outline:"none", fontFamily:"inherit", boxSizing:"border-box" }} />
+              ) : (
+                <div style={{ display:"flex", flexDirection:"column", gap:5 }}>
+                  {f.opts.map((opt, oi) => (
+                    <button key={oi} onClick={() => setVals(p => ({ ...p, [f.id]: opt[1] }))} style={{ padding:"8px 11px", background: vals[f.id] === opt[1] ? C.accent+"12" : "#fff", border:`1.5px solid ${vals[f.id] === opt[1] ? C.accent : C.border}`, borderRadius:7, cursor:"pointer", textAlign:"left", display:"flex", justifyContent:"space-between", alignItems:"center", gap:8, fontFamily:"inherit" }}>
+                      <span style={{ fontSize:12, color: vals[f.id] === opt[1] ? C.accent : C.textMed, fontWeight: vals[f.id] === opt[1] ? 600 : 400, lineHeight:1.35 }}>{opt[0]}</span>
+                      <span style={{ fontSize:11, fontWeight:800, color: vals[f.id] === opt[1] ? C.accent : C.textXsoft, flexShrink:0 }}>{opt[1] > 0 ? "+"+opt[1] : opt[1]}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Result */}
+        {result && (
+          <div style={{ background: levelBg(result.level), border:`2px solid ${levelColor(result.level)}`, borderRadius:12, padding:"16px", marginBottom:14, position:"sticky", bottom:80 }}>
+            {!sc.compute && typeof total === "number" && (
+              <div style={{ fontSize:34, fontWeight:900, color:levelColor(result.level), fontFamily:"monospace", lineHeight:1, marginBottom:6 }}>{total}</div>
+            )}
+            {sc.compute && (
+              <div style={{ fontSize:34, fontWeight:900, color:levelColor(result.level), fontFamily:"monospace", lineHeight:1, marginBottom:6 }}>{computed}</div>
+            )}
+            <div style={{ fontSize:13, fontWeight:700, color:levelColor(result.level), lineHeight:1.5 }}>{result.text}</div>
+          </div>
+        )}
+        {!result && (
+          <div style={{ background:C.slateBg, borderRadius:10, padding:"12px 14px", marginBottom:14, textAlign:"center" }}>
+            <span style={{ fontSize:12, color:C.textSoft }}>Complétez tous les items pour obtenir le résultat</span>
+          </div>
+        )}
+
+        {/* Note + Source */}
+        <div style={{ background:C.blueBg, border:`1px solid ${C.blueBorder}`, borderRadius:10, padding:"11px 14px", marginBottom:10 }}>
+          <div style={{ fontSize:11.5, color:"#1E40AF", lineHeight:1.6 }}>💡 {sc.note}</div>
+        </div>
+        <div style={{ background:"#fff", borderRadius:8, border:`1px solid ${C.border}`, padding:"8px 12px" }}>
+          <div style={{ fontSize:9, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.1em", marginBottom:3 }}>Source</div>
+          <div style={{ fontSize:11, color:C.textSoft }}>{sc.source}</div>
+        </div>
+      </div>
+    );
+  }
+
+  // List view
+  const filtered = query.length > 1
+    ? SCORES.filter(s => s.name.toLowerCase().includes(query.toLowerCase()) || s.short.toLowerCase().includes(query.toLowerCase()) || s.cat.toLowerCase().includes(query.toLowerCase()))
+    : SCORES;
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ background:"linear-gradient(135deg, #3730A3 0%, #1E1B4B 100%)", borderRadius:12, padding:"16px", marginBottom:14, color:"#fff" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
+          <span style={{ fontSize:24 }}>🧮</span>
+          <div>
+            <div style={{ fontSize:16, fontWeight:800 }}>Scores & Calculateurs</div>
+            <div style={{ fontSize:10, opacity:0.85, letterSpacing:"0.06em" }}>{SCORES.length} SCORES DE RÉANIMATION</div>
+          </div>
+        </div>
+        <div style={{ fontSize:11.5, opacity:0.9, lineHeight:1.6 }}>
+          Calcul interactif avec interprétation immédiate. Gravité, neurologie, respiratoire, cardiologie, hépatique, rénal.
+        </div>
+      </div>
+
+      <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Rechercher un score…" style={{ width:"100%", border:`1.5px solid ${C.border}`, borderRadius:9, padding:"10px 13px", fontSize:14, color:C.text, outline:"none", fontFamily:"inherit", background:"#fff", boxSizing:"border-box", marginBottom:16 }} />
+
+      {query.length > 1 ? (
+        <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+          {filtered.map(s => (
+            <button key={s.id} onClick={() => { setSelected(s.id); setVals({}); }} style={{ background:"#fff", border:`1px solid ${C.border}`, borderRadius:10, padding:"12px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:10 }}>
+              <div style={{ flex:1 }}>
+                <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{s.name}</div>
+                <div style={{ fontSize:10.5, color:C.textSoft, marginTop:2 }}>{s.cat} · {s.short}</div>
+              </div>
+              <span style={{ color:C.textXsoft, fontSize:16 }}>›</span>
+            </button>
+          ))}
+          {filtered.length === 0 && <div style={{ textAlign:"center", color:C.textSoft, fontSize:12, padding:20 }}>Aucun score trouvé</div>}
+        </div>
+      ) : (
+        cats.map(cat => (
+          <div key={cat} style={{ marginBottom:18 }}>
+            <div style={{ fontSize:11, fontWeight:700, color:C.textSoft, textTransform:"uppercase", letterSpacing:"0.07em", marginBottom:8 }}>{cat}</div>
+            <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden" }}>
+              {SCORES.filter(s => s.cat === cat).map((s, i, arr) => (
+                <button key={s.id} onClick={() => { setSelected(s.id); setVals({}); }} style={{ width:"100%", background:"none", border:"none", borderBottom: i < arr.length-1 ? `1px solid ${C.border}` : "none", padding:"12px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", justifyContent:"space-between", gap:8 }}>
+                  <div style={{ flex:1 }}>
+                    <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{s.name}</div>
+                    <div style={{ fontSize:10.5, color:C.textSoft, marginTop:1 }}>{s.short}</div>
+                  </div>
+                  <span style={{ color:C.textXsoft, fontSize:16, flexShrink:0 }}>›</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};
+
+
+// ═══════════════════════════════════════════════════════════════
+// MODULE EEG EN RÉANIMATION — RéaGuard
+// Générateur de tracés SVG + patterns + indications
+// ═══════════════════════════════════════════════════════════════
+
+// ─── GÉNÉRATEUR DE TRACÉ EEG SVG ───────────────────────────────
+// Génère un tracé multi-dérivations selon une fonction de signal paramétrée
+const EegTracing = ({ pattern = "normal", height = 150, channels = 4, label }) => {
+  const W = 320, padL = 28, padR = 8;
+  const gW = W - padL - padR;
+  const chH = (height - 20) / channels;
+  const samples = 240;
+
+  // Pseudo-random déterministe (seed) pour un rendu stable
+  const rng = (seed) => {
+    let s = seed * 9301 + 49297;
+    return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  };
+
+  // Fonctions de signal par pattern — amplitude normalisée [-1, 1]
+  const signalFns = {
+    // Tracé normal de veille : rythme alpha postérieur ~10 Hz, basse amplitude
+    normal: (t, r, ch) => {
+      const alpha = Math.sin(t * 10 * 2 * Math.PI) * (ch >= channels - 2 ? 0.5 : 0.25);
+      const beta = Math.sin(t * 20 * 2 * Math.PI) * 0.12;
+      return alpha + beta + (r() - 0.5) * 0.18;
+    },
+    // Ralentissement diffus : ondes thêta/delta, encéphalopathie
+    slowing: (t, r) => {
+      const delta = Math.sin(t * 2.5 * 2 * Math.PI) * 0.7;
+      const theta = Math.sin(t * 5 * 2 * Math.PI) * 0.25;
+      return delta + theta + (r() - 0.5) * 0.12;
+    },
+    // Burst-suppression : bouffées d'activité sur fond suppressif
+    burst: (t, r) => {
+      const cycle = t % 0.55;
+      const inBurst = cycle < 0.18;
+      if (inBurst) {
+        const env = Math.sin((cycle / 0.18) * Math.PI);
+        return env * (Math.sin(t * 14 * 2 * Math.PI) * 0.7 + Math.sin(t * 7 * 2 * Math.PI) * 0.4 + (r() - 0.5) * 0.3);
+      }
+      return (r() - 0.5) * 0.05; // fond suppressif quasi-plat
+    },
+    // Silence électrique / tracé nul : mort encéphalique
+    flat: (t, r) => (r() - 0.5) * 0.04,
+    // Pointes-ondes rythmiques : état de mal / crise
+    spikewave: (t, r) => {
+      const cycle = t % 0.32; // ~3 Hz
+      if (cycle < 0.04) return 0.9 - (cycle / 0.04) * 1.7; // pointe rapide
+      const slow = -Math.sin(((cycle - 0.04) / 0.28) * Math.PI) * 0.55; // onde lente
+      return slow + (r() - 0.5) * 0.06;
+    },
+    // Décharges périodiques (PDs type LPD/GPD)
+    periodic: (t, r) => {
+      const cycle = t % 0.85; // ~1.2 Hz, périodique
+      if (cycle < 0.05) {
+        const sharp = Math.sin((cycle / 0.05) * Math.PI);
+        return sharp * 0.85;
+      }
+      return (r() - 0.5) * 0.08;
+    },
+    // Ondes triphasiques : encéphalopathie métabolique (hépatique)
+    triphasic: (t, r) => {
+      const cycle = t % 0.6; // ~1.7 Hz
+      if (cycle < 0.18) {
+        const p = cycle / 0.18;
+        // 3 phases : petite négative, grande positive, négative lente
+        if (p < 0.2) return -0.25 * Math.sin((p / 0.2) * Math.PI);
+        if (p < 0.5) return 0.85 * Math.sin(((p - 0.2) / 0.3) * Math.PI);
+        return -0.45 * Math.sin(((p - 0.5) / 0.5) * Math.PI);
+      }
+      return (r() - 0.5) * 0.06;
+    },
+    // Extreme delta brush : anti-NMDA (delta lent + bouffées beta surajoutées)
+    deltabrush: (t, r) => {
+      const delta = Math.sin(t * 1.5 * 2 * Math.PI) * 0.7;
+      const onDelta = Math.sin(t * 1.5 * 2 * Math.PI) > 0.3;
+      const brush = onDelta ? Math.sin(t * 22 * 2 * Math.PI) * 0.28 : 0;
+      return delta + brush + (r() - 0.5) * 0.08;
+    },
+    // Tracé de sédation profonde (similaire au ralentissement marqué, plus régulier)
+    sedation: (t, r) => {
+      const delta = Math.sin(t * 1.8 * 2 * Math.PI) * 0.6;
+      return delta + (r() - 0.5) * 0.1;
+    },
+  };
+
+  const fn = signalFns[pattern] || signalFns.normal;
+
+  const buildPath = (chIndex) => {
+    const r = rng((chIndex + 1) * 137 + (pattern.length * 13));
+    const midY = 10 + chIndex * chH + chH / 2;
+    const amp = chH * 0.42;
+    let d = "";
+    for (let i = 0; i <= samples; i++) {
+      const t = (i / samples) * 4; // 4 secondes simulées
+      const x = padL + (i / samples) * gW;
+      const y = midY - fn(t, r, chIndex) * amp;
+      d += (i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1) + " ";
+    }
+    return d;
+  };
+
+  const chLabels = ["Fp-F", "F-C", "C-P", "P-O"];
+
+  return (
+    <svg width="100%" viewBox={`0 0 ${W} ${height}`} style={{ maxWidth: 360, display: "block", background: "#FdFdFf", borderRadius: 8 }}>
+      <rect width={W} height={height} fill="#FCFCFE" rx="8" />
+      {/* Grille temporelle (1 carreau = 1 s) */}
+      {[0, 1, 2, 3, 4].map(s => {
+        const x = padL + (s / 4) * gW;
+        return <line key={s} x1={x} y1={6} x2={x} y2={height - 8} stroke="#EEF1F6" strokeWidth="0.7" />;
+      })}
+      {/* Dérivations */}
+      {Array.from({ length: channels }).map((_, ci) => (
+        <g key={ci}>
+          <text x={4} y={10 + ci * chH + chH / 2 + 3} fontSize="6.5" fill="#94A3B8" fontFamily="monospace">{chLabels[ci % 4]}</text>
+          <path d={buildPath(ci)} fill="none" stroke="#1E293B" strokeWidth="0.9" strokeLinejoin="round" strokeLinecap="round" />
+        </g>
+      ))}
+      {/* Échelle */}
+      <text x={padL} y={height - 1} fontSize="6" fill="#CBD5E1" fontFamily="monospace">1 s/carreau</text>
+      {label && <text x={W - padR} y={height - 1} fontSize="6.5" fill="#94A3B8" textAnchor="end" fontStyle="italic">schématique</text>}
+    </svg>
+  );
+};
+
+// ─── DONNÉES PATTERNS EEG ──────────────────────────────────────
+const EEG_PATTERNS = [
+  {
+    id: "normal", nom: "Tracé normal de veille", pattern: "normal", color: "#15803D",
+    desc: "Rythme alpha postérieur (8–12 Hz) réactif, bien organisé, avec gradient antéro-postérieur normal.",
+    contexte: "Sujet éveillé, yeux fermés. Sert de référence pour reconnaître les anomalies.",
+    points: [
+      "Rythme alpha dominant en région occipitale, bloqué à l'ouverture des yeux (réactivité)",
+      "Gradient antéro-postérieur présent (fréquences plus rapides en avant)",
+      "Symétrie entre les deux hémisphères",
+    ],
+    signif: "Normal — pas de souffrance cérébrale diffuse.", signifLevel: "ok",
+  },
+  {
+    id: "slowing", nom: "Ralentissement diffus", pattern: "slowing", color: "#D97706",
+    desc: "Activité lente diffuse (ondes thêta 4–7 Hz puis delta < 4 Hz) remplaçant le rythme de fond normal.",
+    contexte: "Encéphalopathie diffuse : métabolique, toxique, hypoxique, infectieuse.",
+    points: [
+      "Disparition du rythme alpha au profit d'ondes lentes",
+      "Le degré de ralentissement est corrélé à la profondeur de l'encéphalopathie",
+      "Souvent réactif aux stimulations (élément de bon pronostic relatif)",
+    ],
+    signif: "Souffrance cérébrale diffuse non spécifique — chercher la cause (iono, ammoniémie, toxiques, hypoxie).", signifLevel: "warn",
+  },
+  {
+    id: "spikewave", nom: "Pointes-ondes / Activité critique", pattern: "spikewave", color: "#DC2626",
+    desc: "Décharges de pointes-ondes rythmiques évoluant dans le temps et l'espace : marqueur d'activité épileptique.",
+    contexte: "État de mal épileptique, en particulier non convulsivant (à suspecter devant tout coma inexpliqué).",
+    points: [
+      "Pointes ou pointes-ondes rythmiques ≥ 2,5 Hz évoluant en fréquence/amplitude/topographie",
+      "L'EEG est INDISPENSABLE : l'état de mal non convulsivant n'a pas de traduction motrice",
+      "Un coma persistant après une crise impose un EEG pour éliminer un état de mal infraclinique",
+    ],
+    signif: "État de mal épileptique probable — urgence thérapeutique (benzodiazépine puis antiépileptique).", signifLevel: "bad",
+  },
+  {
+    id: "periodic", nom: "Décharges périodiques (PDs)", pattern: "periodic", color: "#DC2626",
+    desc: "Décharges périodiques régulières (LPDs latéralisées ou GPDs généralisées) selon la terminologie ACNS 2021.",
+    contexte: "Lésion cérébrale aiguë, encéphalite (HSV ++), anoxie, AVC étendu. Position sur le continuum ictal-interictal.",
+    points: [
+      "Décharges régulièrement périodiques sur un fond souvent suppressif",
+      "LPDs (latéralisées) : fortement associées aux crises — évoquer une encéphalite herpétique",
+      "GPDs (généralisées) : encéphalopathie sévère, anoxie — valeur pronostique post-arrêt cardiaque",
+    ],
+    signif: "Continuum ictal-interictal — discuter un test thérapeutique antiépileptique et chercher l'étiologie.", signifLevel: "bad",
+  },
+  {
+    id: "triphasic", nom: "Ondes triphasiques", pattern: "triphasic", color: "#D97706",
+    desc: "Ondes de morphologie triphasique, à prédominance frontale, périodiques (~1–2 Hz).",
+    contexte: "Encéphalopathie métabolique, classiquement hépatique, mais aussi urémique ou septique.",
+    points: [
+      "Morphologie en trois phases caractéristique, gradient antéro-postérieur",
+      "Évocatrices d'une encéphalopathie métabolique mais non spécifiques",
+      "À distinguer des décharges épileptiques périodiques (parfois difficile : continuum)",
+    ],
+    signif: "Oriente vers une encéphalopathie métabolique — doser ammoniémie, bilan hépatique et rénal.", signifLevel: "warn",
+  },
+  {
+    id: "burst", nom: "Burst-suppression", pattern: "burst", color: "#DC2626",
+    desc: "Alternance de bouffées d'activité (≥ 0,5 s, polyphasiques) et de périodes de suppression (< 10 µV).",
+    contexte: "Coma profond : anoxie sévère post-arrêt cardiaque, sédation très profonde (barbituriques), hypothermie.",
+    points: [
+      "Bouffées séparées par des intervalles suppressifs — définition ACNS 2021",
+      "Iatrogène et réversible si sédation profonde / barbituriques (coma thérapeutique)",
+      "Post-anoxique non réactif : élément de mauvais pronostic (avec les autres critères multimodaux)",
+    ],
+    signif: "Coma profond — distinguer une cause iatrogène (réversible) d'une cause anoxique (péjorative).", signifLevel: "bad",
+  },
+  {
+    id: "deltabrush", nom: "Extreme delta brush", pattern: "deltabrush", color: "#6D28D9",
+    desc: "Ondes delta lentes avec bouffées d'activité rapide (bêta) surimposées, en « brosse ».",
+    contexte: "Évocateur de l'encéphalite à anticorps anti-récepteur NMDA (femme jeune ++).",
+    points: [
+      "Association d'ondes delta et d'une activité rapide rythmique surimposée",
+      "Pattern assez spécifique de l'encéphalite anti-NMDA dans le contexte clinique adéquat",
+      "Doit faire rechercher les anticorps anti-NMDA (sérum et LCR) et un tératome ovarien",
+    ],
+    signif: "Évoque une encéphalite auto-immune anti-NMDA — bilan immunologique et recherche de tumeur.", signifLevel: "warn",
+  },
+  {
+    id: "flat", nom: "Silence électrique cérébral", pattern: "flat", color: "#991B1B",
+    desc: "Absence d'activité électrique cérébrale > 2 µV sur un tracé de 30 minutes, de bonne qualité, en amplification maximale.",
+    contexte: "Examen de confirmation réglementaire de la mort encéphalique en France (avec l'angiographie).",
+    points: [
+      "Tracé « inactif » : silence électrique défini par l'absence d'activité > 2 µV pendant 30 minutes",
+      "Conditions strictes : éliminer hypothermie, sédation et troubles métaboliques (sinon angioscanner préféré)",
+      "En France : 2 EEG nuls à 4 heures d'intervalle OU une angiographie cérébrale (cf protocole Mort Encéphalique)",
+    ],
+    signif: "Compatible avec une mort encéphalique si conditions réglementaires réunies — démarche médico-légale.", signifLevel: "bad",
+  },
+];
+
+// ─── INDICATIONS DE L'EEG EN RÉANIMATION ───────────────────────
+const EEG_INDICATIONS = [
+  {
+    nom: "État de mal épileptique non convulsivant", icon: "⚡", color: "#DC2626",
+    txt: "Indication majeure. Tout coma inexpliqué ou prolongé après une crise doit faire réaliser un EEG : l'état de mal non convulsivant n'a aucune traduction motrice et ne peut être diagnostiqué autrement.",
+  },
+  {
+    nom: "Confirmation de mort encéphalique", icon: "⚖️", color: "#991B1B",
+    txt: "Examen de confirmation réglementaire en France (alternative : angiographie cérébrale). Recherche d'un silence électrique > 2 µV sur 30 minutes, après élimination des facteurs confondants.",
+  },
+  {
+    nom: "Neuropronostication post-arrêt cardiaque", icon: "🫀", color: "#1D4ED8",
+    txt: "Élément de l'approche multimodale (avec examen clinique, potentiels évoqués, NSE, imagerie). Un fond non réactif, un burst-suppression ou un état de mal post-anoxique sont des éléments de mauvais pronostic — jamais isolément.",
+  },
+  {
+    nom: "Diagnostic d'une encéphalopathie", icon: "🌫️", color: "#D97706",
+    txt: "Objective et quantifie une souffrance cérébrale diffuse (ralentissement), oriente vers une cause métabolique (ondes triphasiques) ou auto-immune (delta brush).",
+  },
+  {
+    nom: "Monitorage de la sédation profonde", icon: "💤", color: "#6D28D9",
+    txt: "Titration d'un coma thérapeutique barbiturique (HTIC réfractaire, état de mal réfractaire) : la cible est souvent un burst-suppression contrôlé.",
+  },
+];
+
+// ─── ÉCRAN PATTERN EEG (détail) ────────────────────────────────
+const EegPatternScreen = ({ C, pat, onBack }) => {
+  const levelColor = pat.signifLevel === "ok" ? C.green : pat.signifLevel === "warn" ? C.orange : C.red;
+  const levelBg = pat.signifLevel === "ok" ? C.greenBg : pat.signifLevel === "warn" ? C.orangeBg : C.redBg;
+  return (
+    <div>
+      <button onClick={onBack} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>← Patterns EEG</button>
+      <div style={{ fontSize:17, fontWeight:800, color:C.text, marginBottom:2 }}>{pat.nom}</div>
+      <div style={{ fontSize:12, color:C.textSoft, marginBottom:14, lineHeight:1.5 }}>{pat.desc}</div>
+
+      {/* Tracé */}
+      <div style={{ background:"#fff", borderRadius:12, border:`1px solid ${C.border}`, padding:"10px", marginBottom:14 }}>
+        <EegTracing pattern={pat.pattern} label />
+      </div>
+
+      {/* Contexte */}
+      <div style={{ background:C.slateBg, borderRadius:10, padding:"11px 14px", marginBottom:12 }}>
+        <div style={{ fontSize:10, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.08em", marginBottom:4 }}>Contexte clinique</div>
+        <div style={{ fontSize:12.5, color:C.textMed, lineHeight:1.6 }}>{pat.contexte}</div>
+      </div>
+
+      {/* Points clés */}
+      <div style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, overflow:"hidden", marginBottom:12 }}>
+        <div style={{ padding:"9px 14px", borderBottom:`1px solid ${C.border}`, background:C.slateBg }}>
+          <span style={{ fontSize:11, fontWeight:700, color:C.text }}>Points clés de reconnaissance</span>
+        </div>
+        {pat.points.map((p, i) => (
+          <div key={i} style={{ padding:"10px 14px", borderBottom: i < pat.points.length-1 ? `1px solid ${C.border}` : "none", display:"flex", gap:9 }}>
+            <span style={{ color:pat.color, fontWeight:700, flexShrink:0 }}>•</span>
+            <span style={{ fontSize:12, color:C.textMed, lineHeight:1.55 }}>{p}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Signification */}
+      <div style={{ background:levelBg, border:`2px solid ${levelColor}`, borderRadius:10, padding:"12px 14px" }}>
+        <div style={{ fontSize:10, fontWeight:700, color:levelColor, textTransform:"uppercase", letterSpacing:"0.08em", marginBottom:4 }}>Signification clinique</div>
+        <div style={{ fontSize:12.5, color:levelColor, fontWeight:600, lineHeight:1.6 }}>{pat.signif}</div>
+      </div>
+    </div>
+  );
+};
+
+// ─── ÉCRAN PRINCIPAL EEG ───────────────────────────────────────
+const EegScreen = ({ C }) => {
+  const [view, setView] = useState("menu");
+  const [pat, setPat] = useState(null);
+
+  if (pat) return <EegPatternScreen C={C} pat={pat} onBack={() => setPat(null)} />;
+
+  if (view === "indications") {
+    return (
+      <div>
+        <button onClick={() => setView("menu")} style={{ display:"flex", alignItems:"center", gap:6, background:"none", border:"none", cursor:"pointer", color:C.accent, fontSize:13, marginBottom:14, padding:0 }}>← EEG en réanimation</button>
+        <div style={{ fontSize:15, fontWeight:700, color:C.text, marginBottom:14 }}>Indications de l'EEG en réanimation</div>
+        <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+          {EEG_INDICATIONS.map((ind, i) => (
+            <div key={i} style={{ background:"#fff", borderRadius:10, border:`1px solid ${C.border}`, borderLeft:`3px solid ${ind.color}`, padding:"12px 14px" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:5 }}>
+                <span style={{ fontSize:17 }}>{ind.icon}</span>
+                <span style={{ fontSize:13, fontWeight:700, color:C.text }}>{ind.nom}</span>
+              </div>
+              <div style={{ fontSize:12, color:C.textMed, lineHeight:1.6 }}>{ind.txt}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={{ background:"linear-gradient(135deg, #4338CA 0%, #312E81 100%)", borderRadius:12, padding:"16px", marginBottom:16, color:"#fff" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+          <span style={{ fontSize:24 }}>📈</span>
+          <div>
+            <div style={{ fontSize:16, fontWeight:800 }}>EEG en Réanimation</div>
+            <div style={{ fontSize:10, opacity:0.85, letterSpacing:"0.06em" }}>RECONNAISSANCE DES PATTERNS</div>
+          </div>
+        </div>
+        <div style={{ fontSize:12, opacity:0.92, lineHeight:1.6 }}>
+          Reconnaître les grands tracés EEG de réanimation : encéphalopathie, état de mal, mort encéphalique, neuropronostication.
+        </div>
+      </div>
+
+      <button onClick={() => setView("indications")} style={{ width:"100%", background:"#fff", border:`1px solid ${C.border}`, borderRadius:10, padding:"13px 14px", cursor:"pointer", textAlign:"left", display:"flex", alignItems:"center", gap:10, marginBottom:16 }}>
+        <span style={{ fontSize:18 }}>🎯</span>
+        <div style={{ flex:1 }}>
+          <div style={{ fontSize:13, fontWeight:700, color:C.text }}>Indications en réanimation</div>
+          <div style={{ fontSize:10.5, color:C.textSoft, marginTop:1 }}>Quand demander un EEG</div>
+        </div>
+        <span style={{ color:C.textXsoft, fontSize:16 }}>›</span>
+      </button>
+
+      <div style={{ fontSize:11, fontWeight:700, color:C.textXsoft, textTransform:"uppercase", letterSpacing:"0.07em", marginBottom:10 }}>Atlas des patterns</div>
+      <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+        {EEG_PATTERNS.map(p => (
+          <button key={p.id} onClick={() => setPat(p)} style={{ background:"#fff", border:`1px solid ${C.border}`, borderRadius:12, padding:"10px", cursor:"pointer", textAlign:"left" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8, padding:"0 4px" }}>
+              <div style={{ width:8, height:8, borderRadius:"50%", background:p.color, flexShrink:0 }} />
+              <span style={{ fontSize:13, fontWeight:700, color:C.text, flex:1 }}>{p.nom}</span>
+              <span style={{ color:C.textXsoft, fontSize:16 }}>›</span>
+            </div>
+            <EegTracing pattern={p.pattern} height={90} channels={3} />
+          </button>
+        ))}
+      </div>
+
+      <div style={{ background:"#FFFBEB", border:"1px solid #FDE68A", borderRadius:10, padding:"11px 14px", marginTop:16 }}>
+        <div style={{ fontSize:11, color:"#92400E", lineHeight:1.6 }}>
+          ⚠ Les tracés présentés sont des <strong>représentations schématiques à visée pédagogique</strong>, destinées à la reconnaissance des grands patterns. Ils ne remplacent pas la lecture d'un EEG réel par un neurophysiologiste. Terminologie de référence : ACNS 2021.
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function App() {
   const [tab, setTab] = useState("index");
   const [specId, setSpecId] = useState(null);
@@ -4300,8 +7912,10 @@ export default function App() {
 
   const NAV_TABS = [
     { id: "index", label: "Protocoles", icon: "≡" },
-    { id: "ventilation", label: "Ventilation", icon: "🫁" },
-    { id: "search", label: "Recherche", icon: "⊕" },
+    { id: "scores", label: "Scores", icon: "🧮" },
+    { id: "ventilation", label: "Ventil.", icon: "🫁" },
+    { id: "infecto", label: "Infectio", icon: "🦠" },
+    { id: "hemo", label: "Hémo", icon: "💉" },
   ];
 
   return (
@@ -4348,11 +7962,16 @@ export default function App() {
             )}
           </div>
 
-          {!isDetail && tab !== "search" && tab !== "ventilation" && (
-            <button onClick={() => { setTab("search"); setSearch(""); navReset(); }} style={{ background: C.bg, border: `1px solid ${C.border}`, borderRadius: 10, padding: "6px 10px", cursor: "pointer", display: "flex", alignItems: "center" }}>
-              <SvgIcon name="search" size={15} color={C.textSoft} />
+          <div style={{ display: "flex", gap: 6 }}>
+            <button onClick={() => { setTab("about"); navReset(); }} style={{ background: tab === "about" ? C.accent : C.bg, border: `1px solid ${tab === "about" ? C.accent : C.border}`, borderRadius: 10, padding: "6px 10px", cursor: "pointer", display: "flex", alignItems: "center", fontSize: 13, fontWeight: 800, color: tab === "about" ? "#fff" : C.textSoft }}>
+              ⓘ
             </button>
-          )}
+            {!isDetail && tab !== "search" && (
+              <button onClick={() => { setTab("search"); setSearch(""); navReset(); }} style={{ background: C.bg, border: `1px solid ${C.border}`, borderRadius: 10, padding: "6px 10px", cursor: "pointer", display: "flex", alignItems: "center" }}>
+                <SvgIcon name="search" size={15} color={C.textSoft} />
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
@@ -4360,6 +7979,21 @@ export default function App() {
 
         {/* VENTILATION TAB */}
         {tab === "ventilation" && <VentilationScreen C={C} />}
+
+        {/* INFECTIOLOGIE TAB */}
+        {tab === "infecto" && <InfectoScreen C={C} />}
+
+        {/* SCORES TAB */}
+        {tab === "scores" && <ScoresScreen C={C} />}
+
+        {/* EEG TAB */}
+        {tab === "eeg" && <EegScreen C={C} />}
+
+        {/* À PROPOS TAB */}
+        {tab === "about" && <AboutScreen C={C} />}
+
+        {/* HÉMODYNAMIQUE TAB */}
+        {tab === "hemo" && <HemodynamiqueScreen C={C} />}
 
         {/* HOME */}
         {tab === "index" && !isDetail && (
@@ -4396,24 +8030,18 @@ export default function App() {
               })}
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.textXsoft, letterSpacing: "0.08em", textTransform: "uppercase" }}>Scores validés & calculateur de doses</div>
-              <div style={{ marginLeft: "auto", opacity: 0.5 }}><IVBagIllustration size={36} color={C.blue} /></div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: C.textXsoft, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10 }}>
+              Modules interactifs
             </div>
-            <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 14 }}>
-              {SCORES.map((sc, i) => (
-                <button key={sc.id} onClick={() => { setScoreId(sc.id); setScoreVals({}); }} style={{ width: "100%", background: "none", border: "none", borderBottom: i < SCORES.length - 1 ? `1px solid ${C.border}` : "none", padding: "12px 14px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{ width: 34, height: 34, borderRadius: 9, background: C.blueBg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <SvgIcon name="calculator" size={17} color={C.blue} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: C.text }}>{sc.name}</div>
-                    <div style={{ fontSize: 10, color: C.textSoft, marginTop: 2 }}>{sc.category}</div>
-                  </div>
-                  <SvgIcon name="chevron" size={16} color={C.textXsoft} />
-                </button>
-              ))}
-            </div>
+            <button onClick={() => { setTab("eeg"); navReset(); }} style={{ width: "100%", background: "linear-gradient(135deg, #4338CA 0%, #312E81 100%)", border: "none", borderRadius: 12, padding: "14px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 12, marginBottom: 16, color: "#fff" }}>
+              <span style={{ fontSize: 26 }}>📈</span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 14, fontWeight: 800 }}>EEG en Réanimation</div>
+                <div style={{ fontSize: 10.5, opacity: 0.85, marginTop: 1 }}>Atlas des patterns · Indications · Mort encéphalique</div>
+              </div>
+              <span style={{ fontSize: 18, opacity: 0.7 }}>›</span>
+            </button>
+
             <div style={{ fontSize: 9, color: C.textXsoft, textAlign: "center", lineHeight: 1.7 }}>
               Aide-mémoire clinique · Le jugement médical prime sur tout protocole<br />
               ERC 2025 · SSC 2026 · ESICM 2023 · ATS 2024 · HAS 2025 · ESC 2023–24<br />
@@ -4550,54 +8178,6 @@ export default function App() {
           </div>
         )}
 
-        {/* SCORE */}
-        {scoreId && curScore && (
-          <div>
-            <div style={{ fontSize: 11, color: C.textSoft, marginBottom: 14 }}>{curScore.category}</div>
-            <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 14 }}>
-              {curScore.fields.map((f, i) => (
-                <div key={f.id} style={{ padding: "12px 14px", borderBottom: i < curScore.fields.length - 1 ? `1px solid ${C.border}` : "none" }}>
-                  <div style={{ fontSize: 12, color: C.textSoft, marginBottom: 8, fontWeight: 500 }}>{f.label}</div>
-                  {f.type === "number" ? (
-                    <input type="number" placeholder={f.placeholder} value={scoreVals[f.id] || ""} onChange={e => setScoreVals(v => ({ ...v, [f.id]: e.target.value }))} style={{ width: "100%", border: `1.5px solid ${C.border}`, borderRadius: 8, padding: "9px 12px", fontSize: 15, color: C.text, outline: "none", boxSizing: "border-box", fontFamily: "inherit" }} />
-                  ) : (
-                    <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-                      {f.opts.map(([label, val]) => (
-                        <button key={val} onClick={() => setScoreVals(v => ({ ...v, [f.id]: val }))} style={{ padding: "9px 12px", background: scoreVals[f.id] === val ? C.accent : "#fff", border: `1.5px solid ${scoreVals[f.id] === val ? C.accent : C.border}`, borderRadius: 8, cursor: "pointer", textAlign: "left", fontSize: 12.5, color: scoreVals[f.id] === val ? "#fff" : C.textMed, fontWeight: scoreVals[f.id] === val ? 600 : 400, fontFamily: "inherit", lineHeight: 1.4 }}>
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            {!curScore.custom && Object.keys(scoreVals).length === curScore.fields.length && (() => {
-              const total = Object.values(scoreVals).reduce((a, b) => a + Number(b), 0);
-              const r = curScore.interp(total);
-              return (
-                <div style={{ background: "#fff", borderRadius: 12, border: `2.5px solid ${r.color}`, padding: "16px 18px", marginBottom: 14, display: "flex", alignItems: "center", gap: 14 }}>
-                  <div style={{ fontSize: 36, fontWeight: 900, color: r.color, fontFamily: "monospace", lineHeight: 1, flexShrink: 0 }}>{total}</div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: r.color, lineHeight: 1.4 }}>{r.text.split(" — ").slice(1).join(" — ")}</div>
-                </div>
-              );
-            })()}
-            {curScore.custom && scoreVals.w && (
-              <div style={{ background: "#fff", borderRadius: 12, border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 14 }}>
-                <div style={{ padding: "10px 14px 9px", borderBottom: `1px solid ${C.border}`, background: C.blueBg }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: C.blue }}>Doses pour {parseFloat(scoreVals.w).toFixed(0)} kg</span>
-                </div>
-                {curScore.custom(scoreVals).map(([drug, dose], i, arr) => (
-                  <div key={i} style={{ padding: "9px 14px", borderBottom: i < arr.length - 1 ? `1px solid ${C.border}` : "none", display: "flex", justifyContent: "space-between", gap: 10 }}>
-                    <span style={{ fontSize: 12, color: C.textMed, flex: 1, lineHeight: 1.4 }}>{drug}</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: C.blue, textAlign: "right", lineHeight: 1.4, flexShrink: 0 }}>{dose}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
         {/* SEARCH */}
         {tab === "search" && (
           <div>
@@ -4638,7 +8218,7 @@ export default function App() {
           const active = tab === t.id && !isDetail;
           return (
             <button key={t.id} onClick={() => { setTab(t.id); navReset(); }} style={{ flex: 1, background: "none", border: "none", padding: "10px 0 14px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
-              {t.id === "ventilation" ? (
+              {(t.id === "ventilation" || t.id === "infecto" || t.id === "hemo" || t.id === "scores") ? (
                 <span style={{ fontSize: 18, opacity: active ? 1 : 0.4 }}>{t.icon}</span>
               ) : (
                 <SvgIcon name={t.id === "index" ? "list" : "search"} size={20} color={active ? C.accent : C.textXsoft} />
